@@ -11,11 +11,27 @@
 |
 */
 
+//site
 Route::get('/', function () {
-    return view('admin/admin');
+    return view('site.home');
 });
 
+//conheça nossa equipe
+Route::get('/professor', function () {
+    return view('site.professor.index');
+});
 
-Route::get('/admin', function () {
-    return view('admin');
+//documentos
+Route::get('/documento', function () {
+    return view('site.documento.index');
+});
+
+//sobre
+Route::get('/sobre', function () {
+    return view('site.sobre.index');
+});
+
+//publicações
+Route::get('/publicacao', function () {
+    return view('site.publicacao.index');
 });

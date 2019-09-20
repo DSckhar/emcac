@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Hello World</title>
+    <title>EMCAC</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('site/css/bootstrap.min.css')}}">
 
     <!-- FontAwesome CSS -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('site/css/font-awesome.min.css')}}">
 
     <!-- ElegantFonts CSS -->
-    <link rel="stylesheet" href="css/elegant-fonts.css">
+    <link rel="stylesheet" href="{{asset('site/css/elegant-fonts.css')}}">
 
     <!-- themify-icons CSS -->
-    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="{{asset('site/css/themify-icons.css')}}">
 
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="{{asset('site/css/swiper.min.css')}}">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{asset('site/style.css')}}">
 </head>
 <body>
     <div class="hero-content">
@@ -35,7 +35,7 @@
                     <div class="row">
                         <div class="col-9 col-lg-3">
                             <div class="site-branding">
-                                <h1 class="site-title"><a href="index.html" rel="home">EM<span>CAC</span></a></h1>
+                                <h1 class="site-title"><a href="{{asset('/')}}" rel="home">EM<span>CAC</span></a></h1>
                             </div><!-- .site-branding -->
                         </div><!-- .col -->
 
@@ -43,12 +43,11 @@
                             <nav class="site-navigation flex justify-content-end align-items-center">
                                 <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
                                     <li class="current-menu-item" disabled><a href="">Home</a></li>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Sobre</a></li>
-                                    <li><a href="#">Publicações</a></li>
-                                    <li><a href="#">Doc</a></li>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/sobre">Sobre</a></li>
+                                    <li><a href="/publicacao">Publicações</a></li>
+                                    <li><a href="/documento">Documentos</a></li>
                                     <li><a href="#">informação</a></li>
-                                    <li><a href="#">Contato</a></li>
                                 </ul>
                                 
 
@@ -77,7 +76,7 @@
                             </header><!-- .entry-header -->
 
                             <div class="entry-content">
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+                                <p>Educar é crescer junto com o seu filho</p>
                             </div><!-- .entry-content -->
                         </div><!-- .hero-content-wrap -->
                     </div><!-- .col -->
@@ -99,11 +98,11 @@
                     </header><!-- .entry-header -->
 
                     <div class="entry-content">
-                        <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+                        <p>Nossa instituição é formada por uma equipe qualificada e dedicada em compartilhar o conhecimento.</p>
                     </div><!-- .entry-content -->
 
                     <footer class="entry-footer read-more">
-                        <a href="#">Saiba mais</a>
+                        <a href="/professor">Saiba mais</a>
                     </footer><!-- .entry-footer -->
                 </div><!-- .icon-box -->
 
@@ -121,7 +120,7 @@
                     </div><!-- .entry-content -->
 
                     <footer class="entry-footer read-more">
-                        <a href="#">Saiba mais</a>
+                        <a href="/publicacao">Saiba mais</a>
                     </footer><!-- .entry-footer -->
                 </div><!-- .icon-box -->
 
@@ -131,7 +130,7 @@
                     </div><!-- .icon -->
 
                     <header class="entry-header">
-                        <h2 class="entry-title">DOC</h2>
+                        <h2 class="entry-title">Documentos</h2>
                     </header><!-- .entry-header -->
 
                     <div class="entry-content">
@@ -139,7 +138,7 @@
                     </div><!-- .entry-content -->
 
                     <footer class="entry-footer read-more">
-                        <a href="#">Saiba mais</a>
+                        <a href="/documento">Saiba mais</a>
                     </footer><!-- .entry-footer -->
                 </div><!-- .icon-box -->
 
@@ -178,7 +177,7 @@
 
                 <div class="col-12 col-lg-6 flex align-content-center mt-5 mt-lg-0">
                     <div class="ezuca-video position-relative">
-                        <img src="images/video-screenshot.png" alt="">
+                        <img src="{{asset('site/images/video-screenshot.png')}}" alt="">
                     </div><!-- .ezuca-video -->
                 </div><!-- .col -->
             </div><!-- .row -->
@@ -197,7 +196,7 @@
                 <div class="col-12 col-lg-6">
                     <div class="featured-event-content">
                         <figure class="event-thumbnail position-relative m-0">
-                            <a href="#"><img src="images/event-1.jpg" alt=""></a>
+                            <a href="#"><img src="{{asset('site/images/event-1.jpg')}}" alt=""></a>
 
                             <div class="posted-date position-absolute">
                                 <div class="day">23</div>
@@ -218,7 +217,7 @@
                 <div class="col-12 col-lg-6 mt-5 mt-lg-0">
                     <div class="event-content flex flex-wrap justify-content-between align-content-stretch">
                         <figure class="event-thumbnail">
-                            <a href="#"><img src="images/event-2.jpg" alt=""></a>
+                            <a href="#"><img src="{{asset('site/images/event-2.jpg')}}" alt=""></a>
                         </figure><!-- .course-thumbnail -->
 
                         <div class="event-content-wrap">
@@ -244,7 +243,7 @@
 
                     <div class="event-content flex flex-wrap justify-content-between align-content-lg-stretch">
                         <figure class="event-thumbnail">
-                            <a href="#"><img src="images/event-3.jpg" alt=""></a>
+                            <a href="#"><img src="{{asset('site/images/event-3.jpg')}}" alt=""></a>
                         </figure><!-- .course-thumbnail -->
 
                         <div class="event-content-wrap">
@@ -275,59 +274,59 @@
     <section class="home-gallery">
         <div class="gallery-wrap flex flex-wrap">
             <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="images/a.jpg" alt=""></a>
+                <a href="#"><img src="{{asset('site/images/a.jpg')}}" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="images/b.jpg" alt=""></a>
+                <a href="#"><img src="{{asset('site/images/b.jpg')}}" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid2x2">
-                <a href="#"><img src="images/c.jpg" alt=""></a>
+                <a href="#"><img src="{{asset('site/images/c.jpg')}}" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="images/d.jpg" alt=""></a>
+                <a href="#"><img src="{{asset('site/images/d.jpg')}}" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="images/e.jpg" alt=""></a>
+                <a href="#"><img src="{{asset('site/images/e.jpg')}}" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid2x1">
-                <a href="#"><img src="images/g.jpg" alt=""></a>
+                <a href="#"><img src="{{asset('site/images/g.jpg')}}" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid2x1">
-                <a href="#"><img src="images/h.jpg" alt=""></a>
+                <a href="#"><img src="{{asset('site/images/h.jpg')}}" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="images/i.jpg" alt=""></a>
+                <a href="#"><img src="{{asset('site/images/i.jpg')}}" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid2x2 ">
-                <a href="#"><img src="images/j.jpg" alt=""></a>
+                <a href="#"><img src="{{asset('site/images/j.jpg')}}" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="images/k.jpg" alt=""></a>
+                <a href="#"><img src="{{asset('site/images/k.jpg')}}" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="images/l.jpg" alt=""></a>
+                <a href="#"><img src="{{asset('site/images/l.jpg')}}" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid2x1">
-                <a href="#"><img src="images/m.jpg" alt=""></a>
+                <a href="#"><img src="{{asset('site/images/m.jpg')}}" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid3x1">
-                <a href="#"><img src="images/n.jpg" alt=""></a>
+                <a href="#"><img src="{{asset('site/images/n.jpg')}}" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="images/o.jpg" alt=""></a>
+                <a href="#"><img src="{{asset('site/images/o.jpg')}}" alt=""></a>
             </div><!-- .gallery-grid -->
         </div><!-- .gallery-wrap -->
     </section><!-- .home-gallery -->
@@ -340,7 +339,7 @@
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="foot-about">
                             <div class="site-branding">
-                                <h1 class="site-title"><a href="index.html" rel="home">EM<span>CAC</span></a></h1>
+                                <h1 class="site-title"><a href="{{asset('/')}}" rel="home">EM<span>CAC</span></a></h1>
                             </div>
 
                             <p style="color: #a0a0a0;">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia dese mollit anim id est laborum. </p>
@@ -416,11 +415,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div><!-- .footer-bar -->
     </footer><!-- .site-footer -->
 
-<script type='text/javascript' src='js/jquery.js'></script>
-<script type='text/javascript' src='js/swiper.min.js'></script>
-<script type='text/javascript' src='js/masonry.pkgd.min.js'></script>
-<script type='text/javascript' src='js/jquery.collapsible.min.js'></script>
-<script type='text/javascript' src='js/custom.js'></script>
+<script type='text/javascript' src='site/js/jquery.js'></script>
+<script type='text/javascript' src='site/js/swiper.min.js'></script>
+<script type='text/javascript' src='site/js/masonry.pkgd.min.js'></script>
+<script type='text/javascript' src='site/js/jquery.collapsible.min.js'></script>
+<script type='text/javascript' src='site/js/custom.js'></script>
 
 </body>
 </html>
