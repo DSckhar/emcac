@@ -6,6 +6,7 @@ html {
   }
   
   body {
+    background: url("../media/hero-bg.jpg") no-repeat center;
     font-family: "Poppins", sans-serif;
     height: 100vh;
   }

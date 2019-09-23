@@ -7,7 +7,7 @@
 
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link rel="stylesheet" href="{{asset('admin/assets/css/styleLogin.css')}}">
-        <title>Document</title>
+        <title>EMCAC</title>
         
     </head>
     <body>

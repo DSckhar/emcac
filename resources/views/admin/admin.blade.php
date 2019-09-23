@@ -94,6 +94,20 @@
                             <li>
                                 <a class="nav-submenu active" data-toggle="nav-submenu" href="#">
                                     <i class="si si-people"></i>
+                                    <span class="sidebar-mini-hide">Responsáveis</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void(0)">Visualizar</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Cadastrar</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="nav-submenu active" data-toggle="nav-submenu" href="#">
+                                    <i class="si si-people"></i>
                                     <span class="sidebar-mini-hide">Alunos</span>
                                 </a>
                                 <ul>
@@ -230,7 +244,6 @@
                         <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout" data-action="header_search_on">
                             <i class="fa fa-search"></i>
                         </button>
-                        @yield('content')
                         <!-- END Open Search Section -->
 
                         <!-- Color Themes (used just for demonstration) -->
@@ -366,31 +379,7 @@
 
             <!-- Main Container -->
             <main id="main-container">
-                <!-- Page Content -->
-                <div class="content">
-                    <div class="block">
-                        <div class="block-header block-header-default">
-                            <h3 class="block-title">Blank <small>Get Started</small></h3>
-                            <div class="block-options">
-                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="fullscreen_toggle"></button>
-                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="pinned_toggle">
-                                    <i class="si si-pin"></i>
-                                </button>
-                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
-                                    <i class="si si-refresh"></i>
-                                </button>
-                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"></button>
-                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="close">
-                                    <i class="si si-close"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="block-content">
-                            <p>Create your own awesome project!</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- END Page Content -->
+                @yield('adm')
             </main>
             <!-- END Main Container -->
 
