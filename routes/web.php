@@ -26,8 +26,9 @@ Route::get('/publicacao', function () {
 });
 
 //ADMIN
-
-Route::get('/admr', function ()  {
-    return view('admin.aluno.index');
+Route::get('/admr', function () {
+    return view('admin.login');
 });
+
+Route::resource('/admr/aluno', 'AlunosController');
 

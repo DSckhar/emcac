@@ -212,7 +212,7 @@
             <!-- END Sidebar -->
 
             <!-- Header -->
-            @yield('adm')
+           
             <header id="page-header">
                 <!-- Header Content -->
                 <div class="content-header">
@@ -230,6 +230,7 @@
                         <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout" data-action="header_search_on">
                             <i class="fa fa-search"></i>
                         </button>
+                        @yield('content')
                         <!-- END Open Search Section -->
 
                         <!-- Color Themes (used just for demonstration) -->

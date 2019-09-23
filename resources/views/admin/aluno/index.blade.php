@@ -1,3 +1,4 @@
-@extends('admin')
-@section('adm')
+@extends('admin.admin') 
+@section('content')
+
 @endsection
