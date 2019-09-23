@@ -212,6 +212,7 @@
             <!-- END Sidebar -->
 
             <!-- Header -->
+            @yield('adm')
             <header id="page-header">
                 <!-- Header Content -->
                 <div class="content-header">
