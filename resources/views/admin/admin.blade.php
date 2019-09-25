@@ -79,20 +79,6 @@
                         <ul class="nav-main">
                             <li>
                                 <a class="nav-submenu active" data-toggle="nav-submenu" href="#">
-                                    <i class="si si-eyeglass"></i>
-                                    <span class="sidebar-mini-hide">Professores</span>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="javascript:void(0)">Visualizar</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">Cadastrar</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="nav-submenu active" data-toggle="nav-submenu" href="#">
                                     <i class="si si-people"></i>
                                     <span class="sidebar-mini-hide">Responsáveis</span>
                                 </a>
@@ -121,6 +107,20 @@
                             </li>
                             <li>
                                 <a class="nav-submenu active" data-toggle="nav-submenu" href="#">
+                                    <i class="si si-eyeglass"></i>
+                                    <span class="sidebar-mini-hide">Professores</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void(0)">Visualizar</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Cadastrar</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="nav-submenu active" data-toggle="nav-submenu" href="#">
                                     <i class="si si-emotsmile"></i>
                                     <span class="sidebar-mini-hide">Turma</span>
                                 </a>
@@ -134,9 +134,15 @@
                                 </ul>
                             </li>
                             <li>
+                                <a class="active" href="">
+                                    <i class="si si-cup"></i>
+                                    <span class="sidebar-mini-hide">Matriculas</span>
+                                </a>
+                            </li>
+                            <li>
                                 <a class="nav-submenu active" data-toggle="nav-submenu" href="#">
                                     <i class="si si-note"></i>
-                                    <span class="sidebar-mini-hide">Boletim</span>
+                                    <span class="sidebar-mini-hide">Boletins</span>
                                 </a>
                                 <ul>
                                     <li>

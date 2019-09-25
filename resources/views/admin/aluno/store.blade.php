@@ -21,9 +21,13 @@
                                 <div class="form-group">
                                     <input id="nome" class="form-control" type="text" name="nome" maxlength="60" required/>
                                 </div>
+                                <label for="nascimento">Data de Nascimento</label>
+                                <div class="form-group">
+                                    <input id="nascimento" type="date"  class="form-control" name="dataNasc" required/>
+                                </div>
                                 <label for="responsavel">Responsável</label>
                                 <div class="form-group">
-                                    <input id="responsavel" class="form-control" name="idResponsavel" required/>
+                                    <input id="responsavel" type="text" class="form-control" name="idResponsavel" required/>
                                 </div>
                             </div>
                         </div>
