@@ -79,8 +79,8 @@
                         <ul class="nav-main">
                             <li>
                                 <a class="nav-submenu active" data-toggle="nav-submenu" href="#">
-                                    <i class="si si-eyeglass"></i>
-                                    <span class="sidebar-mini-hide">Professores</span>
+                                    <i class="si si-people"></i>
+                                    <span class="sidebar-mini-hide">Responsáveis</span>
                                 </a>
                                 <ul>
                                     <li>
@@ -107,6 +107,20 @@
                             </li>
                             <li>
                                 <a class="nav-submenu active" data-toggle="nav-submenu" href="#">
+                                    <i class="si si-eyeglass"></i>
+                                    <span class="sidebar-mini-hide">Professores</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void(0)">Visualizar</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">Cadastrar</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="nav-submenu active" data-toggle="nav-submenu" href="#">
                                     <i class="si si-emotsmile"></i>
                                     <span class="sidebar-mini-hide">Turma</span>
                                 </a>
@@ -120,9 +134,15 @@
                                 </ul>
                             </li>
                             <li>
+                                <a class="active" href="">
+                                    <i class="si si-cup"></i>
+                                    <span class="sidebar-mini-hide">Matriculas</span>
+                                </a>
+                            </li>
+                            <li>
                                 <a class="nav-submenu active" data-toggle="nav-submenu" href="#">
                                     <i class="si si-note"></i>
-                                    <span class="sidebar-mini-hide">Boletim</span>
+                                    <span class="sidebar-mini-hide">Boletins</span>
                                 </a>
                                 <ul>
                                     <li>
@@ -212,6 +232,7 @@
             <!-- END Sidebar -->
 
             <!-- Header -->
+           
             <header id="page-header">
                 <!-- Header Content -->
                 <div class="content-header">
@@ -364,31 +385,7 @@
 
             <!-- Main Container -->
             <main id="main-container">
-                <!-- Page Content -->
-                <div class="content">
-                    <div class="block">
-                        <div class="block-header block-header-default">
-                            <h3 class="block-title">Blank <small>Get Started</small></h3>
-                            <div class="block-options">
-                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="fullscreen_toggle"></button>
-                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="pinned_toggle">
-                                    <i class="si si-pin"></i>
-                                </button>
-                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
-                                    <i class="si si-refresh"></i>
-                                </button>
-                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"></button>
-                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="close">
-                                    <i class="si si-close"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="block-content">
-                            <p>Create your own awesome project!</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- END Page Content -->
+                @yield('adm')
             </main>
             <!-- END Main Container -->
 
