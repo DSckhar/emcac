@@ -24,7 +24,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('site/style.css')}}">
-    <link rel="stylesheet" href="{{asset('site/css/teste.css')}}">
+    <link rel="stylesheet" href="{{asset('site/css/publicacao.css')}}">
+
     </head>
 <body>
     <div class="">
@@ -43,10 +44,10 @@
                                 <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
                                     <li class="current-menu-item" disabled><a href="">Home</a></li>
                                     <li><a href="{{asset('/')}}">Home</a></li>
-                                    <li><a href="#">Sobre</a></li>
                                     <li><a href="#">Publicações</a></li>
-                                    <li><a href="#">Doc</a></li>
+                                    <li><a href="#">Documentos</a></li>
                                     <li><a href="#">informação</a></li>
+                                    <li><a href="#">Sobre</a></li>
                                 </ul>
                                 
 
@@ -64,70 +65,31 @@
             </div><!-- .nav-bar -->
         </header><!-- .site-header -->
 
-       
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!------ Include the above in your HEAD tag ---------->
-
-        
-        
-        <nav class="navbar navbar-expand navbar-dark bg-primary"> <a href="#menu-toggle" id="menu-toggle" class="navbar-brand"><span class="navbar-toggler-icon"></span></a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-            <div class="collapse navbar-collapse" id="navbarsExample02">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"> <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Link</a> </li>
-                </ul>
-                <form class="form-inline my-2 my-md-0"> </form>
-            </div>
-        </nav>
-        <div id="wrapper" class="toggled">
-            <!-- Sidebar -->
-            <div id="sidebar-wrapper">
-                <ul class="sidebar-nav">
-                    <li class="sidebar-brand"> <a href="#"> Start Bootstrap </a> </li>
-                    <li> <a href="#">Dashboard</a> </li>
-                    <li> <a href="#">Shortcuts</a> </li>
-                    <li> <a href="#">Overview</a> </li>
-                    <li> <a href="#">Events</a> </li>
-                    <li> <a href="#">About</a> </li>
-                    <li> <a href="#">Services</a> </li>
-                    <li> <a href="#">Contact</a> </li>
-                </ul>
-            </div> <!-- /#sidebar-wrapper -->
-            <!-- Page Content -->
-            <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <h1>Simple Sidebar</h1>
-                    <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                    <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+        <main class="container-fluid">
+            <div class="row">
+                <div class="sidebar text-center">
+                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/mantia/128.jpg" class="img-circle">
+                    <h3>User Name</h3>
+                    seil<br/>
+                    seil<br/>
+                    seil<br/>
+                    seil<br/>
+                    seil<br/>
+                    seil<br/>
+                    seil<br/>
+                    seil<br/>
+                    seil<br/>
+                    seil<br/>
+                    seil<br/>
                 </div>
-            </div> <!-- /#page-content-wrapper -->
-        </div> <!-- /#wrapper -->
-        <!-- Bootstrap core JavaScript -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script> <!-- Menu Toggle Script -->
-        <script>
-          $(function(){
-            $("#menu-toggle").click(function(e) {
-                e.preventDefault();
-                $("#wrapper").toggleClass("toggled");
-            });
-
-            $(window).resize(function(e) {
-              if($(window).width()<=768){
-                $("#wrapper").removeClass("toggled");
-              }else{
-                $("#wrapper").addClass("toggled");
-              }
-            });
-          });
-           
-        </script>
-   
-  </html>
-
-
+                <div class="content">
+                    <h1>Title</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium eum consequuntur alias quibusdam, pariatur fugiat iusto fugit totam minus architecto eligendi provident neque id aspernatur quisquam! Doloribus cupiditate, qui dolores.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nemo quasi, quod, eius voluptatum saepe sint reiciendis cupiditate voluptatem porro officiis rem qui nihil natus fugiat, sit animi, omnis repudiandae quia dolore officia consequuntur! Voluptates illum alias, enim voluptas! Commodi velit tempore repudiandae molestiae, beatae, quidem quisquam odit accusamus eius possimus deleniti voluptatibus maiores sequi laudantium nesciunt odio illum aliquid hic quam nemo itaque accusantium, quasi repellendus. Voluptatum totam tempore iure vel dolorem quo numquam, consectetur eveniet repudiandae porro esse delectus ipsum ratione quasi architecto ducimus laborum temporibus eos quibusdam odit blanditiis cupiditate ex! Cum excepturi voluptatibus repellendus minima soluta dolore earum consequuntur reiciendis doloremque placeat possimus, asperiores harum veniam quos nisi minus odit, molestias nihil voluptatum esse. Inventore, quae odit, id eveniet nulla sapiente dignissimos commodi. Vel nisi, ipsam dicta a corporis cupiditate laboriosam mollitia vol
+                    </p>
+                </div>
+            </div>
+        </main>
 
     </div>
 </body>
