@@ -23,7 +23,7 @@ main.container {
 }
 
 .card{
-	margin-top: 2%; 
+	margin-block-end: 2%;
 }
 
 main .row {
