@@ -4,6 +4,10 @@ main.container {
 	height: 100%;
 }
 
+#cont{
+	margin-top: 0.1%;
+}
+
 main.container {
 	display: table;
 	width: 100%;
@@ -14,6 +18,14 @@ main.container {
 	box-sizing: border-box;
 }
 
+#figura{
+	text-align: center;
+}
+
+.card{
+	margin-top: 2%; 
+}
+
 main .row {
 	height: 100%;
 	display: table-row;
@@ -22,9 +34,10 @@ main .row {
 main .sidebar {
 	display: table-cell;
 	width: 200px;
-	background: #383435;
-	color: #aaa;
-    padding-top: 20px;
+	background: #56555b;
+	color: #fff;
+	padding-top: 20px;
+	padding-block-end: 20px;
     position: relative;
     left: -2%;
 }

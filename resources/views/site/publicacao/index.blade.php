@@ -65,31 +65,76 @@
             </div><!-- .nav-bar -->
         </header><!-- .site-header -->
 
-        <main class="container-fluid">
+        <main class="container-fluid" id="cont">
             <div class="row">
-                <div class="sidebar text-center">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/mantia/128.jpg" class="img-circle">
+                <div class="sidebar text-center" >
+                    <img src="" class="img-circle">
                     <h3>User Name</h3>
-                    seil<br/>
-                    seil<br/>
-                    seil<br/>
-                    seil<br/>
-                    seil<br/>
-                    seil<br/>
-                    seil<br/>
-                    seil<br/>
-                    seil<br/>
-                    seil<br/>
-                    seil<br/>
+                    Publicação 1<br/>
+                    Publicação 2<br/>
+                    Publicação 3<br/>
+                    Publicação 4<br/>
+                    Publicação 5<br/>
+                    Publicação 6<br/>
+                    Publicação 7<br/>
+                    Publicação 8<br/>
+                    Publicação 9<br/>
+                    Publicação 10<br/>
+                    Publicação 11<br/>
                 </div>
                 <div class="content">
-                    <h1>Title</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium eum consequuntur alias quibusdam, pariatur fugiat iusto fugit totam minus architecto eligendi provident neque id aspernatur quisquam! Doloribus cupiditate, qui dolores.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nemo quasi, quod, eius voluptatum saepe sint reiciendis cupiditate voluptatem porro officiis rem qui nihil natus fugiat, sit animi, omnis repudiandae quia dolore officia consequuntur! Voluptates illum alias, enim voluptas! Commodi velit tempore repudiandae molestiae, beatae, quidem quisquam odit accusamus eius possimus deleniti voluptatibus maiores sequi laudantium nesciunt odio illum aliquid hic quam nemo itaque accusantium, quasi repellendus. Voluptatum totam tempore iure vel dolorem quo numquam, consectetur eveniet repudiandae porro esse delectus ipsum ratione quasi architecto ducimus laborum temporibus eos quibusdam odit blanditiis cupiditate ex! Cum excepturi voluptatibus repellendus minima soluta dolore earum consequuntur reiciendis doloremque placeat possimus, asperiores harum veniam quos nisi minus odit, molestias nihil voluptatum esse. Inventore, quae odit, id eveniet nulla sapiente dignissimos commodi. Vel nisi, ipsam dicta a corporis cupiditate laboriosam mollitia vol
-                    </p>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" style="width: 65rem;">
+                                    <div class="card-body">
+                                        <h1 class="card-title">Publicação 1</h1>
+                                        <figure id="figura">
+                                            <img src="https://pt.seaicons.com/wp-content/uploads/2015/06/news-icon1.png" alt="">
+                                        </figure>
+                                        <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint iusto laborum dolorem enim cumque minus, alias exercitationem repudiandae
+                                             repellat nulla sequi quam ducimus maxime saepe eaque consequatur illum voluptas officia.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" style="width: 65rem;">
+                                    <div class="card-body">
+                                        <h1 class="card-title">Publicação 2</h1>
+                                        <figure id="figura">
+                                            <img src="https://pt.seaicons.com/wp-content/uploads/2015/06/news-icon1.png" alt="">
+                                        </figure>
+                                        <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint iusto laborum dolorem enim cumque minus, alias exercitationem repudiandae
+                                             repellat nulla sequi quam ducimus maxime saepe eaque consequatur illum voluptas officia.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" style="width: 65rem;">
+                                    <div class="card-body">
+                                        <h1 class="card-title">Publicação 3</h1>
+                                        <figure id="figura">
+                                            <img src="https://pt.seaicons.com/wp-content/uploads/2015/06/news-icon1.png" alt="">
+                                        </figure>
+                                        <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint iusto laborum dolorem enim cumque minus, alias exercitationem repudiandae
+                                             repellat nulla sequi quam ducimus maxime saepe eaque consequatur illum voluptas officia.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
                 </div>
             </div>
         </main>
-
     </div>
 </body>
