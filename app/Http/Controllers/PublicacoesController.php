@@ -15,7 +15,7 @@ class PublicacoesController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.publicacao.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class PublicacoesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.publicacao.store');
     }
 
     /**

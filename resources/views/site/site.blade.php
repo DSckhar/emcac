@@ -127,7 +127,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                             <h2 style="color: #fff;">Siga-nos</h2>
 
                             <ul class="follow-us flex flex-wrap align-items-center">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.facebook.com/colonia.agricola" target="blank"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                                 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                             </ul>

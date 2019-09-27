@@ -4,7 +4,7 @@
     <div class="content">
         <div class="block">
             <div class="block-header block-header-default">
-                <h3 class="block-title">CADASTRAR DOCUMENTO</h3>
+                <h3 class="block-title">CADASTRAR PUBLICAÇÃO</h3>
                 <div class="block-options">
                     <button type="button" class="btn-block-option" data-toggle="block-option" data-action="fullscreen_toggle"></button>
                     <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"></button>
@@ -15,42 +15,44 @@
                 <div class="contanier-fluid">
                     <form method='post' action="/aluno/cadastrado">
                         <div class="row justify-content-center">
-                            <div class="col-12">
+                            <div class="col-6">
                                 {!! csrf_field() !!}
-                                <label for="descricao">Descrição</label>
+                                <label for="titulo">Título da publicação</label>
                                 <div class="form-group">
-                                    <input id="descricao" class="form-control" type="text" name="descricao" maxlength="100" required/>
+                                    <input id="titulo" class="form-control" type="text" name="titulo" maxlength="100" required/>
                                 </div>
 
-                                <label for="documento">Documento completo</label>
+                                <label for="tipo">Tipo</label>
                                 <div class="form-group">
-                                    <input type="file" name="documento"/>
+                                    <select id="tipo" class="form-control" name="tipo">
+                                        <option selected disabled hidden>Selecione o tipo</option>
+                                        <option value="Tipo 1">Tipo 1</option>
+                                        <option value="Tipo 2">Tipo 2</option>
+                                        <option value="Tipo 3">Tipo 3</option>
+                                    </select>
                                 </div>
 
-                                <label for="capitulo1">Capitulo 1</label>
+                                <label for="texto">Texto</label>
                                 <div class="form-group">
-                                    <textarea id="capitulo1" type="text" rows="10" class="form-control" name="capitulo1" required></textarea>
+                                    <textarea id="texto" type="text" rows="10" class="form-control" name="texto" required></textarea>
                                 </div>
 
-                                <label for="capitulo2">Capitulo 2</label>
+                                <label for="img">Imagem principal</label>
                                 <div class="form-group">
-                                    <textarea id="capitulo2" type="text" rows="10" class="form-control" name="capitulo2" required></textarea>
-                                </div>
-
-                                <label for="capitulo3">Capitulo 3</label>
+                                    <input type="file" name="img"/>
+                                </div>  
+                                
+                                <p class="text-center">Imagens secundarias</p>
+                                 
+                                <label for="img1">Imagem 1</label>
                                 <div class="form-group">
-                                    <textarea id="capitulo3" type="text" rows="10" class="form-control" name="capitulo3" required></textarea>
-                                </div>
-
-                                <label for="capitulo4">Capitulo 4</label>
+                                    <input type="file" name="img1"/>
+                                </div> 
+                                 
+                                <label for="img2">Imagem 2</label>
                                 <div class="form-group">
-                                    <textarea id="capitulo4" type="text" rows="10" class="form-control" name="capitulo4" required></textarea>
-                                </div>
-
-                                <label for="capitulo5">Capitulo 5</label>
-                                <div class="form-group">
-                                    <textarea id="capitulo5" type="text" rows="10" class="form-control" name="capitulo5" required></textarea>
-                                </div>
+                                    <input type="file" name="img2"/>
+                                </div>  
                     
                             </div>
                         </div>

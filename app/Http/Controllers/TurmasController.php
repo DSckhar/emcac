@@ -15,7 +15,7 @@ class TurmasController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.turma.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class TurmasController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.turma.store');
     }
 
     /**

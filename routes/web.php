@@ -25,6 +25,11 @@ Route::get('/publicacao', function () {
     return view('site.publicacao.index');
 });
 
+//Boletins
+Route::get('/boletim', function () {
+    return view('site.boletim.index');
+});
+
 //ADMIN
 Route::get('/admr', function () {
     return view('admin.login');
@@ -53,4 +58,20 @@ Route::get('/admr/documento/editar/{id}', 'DocumentosController@edit');
 Route::post('/admr/documento/editado', 'DocumentosController@update');
 Route::get('/admr/documento/delete/{id}', 'DocumentosController@destroy');
 Route::resource('/admr/documento', 'DocumentosController');
+
+//publicacoes
+Route::get('/admr/publicacao/cadastrar', 'PublicacoesController@create');
+Route::post('/admr/publicacao/cadastrado', 'PublicacoesController@store');
+Route::get('/admr/publicacao/editar/{id}', 'PublicacoesController@edit');
+Route::post('/admr/publicacao/editado', 'PublicacoesController@update');
+Route::get('/admr/publicacao/delete/{id}', 'PublicacoesController@destroy');
+Route::resource('/admr/publicacao', 'PublicacoesController');
+
+//turmas
+Route::get('/admr/turma/cadastrar', 'TurmasController@create');
+Route::post('/admr/turma/cadastrado', 'TurmasController@store');
+Route::get('/admr/turma/editar/{id}', 'TurmasController@edit');
+Route::post('/admr/turma/editado', 'TurmasController@update');
+Route::get('/admr/turma/delete/{id}', 'TurmasController@destroy');
+Route::resource('/admr/turma', 'TurmasController');
 
