@@ -15,7 +15,7 @@ class ResponsaveisController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.responsavel.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class ResponsaveisController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.responsavel.store');
     }
 
     /**

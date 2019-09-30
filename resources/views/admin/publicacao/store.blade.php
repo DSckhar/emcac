@@ -19,12 +19,38 @@
                                 {!! csrf_field() !!}
                                 <label for="titulo">Título da publicação</label>
                                 <div class="form-group">
-                                    <input id="titulo" class="form-control" type="text" name="titulo" maxlength="100" required/>
+                                    <input id="titulo" class="form-control" type="text" name="titulo" maxlength="30" required/>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="dInicio">Data de inicio</label>
+                                        <div class="form-group">
+                                            <input id="dInicio" class="form-control" type="date" name="dInicio" min="{{ date('Y-m-d')}}" required/>
+                                        </div>
+
+                                        <label for="dTermino">Data de término</label>
+                                        <div class="form-group">
+                                            <input id="dTermino" class="form-control" type="date" name="dTermino" min="{{ date('Y-m-d')}}" required/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label for="hInicio">Hora de inicio</label>
+                                        <div class="form-group">
+                                            <input id="hInicio" class="form-control" type="time" name="hInicio" required/>
+                                        </div>
+
+                                        <label for="hTermino">Hora de término</label>
+                                        <div class="form-group">
+                                            <input id="hTermino" class="form-control" type="time" name="hTermino" required/>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <label for="tipo">Tipo</label>
                                 <div class="form-group">
-                                    <select id="tipo" class="form-control" name="tipo">
+                                    <select id="tipo" class="form-control" name="tipo" required>
                                         <option selected disabled hidden>Selecione o tipo</option>
                                         <option value="Tipo 1">Tipo 1</option>
                                         <option value="Tipo 2">Tipo 2</option>
@@ -32,9 +58,9 @@
                                     </select>
                                 </div>
 
-                                <label for="texto">Texto</label>
+                                <label for="descricao">Descrição</label>
                                 <div class="form-group">
-                                    <textarea id="texto" type="text" rows="10" class="form-control" name="texto" required></textarea>
+                                    <textarea id="descricao" type="text" rows="10" class="form-control" name="descricao" maxlength="500" required></textarea>
                                 </div>
 
                                 <label for="img">Imagem principal</label>

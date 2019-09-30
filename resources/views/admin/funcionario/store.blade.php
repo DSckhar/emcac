@@ -23,11 +23,22 @@
                                 </div>
                                 <label for="cargo">Cargo</label>
                                 <div class="form-group">
-                                    <input id="cargo" type="text" class="form-control" name="cargo" required/>
+                                    <select id="tipo" class="form-control" name="cargo" required>
+                                        <option selected disabled hidden>Selecione o cargo</option>
+                                        <option value="Diretor(a)">Diretor(a)</option>
+                                        <option value="Vice Diretor(a)">Vice Diretor(a)</option>
+                                        <option value="Secretário(a)">Secretário(a)</option>
+                                        <option value="Professor(a)">Professor(a)</option>
+                                    </select>
                                 </div>
                                 <label for="formacao">Formação</label>
                                 <div class="form-group">
                                     <input id="formacao" type="text" class="form-control" name="formacao" required/>
+                                </div>
+
+                                <label for="foto">Foto:</label>
+                                <div class="form-group">
+                                    <input id="foto" class="form-control-file" type="file" name="foto"/>
                                 </div>
                             </div>
                         </div>

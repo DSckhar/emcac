@@ -24,7 +24,7 @@
 
                                 <label for="ano">Ano</label>
                                 <div class="form-group">
-                                    <input id="ano" class="form-control" type="number" name="ano" placeholder="Ex: 2019" required/>
+                                    <input id="ano" class="form-control" type="number" name="ano" min="2010" max="{{ date('Y')+1}}" placeholder="Ex: 2019" required/>
                                 </div>
                     
                             </div>

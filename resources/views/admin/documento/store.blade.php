@@ -1,5 +1,7 @@
 @extends('admin.admin') 
 @section('adm')
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({selector:'textarea'});</script>
     <!-- Page Content -->
     <div class="content">
         <div class="block">
@@ -17,14 +19,19 @@
                         <div class="row justify-content-center">
                             <div class="col-12">
                                 {!! csrf_field() !!}
-                                <label for="descricao">Descrição</label>
+                                <label for="titulo">Título</label>
                                 <div class="form-group">
-                                    <input id="descricao" class="form-control" type="text" name="descricao" maxlength="100" required/>
+                                    <input id="titulo" class="form-control" type="text" name="titulo" maxlength="60" required/>
+                                </div>
+
+                                <label for="ano">Ano</label>
+                                <div class="form-group">
+                                    <input id="ano" class="form-control" type="number" name="ano" min="2010" max="{{ date('Y')}}" required/>
                                 </div>
 
                                 <label for="documento">Documento completo</label>
                                 <div class="form-group">
-                                    <input type="file" name="documento"/>
+                                    <input type="file" class="form-control-file" id="documento" name="documento"/>
                                 </div>
 
                                 <label for="capitulo1">Capitulo 1</label>
