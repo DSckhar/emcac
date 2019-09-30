@@ -15,6 +15,11 @@ class CreateAlunosTable extends Migration
     {
         Schema::create('alunos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nome', 60);
+            $table->date('nascimento');
+            $table->string('parentesco', 20);
+            $table->unsignedBigInteger('idResponsavel');
+            $table->foreign('idResponsavel')->references('id')->on('responsaveis')->onDelete('cascade');  
             $table->timestamps();
         });
     }

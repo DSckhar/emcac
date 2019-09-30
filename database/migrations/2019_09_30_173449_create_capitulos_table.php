@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFuncionariosTable extends Migration
+class CreateCapitulosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateFuncionariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('funcionarios', function (Blueprint $table) {
+        Schema::create('capitulos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome', 60);
-            $table->string('cargo', 16);
-            $table->string('formação', 40);
-            $table->string('foto', 255)->nullable();
+            $table->string('titulo', 40);
+            $table->mediumText('descricao');
+            $table->unsignedBigInteger('idDocumento');
+            $table->foreign('idDocumento')->references('id')->on('documentos')->onDelete('cascade');  
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateFuncionariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('funcionarios');
+        Schema::dropIfExists('capitulos');
     }
 }

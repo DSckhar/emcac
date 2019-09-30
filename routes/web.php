@@ -6,8 +6,8 @@ Route::get('/', function () {
 });
 
 //conheça nossa equipe
-Route::get('/professor', function () {
-    return view('site.professor.index');
+Route::get('/funcionario', function () {
+    return view('site.funcionario.index');
 });
 
 //documentos

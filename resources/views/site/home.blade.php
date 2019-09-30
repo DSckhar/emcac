@@ -46,7 +46,7 @@
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/publicacao">Publicações</a></li>
                                     <li><a href="/documento">Documentos</a></li>
-                                    <li><a href="#">Boletins</a></li>
+                                    <li><a href="/boletim">Boletins</a></li>
                                     <li><a href="/sobre">Sobre</a></li>
                                 </ul>
                                 
@@ -102,7 +102,7 @@
                     </div><!-- .entry-content -->
 
                     <footer class="entry-footer read-more">
-                        <a href="/professor">Saiba mais</a>
+                        <a href="/funcionario">Saiba mais</a>
                     </footer><!-- .entry-footer -->
                 </div><!-- .icon-box -->
 

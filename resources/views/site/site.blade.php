@@ -44,7 +44,7 @@
                                     <li><a href="{{asset('/')}}">Home</a></li>
                                     <li><a href="#">Publicações</a></li>
                                     <li><a href="/documento">Documentos</a></li>
-                                    <li><a href="#">Boletins</a></li>
+                                    <li><a href="/boletim">Boletins</a></li>
                                     <li><a href="/sobre">Sobre</a></li>
                                 </ul>
                                 
