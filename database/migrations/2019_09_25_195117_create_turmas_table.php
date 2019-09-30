@@ -15,6 +15,9 @@ class CreateTurmasTable extends Migration
     {
         Schema::create('turmas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nome', 16);
+            $table->string('ano', 4);
+            $table->string('status', 16)->default('ativo');
             $table->timestamps();
         });
     }
