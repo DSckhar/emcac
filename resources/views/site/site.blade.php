@@ -42,7 +42,7 @@
                                 <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
                                     <li class="current-menu-item" disabled><a href="">Home</a></li>
                                     <li><a href="{{asset('/')}}">Home</a></li>
-                                    <li><a href="#">Publicações</a></li>
+                                    <li><a href="/publicacao">Publicações</a></li>
                                     <li><a href="/documento">Documentos</a></li>
                                     <li><a href="/boletim">Boletins</a></li>
                                     <li><a href="/sobre">Sobre</a></li>
