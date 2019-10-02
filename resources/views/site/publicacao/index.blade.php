@@ -5,7 +5,7 @@
     <h1>Publicações</h1>
 
     <div class="row">
-        <div class="col-4">
+        <div class="col-3">
 
             <div id="livro" class="list-group">
                 <a class="list-group-item list-group-item-action" href="#">Filtro 1</a>
@@ -16,7 +16,7 @@
                 <a class="list-group-item list-group-item-action" href="#">Filtro 6</a>
             </div>
         </div>
-        <div class="col-8" id="caixaLivro" style="position: relative; height: 500px; overflow: auto">
+        <div class="col-8">
 
         <div class="content">
             <div class="container">
