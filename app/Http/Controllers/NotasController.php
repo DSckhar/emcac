@@ -15,7 +15,7 @@ class NotasController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.nota.index');
     }
 
     /**

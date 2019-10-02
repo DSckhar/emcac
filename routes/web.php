@@ -75,11 +75,19 @@ Route::post('/admr/turma/editado', 'TurmasController@update');
 Route::get('/admr/turma/delete/{id}', 'TurmasController@destroy');
 Route::resource('/admr/turma', 'TurmasController');
 
-//turmas
+//responsáveis
 Route::get('/admr/responsavel/cadastrar', 'ResponsaveisController@create');
 Route::post('/admr/responsavel/cadastrado', 'ResponsaveisController@store');
 Route::get('/admr/responsavel/editar/{id}', 'ResponsaveisController@edit');
 Route::post('/admr/responsavel/editado', 'ResponsaveisController@update');
 Route::get('/admr/responsavel/delete/{id}', 'ResponsaveisController@destroy');
 Route::resource('/admr/responsavel', 'ResponsaveisController');
+
+//boletins
+Route::get('/admr/nota/cadastrar/{id}', 'NotasController@create');
+Route::post('/admr/nota/cadastrado', 'NotasController@store');
+Route::get('/admr/nota/editar/{id}', 'NotasController@edit');
+Route::post('/admr/nota/editado', 'NotasController@update');
+Route::get('/admr/nota/delete/{id}', 'NotasController@destroy');
+Route::resource('/admr/nota', 'NotasController');
 

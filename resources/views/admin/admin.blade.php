@@ -84,10 +84,10 @@
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)">Visualizar</a>
+                                        <a href="/admr/responsavel">Visualizar</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">Cadastrar</a>
+                                        <a href="/admr/responsavel/cadastrar">Cadastrar</a>
                                     </li>
                                 </ul>
                             </li>
@@ -98,60 +98,46 @@
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)">Visualizar</a>
+                                        <a href="/admr/aluno">Visualizar</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">Cadastrar</a>
+                                        <a href="/admr/aluno/cadastrar">Cadastrar</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
                                 <a class="nav-submenu active" data-toggle="nav-submenu" href="#">
                                     <i class="si si-eyeglass"></i>
-                                    <span class="sidebar-mini-hide">Professores</span>
+                                    <span class="sidebar-mini-hide">Funcionários</span>
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)">Visualizar</a>
+                                        <a href="/admr/funcionario">Visualizar</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">Cadastrar</a>
+                                        <a href="/admr/funcionario/cadastrar">Cadastrar</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
                                 <a class="nav-submenu active" data-toggle="nav-submenu" href="#">
                                     <i class="si si-emotsmile"></i>
-                                    <span class="sidebar-mini-hide">Turma</span>
+                                    <span class="sidebar-mini-hide">Turmas</span>
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)">Visualizar</a>
+                                        <a href="/admr/turma">Visualizar</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">Cadastrar</a>
+                                        <a href="/admr/turma/cadastrar">Cadastrar</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a class="active" href="">
+                                <a class="active" href="/admr/nota">
                                     <i class="si si-cup"></i>
-                                    <span class="sidebar-mini-hide">Matriculas</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nav-submenu active" data-toggle="nav-submenu" href="#">
-                                    <i class="si si-note"></i>
                                     <span class="sidebar-mini-hide">Boletins</span>
                                 </a>
-                                <ul>
-                                    <li>
-                                        <a href="javascript:void(0)">Visualizar</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">Cadastrar</a>
-                                    </li>
-                                </ul>
                             </li>
                             <li>
                                 <a class="nav-submenu active" data-toggle="nav-submenu" href="#">
@@ -160,10 +146,10 @@
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)">Visualizar</a>
+                                        <a href="/admr/documento">Visualizar</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">Cadastrar</a>
+                                        <a href="/admr/documento/cadastrar">Cadastrar</a>
                                     </li>
                                 </ul>
                             </li>
@@ -174,13 +160,10 @@
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)">Visualizar</a>
+                                        <a href="/admr/publicacao/">Visualizar</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">Cadastrar</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">Tipos de publicação</a>
+                                        <a href="/admr/publicacao/cadastrar">Cadastrar</a>
                                     </li>
                                 </ul>
                             </li>
@@ -198,31 +181,6 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <a class="nav-submenu active" data-toggle="nav-submenu" href="#">
-                                    <i class="si si-social-instagram"></i>
-                                    <span class="sidebar-mini-hide">Fotos</span>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="javascript:void(0)">Visualizar</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">Cadastrar</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- <li>
-                                <a class="active" href="">
-                                    <i class="si si-cup"></i>
-                                    <span class="sidebar-mini-hide">Dashboard</span>
-                                </a>
-                            </li> 
-                            <li class="nav-main-heading">
-                                <span class="sidebar-mini-visible">HD</span>
-                                <span class="sidebar-mini-hidden">Heading</span>
-                            </li>-->
-                            
                         </ul>
                     </div>
                     <!-- END Side Navigation -->
