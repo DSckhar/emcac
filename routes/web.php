@@ -91,3 +91,11 @@ Route::post('/admr/nota/editado', 'NotasController@update');
 Route::get('/admr/nota/delete/{id}', 'NotasController@destroy');
 Route::resource('/admr/nota', 'NotasController');
 
+//capítulo
+Route::get('/admr/capitulo/cadastrar', 'CapitulosController@create');
+Route::post('/admr/capitulo/cadastrado', 'CapitulosController@store');
+Route::get('/admr/capitulo/editar/{id}', 'CapitulosController@edit');
+Route::post('/admr/capitulo/editado', 'CapitulosController@update');
+Route::get('/admr/capitulo/delete/{id}', 'CapitulosController@destroy');
+Route::resource('/admr/capitulo', 'CapitulosController');
+

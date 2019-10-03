@@ -15,7 +15,7 @@ class CapitulosController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.capituloDoc.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class CapitulosController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.capituloDoc.store');
     }
 
     /**
