@@ -17,7 +17,7 @@ class CreateFuncionariosTable extends Migration
             $table->bigIncrements('id');
             $table->string('nome', 60);
             $table->string('cargo', 16);
-            $table->string('formação', 40);
+            $table->string('formacao', 40);
             $table->string('foto', 255)->nullable();
             $table->timestamps();
         });

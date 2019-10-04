@@ -32,7 +32,7 @@ Route::get('/boletim', function () {
 
 //ADMIN
 Route::get('/admr', function () {
-    return view('admin.login');
+    return view('admin.admin');
 });
 
 //aluno

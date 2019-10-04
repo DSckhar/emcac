@@ -14,8 +14,10 @@ class ResponsaveisController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('admin.responsavel.index');
+    {   
+        $responsaveis = Responsaveis::all();
+
+        return view('admin.responsavel.index', array('responsaveis' => $responsaveis));
     }
 
     /**
