@@ -30,6 +30,9 @@ Route::get('/boletim', function () {
     return view('site.boletim.index');
 });
 
+//Agenda
+Route::get('/agenda', 'AgendasController@indexSite'); 
+
 //ADMIN
 Route::get('/admr', function () {
     return view('admin.admin');
@@ -99,3 +102,11 @@ Route::post('/admr/capitulo/editado', 'CapitulosController@update');
 Route::get('/admr/capitulo/delete/{id}', 'CapitulosController@destroy');
 Route::resource('/admr/capitulo', 'CapitulosController');
 
+
+//agenda
+Route::get('/admr/agenda/cadastrar', 'AgendasController@create');
+Route::post('/admr/agenda/cadastrado', 'AgendasController@store');
+Route::get('/admr/agenda/editar/{id}', 'AgendasController@edit');
+Route::post('/admr/agenda/editado', 'AgendasController@update');
+Route::get('/admr/agenda/delete/{id}', 'AgendasController@destroy');
+Route::resource('/admr/agenda', 'AgendasController');
