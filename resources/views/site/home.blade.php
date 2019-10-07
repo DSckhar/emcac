@@ -152,7 +152,7 @@
                     </header><!-- .entry-header -->
 
                     <div class="entry-content">
-                        <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+                        <p>Veja o nosso calendario escolar</p>
                     </div><!-- .entry-content -->
 
                     <footer class="entry-footer read-more">

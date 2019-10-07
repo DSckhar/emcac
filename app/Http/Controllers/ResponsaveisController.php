@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Validator;
 use App\Models\Responsaveis;
+use App\Models\Alunos;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -67,9 +68,13 @@ class ResponsaveisController extends Controller
      * @param  \App\Models\Responsaveis  $responsaveis
      * @return \Illuminate\Http\Response
      */
-    public function show(Responsaveis $responsaveis)
+    public function show($id)
     {
-        //
+        $responsavel = Responsaveis::find($id);
+
+        $alunos = Alunos::all()->where('idResponsavel', '=', $id);
+
+        return view('admin.responsavel.show', array('responsavel' => $responsavel, 'alunos' => $alunos));
     }
 
     /**

@@ -55,6 +55,19 @@
                     url: ""
                 },
                 @endforeach
+
+                @foreach ($publicacoes as $key => $publicacao)
+                
+                {
+                    title: "{{$publicacoes[$key]['titulo']}}",
+                    description: "{{$publicacoes[$key]['descricao']}}",
+                    start: "{{$publicacoes[$key]['dInicio']}}",
+                    end: "{{date('Y-m-d', strtotime($publicacoes[$key]['dTermino']. ' + 1 days'))}}",
+
+                    url: "",
+                    color: '#39e327'
+                },
+                @endforeach
                 
             ],
 
