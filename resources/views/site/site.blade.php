@@ -24,6 +24,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('site/style.css')}}">
+    <link rel="stylesheet" href="{{asset('site/css/style.css')}}">
 </head>
 <body>
     <div class="hero-content">

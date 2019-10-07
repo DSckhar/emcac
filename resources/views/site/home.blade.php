@@ -156,7 +156,7 @@
                     </div><!-- .entry-content -->
 
                     <footer class="entry-footer read-more">
-                        <a href="#">Saiba mais</a>
+                        <a href="/agenda">Saiba mais</a>
                     </footer><!-- .entry-footer -->
                 </div><!-- .icon-box -->
             </div><!-- .row -->

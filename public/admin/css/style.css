@@ -1,0 +1,23 @@
+#navbar{
+    background-color: #f8f9fa;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#navbar .nav-link{
+    color: #343a40 !important;
+}
+
+.sidebar-sticky a{
+    color: #343a40 !important;
+}
+
+.page-item.active .page-link{
+    background-color: #343a40 !important;
+    border-color: #343a40 !important;
+    color: white !important;
+}
+
+.page-item .page-link{
+    color: #343a40 !important;
+}
