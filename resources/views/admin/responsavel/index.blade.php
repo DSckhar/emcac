@@ -30,9 +30,21 @@
                     <td>{{$responsavel->cpf}}</td>
                     <td>{{$responsavel->telefone}}</td>
                     <td>{{$responsavel->email}}</td>
-                    <td>Visualizar</td>
-                    <td>Editar</td>
-                    <td>Excluir</td>
+                    <td>
+                        <button class="btn btn-outline-dark" onclick="window.location.href='/admr/responsavel/{{$responsavel->id}}'" >
+                            <span data-feather="eye"></span>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-dark" onclick="window.location.href='/admr/responsavel/editar/{{$responsavel->id}}'" >
+                            <span data-feather="edit"></span>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-danger" onclick="window.location.href='/admr/responsavel/deletar/{{$responsavel->id}}'" >
+                            <span data-feather="trash-2"></span>
+                        </button>
+                    </td>
                 </tr>
                 <?php $cont ++; ?>
                 @endforeach
@@ -49,7 +61,5 @@
                 </tr>
             </tfoot>
         </table>
-    </div>
-
-    
+    </div> 
 @endsection 
