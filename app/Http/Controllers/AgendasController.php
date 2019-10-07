@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agendas;
+
+//model publicações
+use App\Models\Publicacoes;
 use Illuminate\Http\Request;
 
 class AgendasController extends Controller
@@ -14,13 +17,21 @@ class AgendasController extends Controller
      */
     public function indexSite()
     {   
+        //buscando dados da tabela agenda
         $agendas = Agendas::all();
-        return view('site.agenda.index', compact('agendas'));
+
+        //buscanda dados da tabela publicação
+        $publicacoes = Publicacoes::all();
+
+        return view('site.agenda.index', compact('agendas', 'publicacoes'));
     }
 
     public function index()
     {
-        return view('admin.agenda.index');
+        //buscando dados da tabela agenda
+        $agendas = Agendas::all();
+
+        return view('admin.agenda.index', compact('agendas'));
     }
 
     /**
@@ -41,7 +52,9 @@ class AgendasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $agenda = $request->except('_token');
+        $agenda = Agendas::store($agenda);
+        return redirect()->action('AgendasController@index');
     }
 
     /**
@@ -61,9 +74,12 @@ class AgendasController extends Controller
      * @param  \App\Models\Agendas  $agendas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Agendas $agendas)
+    public function edit($id)
     {
-        //
+        //selecionando a agenda com base no id
+        $agenda = Agendas::find($id);
+        
+        return view('admin.agenda.update', compact('agenda'));
     }
 
     /**
@@ -73,9 +89,21 @@ class AgendasController extends Controller
      * @param  \App\Models\Agendas  $agendas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Agendas $agendas)
+    public function update(Request $request)
     {
-        //
+        $agendas = $request->except('_token');
+        $id = $agendas['id'];
+
+        $agenda = Agendas::find($id);
+        
+        $agenda->titulo = $agendas['titulo'];
+        $agenda->descricao = $agendas['descricao'];
+        $agenda->dInicio = $agendas['dInicio'];
+        $agenda->dTermino = $agendas['dTermino'];
+
+        $agenda->save();
+
+        return redirect()->action('AgendasController@index');
     }
 
     /**
@@ -84,8 +112,10 @@ class AgendasController extends Controller
      * @param  \App\Models\Agendas  $agendas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Agendas $agendas)
+    public function destroy($id)
     {
-        //
+        $agenda = Agendas::find($id)->delete();
+
+        return redirect()->action('AgendasController@index');
     }
 }
