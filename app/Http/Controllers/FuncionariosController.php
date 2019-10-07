@@ -36,7 +36,9 @@ class FuncionariosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $funcionarios = $request->except('_token');
+        $funcionarios = Funcionarios::store($funcionarios);
+        return redirect()->action('FuncionariosController@index');
     }
 
     /**

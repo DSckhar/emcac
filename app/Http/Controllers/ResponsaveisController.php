@@ -36,7 +36,9 @@ class ResponsaveisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $responsaveis = $request->except('_token');
+        $responsaveis = Responsaveis::store($responsaveis);
+        return redirect()->action('ResponsaveisController@index');
     }
 
     /**

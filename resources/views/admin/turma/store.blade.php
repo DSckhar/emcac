@@ -13,13 +13,13 @@
             </div>
             <div class="block-content">
                 <div class="contanier-fluid">
-                    <form method='post' action="/aluno/cadastrado">
+                    <form method='post' action="/admr/turma/cadastrado">
                         <div class="row justify-content-center">
                             <div class="col-6">
                                 {!! csrf_field() !!}
                                 <label for="titulo">Título da turma</label>
                                 <div class="form-group">
-                                    <input id="titulo" class="form-control" type="text" name="titulo" maxlength="100" required/>
+                                    <input id="nome" class="form-control" type="text" name="nome" maxlength="100" required/>
                                 </div>
 
                                 <label for="ano">Ano</label>

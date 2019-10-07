@@ -36,7 +36,9 @@ class TurmasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $turmas = $request->except('_token');
+        $turmas = Turmas::store($turmas);
+        return redirect()->action('TurmasController@index');
     }
 
     /**

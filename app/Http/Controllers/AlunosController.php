@@ -35,7 +35,9 @@ class AlunosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $alunos = $request->except('_token');
+        $alunos = Alunos::store($alunos);
+        return redirect()->action('AlunosController@index');
     }
 
     /**

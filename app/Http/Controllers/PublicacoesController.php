@@ -36,7 +36,9 @@ class PublicacoesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $publicacaoes = $request->except('_token');
+        $publicacaoes = Publicacoes::store($publicacaoes);
+        return redirect()->action('PublicacoesController@index');
     }
 
     /**

@@ -13,7 +13,7 @@
             </div>
             <div class="block-content">
                 <div class="contanier-fluid">
-                    <form method='post' action="/aluno/cadastrado">
+                    <form method='post' action="/admr/publicacao/cadastrado">
                         <div class="row justify-content-center">
                             <div class="col-6">
                                 {!! csrf_field() !!}

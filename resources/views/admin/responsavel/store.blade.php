@@ -15,7 +15,7 @@
             </div>
             <div class="block-content">
                 <div class="contanier-fluid">
-                    <form name="validar" method='post' action="/aluno/cadastrado">
+                    <form name="validar" method='post' action="/admr/responsavel/cadastrado">
                         <div class="row justify-content-center">
                             <div class="col-6">
                                 {!! csrf_field() !!}

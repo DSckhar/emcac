@@ -13,7 +13,7 @@
             </div>
             <div class="block-content">
                 <div class="contanier-fluid">
-                    <form method='post' action="/aluno/cadastrado">
+                    <form method='post' action="/admr/documento/cadastrado">
                         <div class="row justify-content-center">
                             <div class="col-6">
                                 {!! csrf_field() !!}
@@ -29,7 +29,7 @@
 
                                 <label for="documento">Documento completo</label>
                                 <div class="form-group">
-                                    <input type="file" class="form-control-file" id="documento" name="documento"/>
+                                    <input type="file" class="form-control-file" id="arquivo" name="arquivo"/>
                                 </div>
                     
                             </div>

@@ -36,7 +36,9 @@ class DocumentosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $documentos = $request->except('_token');
+        $documentos = Documentos::store($documentos);
+        return redirect()->action('DocumentosController@index');
     }
 
     /**
