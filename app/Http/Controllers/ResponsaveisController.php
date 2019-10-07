@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Models\Responsaveis;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -38,6 +39,23 @@ class ResponsaveisController extends Controller
      */
     public function store(Request $request)
     {
+
+        /*$validator = Validator::make($request->all(), [
+            'email' => 'required|email|unique:responsaveis,email',
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect('/admr/responsavel/create')
+                            ->withErrors($validator)
+                            ->withInput();
+        }
+    
+        // continua e persiste os dados
+        Funcionario::create($request->all());
+    
+        return redirect('/admr/responsavel/create')
+        ->with('mensagem', 'Responsavel salvo com sucesso');*/
+
         $responsaveis = $request->except('_token');
         $responsaveis = Responsaveis::store($responsaveis);
         return redirect()->action('ResponsaveisController@index');

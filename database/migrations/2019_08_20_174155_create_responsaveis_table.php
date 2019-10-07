@@ -18,7 +18,7 @@ class CreateResponsaveisTable extends Migration
             $table->string('nome', 60);
             $table->string('cpf', 20)->unique();
             $table->string('telefone', 20)->nullable();
-            $table->string('email', 40)->nullable();
+            $table->string('email', 40)->unique()->nullable();
             $table->timestamps();
         });
     }
