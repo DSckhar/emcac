@@ -11,11 +11,9 @@
         <table id="tabela" class="display table table-striped" style="width:100%">
             <thead>
                 <tr>
-                    <th></th>
+                    <th>Nº</th>
                     <th>Nome</th>
                     <th>CPF</th>
-                    <th>Telefone</th>
-                    <th>Email</th>
                     <th class="no-sort"></th>
                     <th class="no-sort"></th>
                     <th class="no-sort"></th>
@@ -28,8 +26,6 @@
                     <td>{{$cont}}</td>
                     <td>{{$responsavel->nome}}</td>
                     <td>{{$responsavel->cpf}}</td>
-                    <td>{{$responsavel->telefone}}</td>
-                    <td>{{$responsavel->email}}</td>
                     <td>
                         <button class="btn btn-outline-dark" onclick="window.location.href='/admr/responsavel/{{$responsavel->id}}'" >
                             <span data-feather="eye"></span>
@@ -50,11 +46,9 @@
                 @endforeach
             <tfoot>
                 <tr>
-                    <th></th>
+                    <th>Nº</th>
                     <th>Nome</th>
                     <th>CPF</th>
-                    <th>Telefone</th>
-                    <th>Email</th>
                     <th></th>
                     <th></th>
                     <th></th>
