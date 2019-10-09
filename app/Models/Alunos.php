@@ -9,7 +9,8 @@ class Alunos extends Model
     protected $fillable = [
         'nome',
         'nascimento',
-        'responsavel'
+        'parentesco',
+        'idResponsavel'
     ];
 
     public static function store($alunos){
@@ -18,7 +19,8 @@ class Alunos extends Model
 
         $aluno->nome = $alunos['nome'];
         $aluno->nascimento = $alunos['nascimento'];
-        $aluno->responsavel = $alunos['responsavel'];
+        $aluno->parentesco = $alunos['parentesco'];
+        $aluno->idResponsavel = $alunos['idResponsavel'];
         $aluno->save();
     }
 }

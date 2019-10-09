@@ -1,46 +1,44 @@
 @extends('admin.admin') 
 @section('adm')
-    <!-- Page Content -->
-    <div class="content">
-        <div class="block">
-            <div class="block-header block-header-default">
-                <h3 class="block-title">CADASTRAR ALUNO</h3>
-                <div class="block-options">
-                    <button type="button" class="btn-block-option" data-toggle="block-option" data-action="fullscreen_toggle"></button>
-                    <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"></button>
-                    
-                </div>
-            </div>
-            <div class="block-content">
-                <div class="contanier-fluid">
-                    <form method='post' action="/admr/aluno/cadastrado">
-                        <div class="row justify-content-center">
-                            <div class="col-6">
-                                {!! csrf_field() !!}
-                                <label for="nome">Nome</label>
-                                <div class="form-group">
-                                    <input id="nome" class="form-control" type="text" name="nome" maxlength="60" required/>
-                                </div>
-                                <label for="nascimento">Data de Nascimento</label>
-                                <div class="form-group">
-                                    <input id="nascimento" type="date"  class="form-control" name="dataNasc" required/>
-                                </div>
-                                <label for="responsavel">Responsável</label>
-                                <div class="form-group">
-                                    <input id="responsavel" type="text" class="form-control" name="idResponsavel" required/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-2">
-                                <button type="submit" class="btn btn-primary">Enviar</button>
-                            </div>
-                        </div>
-                        <br/>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Cadastrar Aluno</h1>
     </div>
-    <!-- END Page Content -->
+
+    <div class="contanier-fluid">
+        <form method='post' action="/admr/aluno/cadastrado">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    {!! csrf_field() !!}
+                    <label for="nome">Nome</label>
+                    <div class="form-group">
+                        <input id="nome" class="form-control" type="text" name="nome" maxlength="60" required/>
+                    </div>
+                    <label for="nascimento">Data de Nascimento</label>
+                    <div class="form-group">
+                        <input id="nascimento" type="date"  class="form-control" name="nascimento" required/>
+                    </div>
+                    <label for="parentesco">Parentesco</label>
+                    <div class="form-group">
+                        <select id="parentesco" class="form-control" name="parentesco" required>
+                            <option selected disabled hidden>Selecione o Grau de Parentesco</option>
+                            <option value="Filho(a)">Filho(a)</option>
+                            <option value="Entiado(a)">Entiado(a)</option>
+                            <option value="Neto(a)">Neto(a)</option>
+                            <option value="Sobrinho(a)">Sobrinho(a)</option>
+                        </select>
+                    </div>
+                    <label for="responsavel">Responsável</label>
+                    <div class="form-group">
+                        <input id="responsavel" type="number" class="form-control" name="idResponsavel" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-2">
+                    <button type="submit" class="btn btn-outline-dark">Enviar</button>
+                </div>
+            </div>
+            <br/>
+        </form>
+    </div>
 @endsection

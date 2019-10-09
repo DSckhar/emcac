@@ -401,6 +401,7 @@ class ComposerStaticInit4414ee3082b2e1b55bb263ffea4221fa
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\AgendasController' => __DIR__ . '/../..' . '/app/Http/Controllers/AgendasController.php',
         'App\\Http\\Controllers\\AlunosController' => __DIR__ . '/../..' . '/app/Http/Controllers/AlunosController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -433,6 +434,7 @@ class ComposerStaticInit4414ee3082b2e1b55bb263ffea4221fa
         'App\\Models\\Notas' => __DIR__ . '/../..' . '/app/Models/Notas.php',
         'App\\Models\\Publicacoes' => __DIR__ . '/../..' . '/app/Models/Publicacoes.php',
         'App\\Models\\Responsaveis' => __DIR__ . '/../..' . '/app/Models/Responsaveis.php',
+        'App\\Models\\TipoPublicacoes' => __DIR__ . '/../..' . '/app/Models/TipoPublicacoes.php',
         'App\\Models\\Turmas' => __DIR__ . '/../..' . '/app/Models/Turmas.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

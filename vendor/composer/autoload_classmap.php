@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\AgendasController' => $baseDir . '/app/Http/Controllers/AgendasController.php',
     'App\\Http\\Controllers\\AlunosController' => $baseDir . '/app/Http/Controllers/AlunosController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
@@ -40,6 +41,7 @@ return array(
     'App\\Models\\Notas' => $baseDir . '/app/Models/Notas.php',
     'App\\Models\\Publicacoes' => $baseDir . '/app/Models/Publicacoes.php',
     'App\\Models\\Responsaveis' => $baseDir . '/app/Models/Responsaveis.php',
+    'App\\Models\\TipoPublicacoes' => $baseDir . '/app/Models/TipoPublicacoes.php',
     'App\\Models\\Turmas' => $baseDir . '/app/Models/Turmas.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
