@@ -12,9 +12,10 @@
         <thead>
             <tr>
                 <th>Nº</th>
+                <th class="no-sort">Foto</th>
                 <th>Nome</th>
                 <th>Cargo</th>
-                <th class="no-sort"></th>
+                <th>Formção</th>
                 <th class="no-sort"></th>
                 <th class="no-sort"></th>
             </tr>
@@ -23,20 +24,17 @@
             <?php $cont = 1;?>
             @foreach($funcionarios as $funcionario)
             <tr>
-                <td>{{$cont}}</td>
-                <td>{{$funcionario->nome}}</td>
-                <td>{{$funcionario->cargo}}</td>
-                <td>
-                    <button class="btn btn-outline-dark" onclick="window.location.href='/admr/funcionario/{{$funcionario->id}}'" >
-                        <span data-feather="eye"></span>
-                    </button>
-                </td>
-                <td>
+                <td class="align-middle">{{$cont}}</td>
+                <td class="align-middle"><img src="{{asset('admin//media/funcionario/user.png')}}" class="img-thumbnail" width="50px"></td>
+                <td class="align-middle">{{$funcionario->nome}}</td>
+                <td class="align-middle">{{$funcionario->cargo}}</td>
+                <td class="align-middle">{{$funcionario->formacao}}</td>
+                <td class="align-middle">
                     <button class="btn btn-outline-dark" onclick="window.location.href='/admr/funcionario/editar/{{$funcionario->id}}'" >
                         <span data-feather="edit"></span>
                     </button>
                 </td>
-                <td>
+                <td class="align-middle">
                     <button class="btn btn-outline-danger" onclick="window.location.href='/admr/funcionario/deletar/{{$funcionario->id}}'" >
                         <span data-feather="trash-2"></span>
                     </button>
@@ -47,9 +45,10 @@
         <tfoot>
             <tr>
                 <th>Nº</th>
+                <th>Foto</th>
                 <th>Nome</th>
-                <th>CPF</th>
-                <th></th>
+                <th>Cargo</th>
+                <th>Formação</th>
                 <th></th>
                 <th></th>
             </tr>

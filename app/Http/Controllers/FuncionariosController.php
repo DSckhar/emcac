@@ -60,9 +60,11 @@ class FuncionariosController extends Controller
      * @param  \App\Models\Funcionarios  $funcionarios
      * @return \Illuminate\Http\Response
      */
-    public function edit(Funcionarios $funcionarios)
+    public function edit($id)
     {
-        //
+        $funcionario = Funcionarios::find($id);
+
+        return view('admin.funcionario.update', array('funcionario' => $funcionario));
     }
 
     /**
@@ -72,9 +74,20 @@ class FuncionariosController extends Controller
      * @param  \App\Models\Funcionarios  $funcionarios
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Funcionarios $funcionarios)
+    public function update(Request $request)
     {
-        //
+        $funcionarios = $request->except('_token');
+        $id = $funcionarios['id'];  
+  
+        $funcionario = Funcionarios::find($id);
+
+        $funcionario->nome = $funcionarios['nome'];
+        $funcionario->cargo = $funcionarios['cargo'];
+        $funcionario->formacao = $funcionarios['formacao'];
+        $funcionario->foto = $funcionarios['foto'];
+        $funcionario->save();
+
+        return redirect()->action('FuncionariosController@index');
     }
 
     /**
