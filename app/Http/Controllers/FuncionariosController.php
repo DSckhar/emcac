@@ -96,8 +96,10 @@ class FuncionariosController extends Controller
      * @param  \App\Models\Funcionarios  $funcionarios
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Funcionarios $funcionarios)
+    public function destroy($id)
     {
-        //
+        $funcionario = Funcionarios::find($id)->delete();
+
+        return redirect()->action('FuncionariosController@index');
     }
 }

@@ -15,7 +15,7 @@
                 <th class="no-sort">Foto</th>
                 <th>Nome</th>
                 <th>Cargo</th>
-                <th>Formção</th>
+                <th>Formação</th>
                 <th class="no-sort"></th>
                 <th class="no-sort"></th>
             </tr>
@@ -35,7 +35,7 @@
                     </button>
                 </td>
                 <td class="align-middle">
-                    <button class="btn btn-outline-danger" onclick="window.location.href='/admr/funcionario/deletar/{{$funcionario->id}}'" >
+                    <button class="btn btn-outline-danger" onclick="window.location.href='/admr/funcionario/delete/{{$funcionario->id}}'" >
                         <span data-feather="trash-2"></span>
                     </button>
                 </td>
