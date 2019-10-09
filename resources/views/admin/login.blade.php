@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <link rel="stylesheet" href="{{asset('admin/assets/css/styleLogin.css')}}">
+        <link href="{{asset('admin/css/bootstrap.min.css')}}" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" href="{{asset('admin/css/styleLogin.css')}}">
         <title>EMCAC</title>
         
     </head>
@@ -37,8 +37,8 @@
             </div>
         </div>
         <footer>
-            <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="{{asset('admin/js/bootstrap.min.js')}}"></script>
+            <script src="{{asset('admin/js/jquery.js')}}"></script>
         </footer>
     </body>
 </html>

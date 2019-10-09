@@ -35,22 +35,22 @@
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">     
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><span data-feather="users"></span> Responsáveis</a>
+                                <a class="nav-link" href="/admr/responsavel"><span data-feather="users"></span> Responsáveis</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><span data-feather="users"></span> Alunos</a>
+                                <a class="nav-link" href="/admr/aluno"><span data-feather="users"></span> Alunos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><span data-feather="briefcase"></span> Funcionários</a>
+                                <a class="nav-link" href="/admr/funcionario"><span data-feather="briefcase"></span> Funcionários</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><span data-feather="smile"></span> Turmas</a>
+                                <a class="nav-link" href="/admr/turma"><span data-feather="smile"></span> Turmas</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><span data-feather="bar-chart-2"></span> Boletins</a>
+                                <a class="nav-link" href="/admr/nota"><span data-feather="bar-chart-2"></span> Boletins</a>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="#">
-                                <span data-feather="file-text"></span> Documentos</a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admr/documento"><span data-feather="file-text"></span> Documentos</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#"><span data-feather="book-open"></span> Publicações</a>

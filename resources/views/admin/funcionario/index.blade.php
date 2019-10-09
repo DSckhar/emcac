@@ -1,20 +1,59 @@
 @extends('admin.admin') 
 @section('adm')
-    <!-- Page Content -->
-    <div class="content">
-        <div class="block">
-            <div class="block-header block-header-default">
-                <h3 class="block-title">FUNCIONÁRIOS</h3>
-                <div class="block-options">
-                    <button type="button" class="btn-block-option" data-toggle="block-option" data-action="fullscreen_toggle"></button>
-                    <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"></button>
-                   
-                </div>
-            </div>
-            <div class="block-content">
-                <p>Create your own awesome project!</p>
-            </div>
-        </div>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Funcionários</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <button class="btn btn-outline-dark" onclick="window.location.href='/admr/funcionario/cadastrar'" ><span data-feather="user-plus"></span></button>
     </div>
-    <!-- END Page Content -->
+</div>
+
+<div class="contanier-fluid">
+    <table id="tabela" class="display table table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Nº</th>
+                <th>Nome</th>
+                <th>Cargo</th>
+                <th class="no-sort"></th>
+                <th class="no-sort"></th>
+                <th class="no-sort"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php $cont = 1;?>
+            @foreach($funcionarios as $funcionario)
+            <tr>
+                <td>{{$cont}}</td>
+                <td>{{$funcionario->nome}}</td>
+                <td>{{$funcionario->cargo}}</td>
+                <td>
+                    <button class="btn btn-outline-dark" onclick="window.location.href='/admr/funcionario/{{$funcionario->id}}'" >
+                        <span data-feather="eye"></span>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-outline-dark" onclick="window.location.href='/admr/funcionario/editar/{{$funcionario->id}}'" >
+                        <span data-feather="edit"></span>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-outline-danger" onclick="window.location.href='/admr/funcionario/deletar/{{$funcionario->id}}'" >
+                        <span data-feather="trash-2"></span>
+                    </button>
+                </td>
+            </tr>
+            <?php $cont ++; ?>
+            @endforeach
+        <tfoot>
+            <tr>
+                <th>Nº</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </tfoot>
+    </table>
+</div> 
 @endsection

@@ -14,8 +14,10 @@ class FuncionariosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('admin.funcionario.index');
+    {   
+        $funcionarios = Funcionarios::all();
+
+        return view('admin.funcionario.index', array('funcionarios' => $funcionarios));
     }
 
     /**

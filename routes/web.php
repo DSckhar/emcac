@@ -35,7 +35,7 @@ Route::get('/agenda', 'AgendasController@indexSite');
 
 //ADMIN
 Route::get('/admr', function () {
-    return view('admin.admin');
+    return view('admin.login');
 });
 
 //aluno
