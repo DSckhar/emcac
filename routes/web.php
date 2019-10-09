@@ -110,3 +110,11 @@ Route::get('/admr/agenda/editar/{id}', 'AgendasController@edit');
 Route::post('/admr/agenda/editado', 'AgendasController@update');
 Route::get('/admr/agenda/delete/{id}', 'AgendasController@destroy');
 Route::resource('/admr/agenda', 'AgendasController');
+
+//foto
+Route::get('/admr/foto/cadastrar/{id}', 'FotosController@create');
+Route::post('/admr/foto/cadastrado', 'FotosController@store');
+Route::get('/admr/foto/editar/{id}', 'FotosController@edit');
+Route::post('/admr/foto/editado', 'FotosController@update');
+Route::get('/admr/foto/delete/{id}', 'FotosController@destroy');
+Route::resource('/admr/foto', 'FotosController');

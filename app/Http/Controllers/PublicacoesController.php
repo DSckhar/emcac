@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Publicacoes;
+//model fotos
+use App\Models\Fotos;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +18,10 @@ class PublicacoesController extends Controller
      */
     public function index()
     {
-        return view('admin.publicacao.index');
+        //buscando dados da tabela agenda
+        $publicacoes = Publicacoes::all();
+
+        return view('admin.publicacao.index', compact('publicacoes'));
     }
 
     /**
@@ -47,9 +53,13 @@ class PublicacoesController extends Controller
      * @param  \App\Models\Publicacoes  $publicacoes
      * @return \Illuminate\Http\Response
      */
-    public function show(Publicacoes $publicacoes)
+    public function show($id)
     {
-        //
+        $publicacao = Publicacoes::find($id);
+
+        $fotos = Fotos::all()->where('idPublicacao', '=', $id);
+
+        return view('admin.publicacao.show', compact('publicacao', 'fotos'));
     }
 
     /**
@@ -58,9 +68,12 @@ class PublicacoesController extends Controller
      * @param  \App\Models\Publicacoes  $publicacoes
      * @return \Illuminate\Http\Response
      */
-    public function edit(Publicacoes $publicacoes)
+    public function edit($id)
     {
-        //
+        //selecionando a agenda com base no id
+        $publicacoes = Publicacoes::find($id);
+        
+        return view('admin.publicacao.update', compact('publicacoes'));
     }
 
     /**
@@ -70,9 +83,24 @@ class PublicacoesController extends Controller
      * @param  \App\Models\Publicacoes  $publicacoes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Publicacoes $publicacoes)
+    public function update(Request $request)
     {
-        //
+        $publicacoes = $request->except('_token');
+        $id = $publicacoes['id'];
+
+        $publicacao = Publicacoes::find($id);
+        
+        $publicacao->titulo = $publicacoes['titulo'];
+        $publicacao->descricao = $publicacoes['descricao'];
+        $publicacao->tipo = $publicacoes['tipo'];
+        $publicacao->dInicio = $publicacoes['dInicio'];
+        $publicacao->dTermino = $publicacoes['dTermino'];
+        $publicacao->hInicio = $publicacoes['hInicio'];
+        $publicacao->hTermino = $publicacoes['hTermino'];
+
+        $publicacao->save();
+
+        return redirect()->action('PublicacoesController@show', $id);
     }
 
     /**
@@ -81,8 +109,10 @@ class PublicacoesController extends Controller
      * @param  \App\Models\Publicacoes  $publicacoes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Publicacoes $publicacoes)
+    public function destroy($id)
     {
-        //
+        $publicacao = Publicacoes::find($id)->delete();
+
+        return redirect()->action('PublicacoesController@index');
     }
 }

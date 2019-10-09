@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Fotos;
+//consultar publicações
+use App\Models\Publicacoes;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
+use Illuminate\Support\Facades\Storage;
 
 class FotosController extends Controller
 {
@@ -23,9 +28,11 @@ class FotosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $publicacao = Publicacoes::find($id);
+
+        return view('admin.foto.store', compact('publicacao'));
     }
 
     /**
@@ -35,8 +42,38 @@ class FotosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        $nameFile = null;
+ 
+        // Verifica se informou o arquivo e se é válido
+        if ($request->hasFile('arquivo') && $request->file('arquivo')->isValid()) {
+
+            $nome = uniqid(date('HisYmd'));
+            
+            // Extensão do arquivo
+            $fileExtensao = $request->arquivo->extension();
+            
+            $file = $request->file('arquivo');
+
+            // Define finalmente o nome
+            $nameFile = "{$nome}.{$fileExtensao}";
+
+            // Faz o upload:
+            $upload = $file->storeAs('media/fotos', $nameFile);
+
+            if ( !$upload )
+            return redirect()
+                        ->back()
+                        ->with('error', 'Falha ao fazer upload')
+                        ->withInput();
+
+        }
+
+        $fotos = $request->except('_token');
+        $id = $fotos['idPublicacao'];
+        $fotos = Fotos::store($fotos, $nameFile);
+        
+        return redirect()->action('PublicacoesController@show', $id);
     }
 
     /**
@@ -79,8 +116,15 @@ class FotosController extends Controller
      * @param  \App\Models\Fotos  $fotos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Fotos $fotos)
-    {
-        //
+    public function destroy($id)
+    {   
+        $foto = Fotos::find($id);
+        Storage::delete("media/fotos/{$foto->arquivo}");
+
+        $idPublicacao = $foto['idPublicacao'];
+
+        $foto = Fotos::find($id)->delete();
+
+        return redirect()->action('PublicacoesController@show', $idPublicacao);
     }
 }

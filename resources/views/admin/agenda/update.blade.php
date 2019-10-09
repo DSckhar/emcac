@@ -29,14 +29,14 @@
                                     <div class="col-6">
                                         <label for="dInicio">Data de inicio</label>
                                         <div class="form-group">
-                                            <input id="dInicio" class="form-control" type="date" name="dInicio" min="{{ date('Y-m-d')}}" value="{{$agenda->dInicio}}" required/>
+                                            <input id="dInicio" class="form-control" type="date" name="dInicio" value="{{$agenda->dInicio}}" required/>
                                         </div>
                                     </div>
 
                                     <div class="col-6">
                                         <label for="dTermino">Data de término</label>
                                         <div class="form-group">
-                                            <input id="dTermino" class="form-control" type="date" name="dTermino" min="{{ date('Y-m-d')}}" value="{{$agenda->dTermino}}" required/>
+                                            <input id="dTermino" class="form-control" type="date" name="dTermino" value="{{$agenda->dTermino}}" required/>
                                         </div>
                                     </div>
                                 </div>
