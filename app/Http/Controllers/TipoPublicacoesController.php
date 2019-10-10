@@ -15,7 +15,9 @@ class TipoPublicacoesController extends Controller
      */
     public function index()
     {
-        //
+        $tipoPublicacoes = TipoPublicacoes::all();
+
+        return view('admin.tipoPublicacao.index', array('tipopublicacoes' => $tipoPublicacoes));
     }
 
     /**
@@ -36,7 +38,9 @@ class TipoPublicacoesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tipopublicacoes = $request->except('_token');
+        $tipopublicacoes = TipoPublicacoes::store($tipopublicacoes);
+        return redirect()->action('TipoPublicacoesController@index');
     }
 
     /**
