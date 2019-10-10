@@ -52,6 +52,7 @@
                     description: "{{$agendas[$key]['descricao']}}",
                     start: "{{$agendas[$key]['dInicio']}}",
                     end: "{{date('Y-m-d', strtotime($agendas[$key]['dTermino']. ' + 1 days'))}}",
+                    color: "{{$agendas[$key]['cor']}}",
                     url: ""
                 },
                 @endforeach
@@ -63,7 +64,7 @@
                     description: "publicação",
                     start: "{{$publicacoes[$key]['dInicio']}}",
                     end: "{{date('Y-m-d', strtotime($publicacoes[$key]['dTermino']. ' + 1 days'))}}",
-                    color: '#39e327',
+                    color: '#993399',
                     url: "publicacao/{{$publicacoes[$key]['id']}}"
                 },
                 @endforeach

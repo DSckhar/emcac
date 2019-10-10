@@ -16,6 +16,7 @@
                     <th>Descrição</th>
                     <th>Data de início</th>
                     <th>Data de término</th>
+                    <th class="no-sort">Cor</th>
                     <th class="no-sort"></th>
                     <th class="no-sort"></th>
                 </tr>
@@ -29,6 +30,9 @@
                     <td>{{$agenda->descricao}}</td>
                     <td>{{date('d/m/Y', strtotime($agenda->dInicio))}}</td>
                     <td>{{date('d/m/Y', strtotime($agenda->dTermino))}}</td>
+                    <td style="background-color: {{$agenda->cor}};">
+
+                    </td>
                     <td>
                         <button class="btn btn-outline-dark" onclick="window.location.href='/admr/agenda/editar/{{$agenda->id}}'" >
                             <span data-feather="edit"></span>
@@ -49,6 +53,7 @@
                     <th>Descrição</th>
                     <th>Data de início</th>
                     <th>Data de término</th>
+                    <th>Cor</th>
                     <th></th>
                     <th></th>
                 </tr>

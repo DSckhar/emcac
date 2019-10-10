@@ -100,6 +100,7 @@ class AgendasController extends Controller
         $agenda->descricao = $agendas['descricao'];
         $agenda->dInicio = $agendas['dInicio'];
         $agenda->dTermino = $agendas['dTermino'];
+        $agenda->cor = $agendas['cor'];
 
         $agenda->save();
 

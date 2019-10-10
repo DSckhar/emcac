@@ -42,13 +42,16 @@
                         </div>
                     </div>
 
-                    <label for="tipo">Tipo</label>
+                    <label for="idTipoPublicacao">Tipo</label>
                     <div class="form-group">
-                        <select id="tipo" class="form-control" name="tipo" required>
-                            <option selected value="{{$publicacoes->tipo}}">{{$publicacoes->tipo}}</option>
-                            <option value="Tipo 1">Tipo 1</option>
-                            <option value="Tipo 2">Tipo 2</option>
-                            <option value="Tipo 3">Tipo 3</option>
+                        <select id="idTipoPublicacao" class="form-control" name="idTipoPublicacao" required>
+                            @foreach($tipos as $tipo)
+                                @if($publicacoes->idTipoPublicacao == $tipo->id)
+                                    <option selected value="{{$tipo->id}}">{{$tipo->nome}}</option>
+                                @else
+                                    <option value="{{$tipo->id}}">{{$tipo->nome}}</option>
+                                @endif
+                            @endforeach
                         </select>
                     </div>
 
@@ -59,7 +62,7 @@
 
                     <div class="row justify-content-center">
                         <div class="col-2">
-                            <button type="submit" class="btn btn-outline-dark">Atualizar</button>
+                            <button type="submit" class="btn btn-outline-dark">Enviar</button>
                         </div>
                     </div>
                     <br/>

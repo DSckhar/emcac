@@ -25,8 +25,8 @@ class Publicacoes extends Model
         $publicacao->dTermino = $publicacoes['dTermino'];
         $publicacao->hInicio = $publicacoes['hInicio'];
         $publicacao->hTermino = $publicacoes['hTermino'];
-        $publicacao->tipo = $publicacoes['tipo'];
         $publicacao->descricao = $publicacoes['descricao'];
+        $publicacao->idTipoPublicacao = $publicacoes['idTipoPublicacao'];
         $publicacao->save();
 
         return $publicacao;

@@ -8,12 +8,9 @@
         <div class="col-3">
 
             <div id="livro" class="list-group">
-                <a class="list-group-item list-group-item-action" href="#">Filtro 1</a>
-                <a class="list-group-item list-group-item-action" href="#">Filtro 2</a>
-                <a class="list-group-item list-group-item-action" href="#">Filtro 3</a>
-                <a class="list-group-item list-group-item-action" href="#">Filtro 4</a>
-                <a class="list-group-item list-group-item-action" href="#">Filtro 5</a>
-                <a class="list-group-item list-group-item-action" href="#">Filtro 6</a>
+                @foreach($tipos as $tipo)
+                    <a class="list-group-item list-group-item-action" href="#">{{$tipo->nome}}</a>
+                @endforeach
             </div>
         </div>
         <div class="col-8">

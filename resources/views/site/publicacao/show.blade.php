@@ -21,7 +21,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>{{$publicacao->tipo}}</td>
+                    <td>{{$tipo->nome}}</td>
                     <td>{{date('d/m/Y', strtotime($publicacao->dInicio))}}</td>
                     <td>{{date('d/m/Y', strtotime($publicacao->dTermino))}}</td>
                     <td>{{$publicacao->hInicio}}</td>
@@ -39,7 +39,7 @@
                 @foreach($fotos as $foto)
                     <div class="gallery-grid gallery-grid2x2">
                         <a href="#">
-                            <img src='{{asset("storage/media/fotos/{$foto->arquivo}")}}' alt="{{ $foto->descricao }}">
+                            <img class="img-thumbnail" src='{{asset("storage/media/fotos/{$foto->arquivo}")}}' alt="{{ $foto->descricao }}">
                         </a>
                     </div>
                 @endforeach

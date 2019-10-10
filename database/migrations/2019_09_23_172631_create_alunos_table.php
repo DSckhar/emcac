@@ -18,8 +18,9 @@ class CreateAlunosTable extends Migration
             $table->string('nome', 60);
             $table->date('nascimento');
             $table->string('parentesco', 20);
-            $table->unsignedBigInteger('idResponsavel');
-            $table->foreign('idResponsavel')->references('id')->on('responsaveis')->onDelete('cascade');  
+            $table->string('nomeResponsavel', 60);
+            $table->string('emailResponsavel');
+            $table->string('telefoneResponsavel')->nullable();
             $table->timestamps();
         });
     }

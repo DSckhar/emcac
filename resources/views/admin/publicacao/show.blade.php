@@ -30,7 +30,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{{$publicacao->tipo}}</td>
+                            <td>{{$tipo->nome}}</td>
                             <td>{{date('d/m/Y', strtotime($publicacao->dInicio))}}</td>
                             <td>{{date('d/m/Y', strtotime($publicacao->dTermino))}}</td>
                             <td>{{$publicacao->hInicio}}</td>

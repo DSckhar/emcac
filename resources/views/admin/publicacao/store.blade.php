@@ -40,13 +40,13 @@
                         </div>
                     </div>
 
-                    <label for="tipo">Tipo</label>
+                    <label for="idTipoPublicacao">Tipo</label>
                     <div class="form-group">
-                        <select id="tipo" class="form-control" name="tipo" required>
+                        <select id="idTipoPublicacao" class="form-control" name="idTipoPublicacao" required>
                             <option selected disabled hidden>Selecione o tipo</option>
-                            <option value="Tipo 1">Tipo 1</option>
-                            <option value="Tipo 2">Tipo 2</option>
-                            <option value="Tipo 3">Tipo 3</option>
+                            @foreach($tipos as $tipo)
+                                <option value="{{$tipo->id}}">{{$tipo->nome}}</option>
+                            @endforeach
                         </select>
                     </div>
 

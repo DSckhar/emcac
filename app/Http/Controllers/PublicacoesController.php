@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Publicacoes;
+
 //model fotos
 use App\Models\Fotos;
+
+//model tipo de publicações
+use App\Models\TipoPublicacoes;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -16,6 +20,16 @@ class PublicacoesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function indexSite()
+    {
+        //buscando dados da tabela agenda
+        $publicacoes = Publicacoes::all();
+
+        $tipos = TipoPublicacoes::all();
+
+        return view('site.publicacao.index', compact('publicacoes', 'tipos'));
+    }
+
     public function showSite($id)
     {
         //buscando dados da tabela publicação
@@ -23,7 +37,9 @@ class PublicacoesController extends Controller
 
         $fotos = Fotos::all()->where('idPublicacao', '=', $id);
 
-        return view('site.publicacao.show', compact('publicacao', 'fotos'));
+        $tipo = TipoPublicacoes::find($publicacao->idTipoPublicacao);
+
+        return view('site.publicacao.show', compact('publicacao', 'fotos', 'tipo'));
     }
     
     public function index()
@@ -41,7 +57,8 @@ class PublicacoesController extends Controller
      */
     public function create()
     {
-        return view('admin.publicacao.store');
+        $tipos = TipoPublicacoes::all();
+        return view('admin.publicacao.store', compact('tipos'));
     }
 
     /**
@@ -70,7 +87,9 @@ class PublicacoesController extends Controller
 
         $fotos = Fotos::all()->where('idPublicacao', '=', $id);
 
-        return view('admin.publicacao.show', compact('publicacao', 'fotos'));
+        $tipo = TipoPublicacoes::find($publicacao->idTipoPublicacao);
+
+        return view('admin.publicacao.show', compact('publicacao', 'fotos', 'tipo'));
     }
 
     /**
@@ -83,8 +102,10 @@ class PublicacoesController extends Controller
     {
         //selecionando a agenda com base no id
         $publicacoes = Publicacoes::find($id);
+
+        $tipos = TipoPublicacoes::all();
         
-        return view('admin.publicacao.update', compact('publicacoes'));
+        return view('admin.publicacao.update', compact('publicacoes', 'tipos'));
     }
 
     /**
@@ -103,7 +124,7 @@ class PublicacoesController extends Controller
         
         $publicacao->titulo = $publicacoes['titulo'];
         $publicacao->descricao = $publicacoes['descricao'];
-        $publicacao->tipo = $publicacoes['tipo'];
+        $publicacao->idTipoPublicacao = $publicacoes['idTipoPublicacao'];
         $publicacao->dInicio = $publicacoes['dInicio'];
         $publicacao->dTermino = $publicacoes['dTermino'];
         $publicacao->hInicio = $publicacoes['hInicio'];

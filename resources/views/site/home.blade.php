@@ -46,13 +46,11 @@
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/publicacao">Publicações</a></li>
                                     <li><a href="/documento">Documentos</a></li>
-                                    <li><a href="/boletim">Boletins</a></li>
                                     <li><a href="/sobre">Sobre</a></li>
                                 </ul>
                                 
 
                                 <div class="hamburger-menu d-lg-none">
-                                    <span></span>
                                     <span></span>
                                     <span></span>
                                     <span></span>

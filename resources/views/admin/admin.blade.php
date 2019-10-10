@@ -30,13 +30,10 @@
                     </ul>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style=" min-height:100%;">
                 <nav class="col-md-2 d-none d-md-block bg-light sidebar">
                     <div class="sidebar-sticky">
-                        <ul class="nav flex-column">     
-                            <li class="nav-item">
-                                <a class="nav-link" href="/admr/responsavel"><span data-feather="users"></span> Responsáveis</a>
-                            </li>
+                        <ul class="nav flex-column"> 
                             <li class="nav-item">
                                 <a class="nav-link" href="/admr/aluno"><span data-feather="users"></span> Alunos</a>
                             </li>
@@ -45,9 +42,6 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/admr/turma"><span data-feather="smile"></span> Turmas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/admr/nota"><span data-feather="bar-chart-2"></span> Boletins</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/admr/documento"><span data-feather="file-text"></span> Documentos</a>
