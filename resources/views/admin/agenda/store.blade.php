@@ -24,7 +24,7 @@
 
                                 <div class="row">
                                     <div class="col-6">
-                                        <label for="dInicio">Data de inicio</label>
+                                        <label for="dInicio">Data de início</label>
                                         <div class="form-group">
                                             <input id="dInicio" class="form-control" type="date" name="dInicio" min="{{ date('Y-m-d')}}" required/>
                                         </div>

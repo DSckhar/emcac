@@ -28,5 +28,7 @@ class Publicacoes extends Model
         $publicacao->tipo = $publicacoes['tipo'];
         $publicacao->descricao = $publicacoes['descricao'];
         $publicacao->save();
+
+        return $publicacao;
     }
 }

@@ -19,6 +19,7 @@ class CreateAgendasTable extends Migration
             $table->string('descricao', 100);
             $table->date('dInicio');
             $table->date('dTermino')->nullable();
+            $table->string('cor', 10);
             $table->timestamps();
         });
     }

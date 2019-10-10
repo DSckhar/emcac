@@ -6,7 +6,7 @@
             <button class="btn btn-outline-dark" onclick="window.location.href='/admr/publicacao/editar/{{$publicacao->id}}'" >
                 <span data-feather="edit"></span>
             </button>
-            <button class="btn btn-outline-danger" onclick="window.location.href='/admr/publicacao/deletar/{{$publicacao->id}}'" >
+            <button class="btn btn-outline-danger" onclick="window.location.href='/admr/publicacao/delete/{{$publicacao->id}}'" >
                 <span data-feather="trash-2"></span>
             </button>
         </div>
@@ -22,17 +22,17 @@
                     <thead>
                         <tr>
                             <th>Tipo</th>
-                            <th>Data inicio</th>
-                            <th>Data Termino</th>
-                            <th>Hora inicio</th>
-                            <th>Hora Termino</th>
+                            <th>Data início</th>
+                            <th>Data Término</th>
+                            <th>Hora início</th>
+                            <th>Hora Término</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>{{$publicacao->tipo}}</td>
-                            <td>{{$publicacao->dInicio}}</td>
-                            <td>{{$publicacao->dTermino}}</td>
+                            <td>{{date('d/m/Y', strtotime($publicacao->dInicio))}}</td>
+                            <td>{{date('d/m/Y', strtotime($publicacao->dTermino))}}</td>
                             <td>{{$publicacao->hInicio}}</td>
                             <td>{{$publicacao->hTermino}}</td>
                         </tr>
@@ -58,35 +58,29 @@
                     <th>Descrção</th>
                     <th class="no-sort">Foto</th>
                     <th class="no-sort"></th>
-                    <th class="no-sort"></th>
                 </tr>
             </thead>
             <tbody>
                 <?php $cont = 1;?>
                 @foreach($fotos as $foto)
-                <tr>
-                    <td>{{$cont}}</td>
-                    <td>{{$foto->descricao}}</td>
-                    <td><img width="50px" src='{{asset("storage/media/fotos/{$foto->arquivo}")}}' alt="{{ $foto->descricao }}"></td>
-                    <td>
-                        <button class="btn btn-outline-dark" onclick="window.location.href='{{asset("storage/media/fotos/{$foto->arquivo}")}}'" >
-                            <span data-feather="eye"></span>
-                        </button>
-                    </td>
-                    <td>
-                        <button class="btn btn-outline-danger" onclick="window.location.href='/admr/foto/delete/{{$foto->id}}'" >
-                            <span data-feather="trash-2"></span>
-                        </button>
-                    </td>
-                </tr>
-                <?php $cont ++; ?>
+                    <tr>
+                        <td>{{$cont}}</td>
+                        <td>{{$foto->descricao}}</td>
+                        <td><a href='{{asset("storage/media/fotos/{$foto->arquivo}")}}' target="_blank"><img width="50px" src='{{asset("storage/media/fotos/{$foto->arquivo}")}}' alt="{{ $foto->descricao }}"></a></td>
+
+                        <td>
+                            <button class="btn btn-outline-danger" onclick="window.location.href='/admr/foto/delete/{{$foto->id}}'" >
+                                <span data-feather="trash-2"></span>
+                            </button>
+                        </td>
+                    </tr>
+                    <?php $cont ++; ?>
                 @endforeach
             <tfoot>
                 <tr>
                     <th>Nº</th>
                     <th>Descrição</th>
                     <th>Foto</th>
-                    <th></th>
                     <th></th>
                 </tr>
             </tfoot>

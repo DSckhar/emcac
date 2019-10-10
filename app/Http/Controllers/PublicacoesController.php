@@ -16,6 +16,16 @@ class PublicacoesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function showSite($id)
+    {
+        //buscando dados da tabela publicação
+        $publicacao = Publicacoes::find($id);
+
+        $fotos = Fotos::all()->where('idPublicacao', '=', $id);
+
+        return view('site.publicacao.show', compact('publicacao', 'fotos'));
+    }
+    
     public function index()
     {
         //buscando dados da tabela agenda
@@ -44,7 +54,8 @@ class PublicacoesController extends Controller
     {
         $publicacaoes = $request->except('_token');
         $publicacaoes = Publicacoes::store($publicacaoes);
-        return redirect()->action('PublicacoesController@index');
+
+        return redirect()->action('PublicacoesController@show', $publicacaoes->id);
     }
 
     /**

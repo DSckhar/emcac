@@ -14,8 +14,8 @@
                     <th></th>
                     <th>Título</th>
                     <th>Descrição</th>
-                    <th>Data de incio</th>
-                    <th>Data de termino</th>
+                    <th>Data de início</th>
+                    <th>Data de término</th>
                     <th class="no-sort"></th>
                     <th class="no-sort"></th>
                 </tr>
@@ -47,8 +47,8 @@
                     <th></th>
                     <th>Título</th>
                     <th>Descrição</th>
-                    <th>Data de incio</th>
-                    <th>Data de termino</th>
+                    <th>Data de início</th>
+                    <th>Data de término</th>
                     <th></th>
                     <th></th>
                 </tr>

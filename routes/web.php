@@ -24,6 +24,7 @@ Route::get('/sobre', function () {
 Route::get('/publicacao', function () {
     return view('site.publicacao.index');
 });
+Route::get('/publicacao/{id}', 'PublicacoesController@showSite'); 
 
 //Boletins
 Route::get('/boletim', function () {

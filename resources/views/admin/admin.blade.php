@@ -53,10 +53,10 @@
                                 <a class="nav-link" href="/admr/documento"><span data-feather="file-text"></span> Documentos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><span data-feather="book-open"></span> Publicações</a>
+                                <a class="nav-link" href="/admr/publicacao"><span data-feather="book-open"></span> Publicações</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><span data-feather="calendar"></span> Agenda</a>
+                                <a class="nav-link" href="/admr/agenda"><span data-feather="calendar"></span> Agenda</a>
                             </li>
                         </ul>
                     </div>

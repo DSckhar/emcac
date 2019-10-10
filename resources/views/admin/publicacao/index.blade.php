@@ -11,11 +11,11 @@
         <table id="tabela" class="display table table-striped" style="width:100%">
             <thead>
                 <tr>
-                    <th></th>
+                    <th>Nº</th>
                     <th>Título</th>
                     <th>Tipo</th>
-                    <th>Data de incio</th>
-                    <th>Data de termino</th>
+                    <th>Data de início</th>
+                    <th>Data de término</th>
                     <th class="no-sort"></th>
                     <th class="no-sort"></th>
                     <th class="no-sort"></th>
@@ -50,11 +50,11 @@
                 @endforeach
             <tfoot>
                 <tr>
-                    <th></th>
+                    <th>Nº</th>
                     <th>Título</th>
                     <th>Tipo</th>
-                    <th>Data de incio</th>
-                    <th>Data de termino</th>
+                    <th>Data de início</th>
+                    <th>Data de término</th>
                     <th></th>
                     <th></th>
                     <th></th>

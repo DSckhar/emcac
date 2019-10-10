@@ -15,6 +15,7 @@ class CreateTipoPublicacoesTable extends Migration
     {
         Schema::create('tipo_publicacoes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nome', 20);
             $table->timestamps();
         });
     }

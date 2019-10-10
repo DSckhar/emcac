@@ -17,7 +17,7 @@
 
                     <label for="arquivo">Imagem</label>
                     <div class="form-group">
-                        <input type="file" id="arquivo" name="arquivo"/>
+                        <input type="file" id="arquivo" name="arquivo" required/>
                     </div>  
 
                     <input id="idPublicacao" class="form-control" type="text" name="idPublicacao" value="{{$publicacao->id}}" hidden required/>

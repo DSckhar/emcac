@@ -16,7 +16,7 @@
 
                     <div class="row">
                         <div class="col-6">
-                            <label for="dInicio">Data de inicio</label>
+                            <label for="dInicio">Data de início</label>
                             <div class="form-group">
                                 <input id="dInicio" class="form-control" type="date" name="dInicio" min="{{ date('Y-m-d')}}" required/>
                             </div>
@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="col-6">
-                            <label for="hInicio">Hora de inicio</label>
+                            <label for="hInicio">Hora de início</label>
                             <div class="form-group">
                                 <input id="hInicio" class="form-control" type="time" name="hInicio" required/>
                             </div>

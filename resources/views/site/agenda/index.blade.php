@@ -60,12 +60,11 @@
                 
                 {
                     title: "{{$publicacoes[$key]['titulo']}}",
-                    description: "{{$publicacoes[$key]['descricao']}}",
+                    description: "publicação",
                     start: "{{$publicacoes[$key]['dInicio']}}",
                     end: "{{date('Y-m-d', strtotime($publicacoes[$key]['dTermino']. ' + 1 days'))}}",
-
-                    url: "",
-                    color: '#39e327'
+                    color: '#39e327',
+                    url: "publicacao/{{$publicacoes[$key]['id']}}"
                 },
                 @endforeach
                 
@@ -81,20 +80,28 @@
                 dFim = info.event.end;
                 dFim.setDate(dFim.getDate() - 1);
 
-                //carregando variaveis no modela
-                $('#visualizar #titulo').text(info.event.title);
-                $('#visualizar #descricao').text(info.event.extendedProps.description);
-                $('#visualizar #dInicio').text(info.event.start.toLocaleDateString());
-                $('#visualizar #dTermino').text(dFim.toLocaleDateString());
-                if(info.event.url != ""){
-                    $('#visualizar #url').text('Saiba mais');
-                    //$('#visualizar #url').text(info.event.url);
-                    $('#visualizar #url').attr('href', info.event.url);
-                }
-                
+                if(info.event.extendedProps.description == "publicação"){
 
-                //abrir modal
-                $('#visualizar').modal('show');
+                    //carregando variaveis no modela
+                    $('#visualizarPublicacao #titulo').text(info.event.title);
+                    $('#visualizarPublicacao #dInicio').text(info.event.start.toLocaleDateString());
+                    $('#visualizarPublicacao #dTermino').text(dFim.toLocaleDateString());
+                    $('#visualizarPublicacao #url').text('Saiba mais');
+                    $('#visualizarPublicacao #url').attr('href', info.event.url);
+
+
+                    //abrir modal
+                    $('#visualizarPublicacao').modal('show');
+                }else{
+                    //carregando variaveis no modela
+                    $('#visualizarAgenda #titulo').text(info.event.title);
+                    $('#visualizarAgenda #descricao').text(info.event.extendedProps.description);
+                    $('#visualizarAgenda #dInicio').text(info.event.start.toLocaleDateString());
+                    $('#visualizarAgenda #dTermino').text(dFim.toLocaleDateString());
+                    
+                    //abrir modal
+                    $('#visualizarAgenda').modal('show');
+                }
             }
         });
         //traduzir para o portugues
@@ -121,9 +128,8 @@
 
     <div id='calendar' class="calendario mt-5 mb-5"></div>
 
-    <!-- modal -->
-    <!-- Modal -->
-    <div class="modal fade" id="visualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- modal Agenda-->
+    <div class="modal fade" id="visualizarAgenda" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
             <div class="modal-header">
@@ -142,12 +148,36 @@
                 <dt class="col-sm-3">Data de inicio e fim</dt>
                 <dd class="col-sm-9" id="dInicio"></dd>
                 <dd class="col-sm-9" id="dTermino"></dd>
-                
-                <a class="col-sm-9" id="url" href=""></a>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <!--<button type="button" class="btn btn-primary">Salvar mudanças</button> -->
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal publicação-->
+    <div class="modal fade" id="visualizarPublicacao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detalhes do evento</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <dt class="col-sm-3">Título</dt>
+                <dd class="col-sm-9" id="titulo"></dd>
+
+                <dt class="col-sm-3">Data de inicio e fim</dt>
+                <dd class="col-sm-9" id="dInicio"></dd>
+                <dd class="col-sm-9" id="dTermino"></dd>
+                
+                <a class="col-sm-9" id="url" href="" target="_blank"></a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
             </div>
             </div>
         </div>
