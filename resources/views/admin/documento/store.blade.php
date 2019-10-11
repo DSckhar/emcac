@@ -4,7 +4,7 @@
         <h1 class="h2">Cadastrar Documento</h1>
     </div>
     <div class="contanier-fluid">
-        <form method='post' action="/admr/documento/cadastrado">
+        <form method='post' enctype="multipart/form-data"  action="/admr/documento/cadastrado">
             <div class="row justify-content-center">
                 <div class="col-6">
                     {!! csrf_field() !!}
@@ -20,7 +20,7 @@
 
                     <label for="documento">Documento completo</label>
                     <div class="form-group">
-                        <input type="file" class="form-control-file" id="arquivo" name="arquivo"/>
+                        <input type="file" class="form-control-file" id="arquivo" name="arquivo" required/>
                     </div>
         
                 </div>

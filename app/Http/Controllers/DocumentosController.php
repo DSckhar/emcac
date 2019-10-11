@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
 use App\Models\Documentos;
 use App\Models\Capitulos;
 use Illuminate\Http\Request;
@@ -15,7 +16,7 @@ class DocumentosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
         $documentos = Documentos::all()->sortByDesc('updated_at');
 
         return view('admin.documento.index', array('documentos' => $documentos));
@@ -39,9 +40,40 @@ class DocumentosController extends Controller
      */
     public function store(Request $request)
     {
-        $documentos = $request->except('_token');
-        $documentos = Documentos::store($documentos);
-        return redirect()->action('DocumentosController@index');
+        $nameFile = null;
+ 
+        // Verifica se informou o arquivo e se é válido
+        if ($request->hasFile('arquivo') && $request->file('arquivo')->isValid()) {
+
+            $nome = uniqid(date('HisYmd'));
+            
+            // Extensão do arquivo
+            $fileExtensao = $request->arquivo->extension();
+            
+            $file = $request->file('arquivo');
+
+            // Define finalmente o nome
+            $nameFile = "{$nome}.{$fileExtensao}";
+
+            // Faz o upload:
+            $upload = $file->storeAs('media/arquivo', $nameFile);
+
+            if ( !$upload )
+            return redirect()
+                        ->back()
+                        ->with('error', 'Falha ao fazer upload')
+                        ->withInput();
+        }
+
+        $documento = $request->except('_token');
+        $documento['arquivo'] =  $nameFile;
+        $documento = Documentos::store($documento);
+        
+        $documento = Documentos::all()->sortByDesc('created_at')->first();
+
+        $id = $documento['id'];
+
+        return redirect()->action('DocumentosController@show', $id);
     }
 
     /**
@@ -56,7 +88,7 @@ class DocumentosController extends Controller
 
         $capitulos = Capitulos::all()->where('idDocumento', '=', $id);
 
-        return 
+        return view('admin.documento.show', array('documento' => $documento, 'capitulos' => $capitulos));
     }
 
     /**
@@ -88,8 +120,13 @@ class DocumentosController extends Controller
      * @param  \App\Models\Documentos  $documentos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Documentos $documentos)
+    public function destroy($id)
     {
-        //
+        $documento = Documentos::find($id);
+        Storage::delete("media/arquivo/{$documento->arquivo}");
+
+        $documento = Documentos::find($id)->delete();
+
+        return redirect()->action('DocumentosController@index');  
     }
 }

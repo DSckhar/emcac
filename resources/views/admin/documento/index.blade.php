@@ -15,7 +15,7 @@
                 <th>Título</th>
                 <th>Ano</th>
                 <th>Inserção no Sistema</th>
-                <th>Última atualização</th>
+                <th>Última Atualização</th>
                 <th class="no-sort"></th>
                 <th class="no-sort"></th>
                 <th class="no-sort"></th>
@@ -28,8 +28,8 @@
                 <td>{{$cont}}</td>
                 <td>{{$documento->titulo}}</td>
                 <td>{{$documento->ano}}</td>
-                <td>{{$documento->created_at}}</td>
-                <td>{{$documento->updated_at}}</td>
+                <td>{{date('d/m/Y', strtotime($documento->dInicio))}}</td>
+                <td>{{date('d/m/Y', strtotime($documento->updated_at))}}</td>
                 <td>
                     <button class="btn btn-outline-dark" onclick="window.location.href='/admr/documento/{{$documento->id}}'" >
                         <span data-feather="eye"></span>

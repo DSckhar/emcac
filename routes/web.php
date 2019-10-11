@@ -78,7 +78,7 @@ Route::get('/admr/turma/delete/{id}', 'TurmasController@destroy');
 Route::resource('/admr/turma', 'TurmasController');
 
 //capítulo
-Route::get('/admr/capitulo/cadastrar', 'CapitulosController@create');
+Route::get('/admr/capitulo/cadastrar/', 'CapitulosController@create');
 Route::post('/admr/capitulo/cadastrado', 'CapitulosController@store');
 Route::get('/admr/capitulo/editar/{id}', 'CapitulosController@edit');
 Route::post('/admr/capitulo/editado', 'CapitulosController@update');
