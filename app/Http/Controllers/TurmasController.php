@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Turmas;
+use App\Models\Alunos;
+use App\Models\TurmaAlunos;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -49,9 +51,11 @@ class TurmasController extends Controller
      * @param  \App\Models\Turmas  $turmas
      * @return \Illuminate\Http\Response
      */
-    public function show(Turmas $turmas)
+    public function show($id)
     {
-        //
+        $turma = Turmas::find($id);
+
+        return view('admin.turma.show', array('turma' => $turma));
     }
 
     /**
@@ -64,7 +68,7 @@ class TurmasController extends Controller
     {
         $turma = Turmas::find($id);
 
-        return view('admin.turma.update', array('turma' => $turma)->oderBy());
+        return view('admin.turma.update', array('turma' => $turma));
     }
 
     /**
