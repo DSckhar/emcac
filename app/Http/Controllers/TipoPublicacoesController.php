@@ -83,8 +83,10 @@ class TipoPublicacoesController extends Controller
      * @param  \App\Models\TipoPublicacoes  $tipoPublicacoes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TipoPublicacoes $tipoPublicacoes)
+    public function destroy($id)
     {
-        //
+        $tipoPublicacao = TipoPublicacoes::find($id)->delete();
+
+        return redirect()->action('TipoPublicacoesController@index');
     }
 }

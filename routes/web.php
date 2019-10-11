@@ -66,6 +66,7 @@ Route::resource('/admr/publicacao', 'PublicacoesController');
 
 //tipoPublicações
 Route::post('/admr/tipopublicacao/cadastrado', 'TipoPublicacoesController@store');
+Route::get('/admr/tipopublicacao/delete/{id}', 'TipoPublicacoesController@destroy');
 Route::resource('/admr/tipopublicacao', 'TipoPublicacoesController');
 
 //turmas

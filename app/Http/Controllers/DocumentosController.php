@@ -15,7 +15,9 @@ class DocumentosController extends Controller
      */
     public function index()
     {
-        return view('admin.documento.index');
+        $documentos = Documentos::all()->sortByDesc('updated_at');
+
+        return view('admin.documento.index', array('documentos' => $documentos));
     }
 
     /**
@@ -47,9 +49,9 @@ class DocumentosController extends Controller
      * @param  \App\Models\Documentos  $documentos
      * @return \Illuminate\Http\Response
      */
-    public function show(Documentos $documentos)
+    public function show($id)
     {
-        //
+        $documento = 
     }
 
     /**
