@@ -28,7 +28,7 @@
                 <td>{{$cont}}</td>
                 <td>{{$documento->titulo}}</td>
                 <td>{{$documento->ano}}</td>
-                <td>{{date('d/m/Y', strtotime($documento->dInicio))}}</td>
+                <td>{{date('d/m/Y', strtotime($documento->created_at))}}</td>
                 <td>{{date('d/m/Y', strtotime($documento->updated_at))}}</td>
                 <td>
                     <button class="btn btn-outline-dark" onclick="window.location.href='/admr/documento/{{$documento->id}}'" >
