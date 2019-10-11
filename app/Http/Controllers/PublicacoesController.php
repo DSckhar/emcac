@@ -16,8 +16,6 @@ use App\Http\Controllers\Controller;
 //arquivo
 use Illuminate\Support\Facades\Storage;
 
-use DB;
-
 class PublicacoesController extends Controller
 {
     /**
@@ -49,11 +47,8 @@ class PublicacoesController extends Controller
     
     public function index()
     {
-        //buscando dados da tabela publicações e tipo de publicações
-        $publicacoes = DB::table('publicacoes')
-            ->join('tipo_publicacoes', 'tipo_publicacoes.id', '=', 'publicacoes.idTipoPublicacao')
-            ->select('publicacoes.*', 'tipo_publicacoes.nome')
-            ->get();
+        
+        $publicacoes = Publicacoes::listar();
 
         return view('admin.publicacao.index', compact('publicacoes'));
     }

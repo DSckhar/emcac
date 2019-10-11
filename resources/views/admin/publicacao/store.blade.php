@@ -5,7 +5,7 @@
     </div>
 
     <div class="contanier-fluid">
-        <form method='post' enctype="multipart/form-data" action="/admr/publicacao/cadastrado">
+        <form name="validar" method='post' enctype="multipart/form-data" action="/admr/publicacao/cadastrado">
             <div class="row justify-content-center">
                 <div class="col-6">
                     {!! csrf_field() !!}
@@ -25,6 +25,7 @@
                             <div class="form-group">
                                 <input id="dTermino" class="form-control" type="date" name="dTermino" min="{{ date('Y-m-d')}}" required/>
                             </div>
+                            <span id="dataTermino" class="text-danger mb-3"></span>
                         </div>
 
                         <div class="col-6">
@@ -37,6 +38,7 @@
                             <div class="form-group">
                                 <input id="hTermino" class="form-control" type="time" name="hTermino" required/>
                             </div>
+                            <span id="horaTermino" class="text-danger mb-3"></span>
                         </div>
                     </div>
 
@@ -62,7 +64,7 @@
                             
                     <div class="row justify-content-center">
                         <div class="col-2">
-                            <button type="submit" class="btn btn-outline-dark">Enviar</button>
+                            <button type="submit" onclick = "return validarDataeHora();"  class="btn btn-outline-dark">Enviar</button>
                         </div>
                     </div>
                     <br/>

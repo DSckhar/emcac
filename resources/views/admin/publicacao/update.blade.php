@@ -5,7 +5,7 @@
     </div>
 
     <div class="contanier-fluid">
-        <form method='post' enctype="multipart/form-data" action="/admr/publicacao/editado">
+        <form name="validar" method='post' enctype="multipart/form-data" action="/admr/publicacao/editado">
             <div class="row justify-content-center">
                 <div class="col-6">
                     {!! csrf_field() !!}
@@ -27,6 +27,7 @@
                             <div class="form-group">
                                 <input id="dTermino" class="form-control" type="date" name="dTermino" value="{{$publicacoes->dTermino}}" required/>
                             </div>
+                            <span id="dataTermino" class="text-danger mb-3"></span>
                         </div>
 
                         <div class="col-6">
@@ -39,6 +40,7 @@
                             <div class="form-group">
                                 <input id="hTermino" class="form-control" type="time" name="hTermino" value="{{$publicacoes->hTermino}}" required/>
                             </div>
+                            <span id="horaTermino" class="text-danger mb-3"></span>
                         </div>
                     </div>
 
@@ -61,7 +63,7 @@
                     </div>
 
                     <!-- Valor arquivo bd -->
-                    <input id="arquivoOld" class="form-control" type="text" name="arquivoOld" value="{{$publicacoes->arquivo}}" hidden required/>
+                    <input id="arquivoOld" class="form-control" type="text" name="arquivoOld" value="{{$publicacoes->arquivo}}" hidden/>
                     
                     <label for="arquivo">Arquivo</label>
                     <div class="form-group">
@@ -70,7 +72,7 @@
 
                     <div class="row justify-content-center">
                         <div class="col-2">
-                            <button type="submit" class="btn btn-outline-dark">Enviar</button>
+                            <button type="submit" onclick = "return validarDataeHora();"   class="btn btn-outline-dark">Enviar</button>
                         </div>
                     </div>
                     <br/>

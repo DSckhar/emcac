@@ -1,11 +1,10 @@
 @extends('admin.admin') 
 @section('adm')
-    
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Cadastrar agenda</h1>
     </div>
     <div class="contanier-fluid">
-        <form method='post' action="/admr/agenda/cadastrado">
+        <form name="validar" method='post' action="/admr/agenda/cadastrado">
             <div class="row justify-content-center">
                 <div class="col-6">
                     {!! csrf_field() !!}
@@ -32,6 +31,7 @@
                             <div class="form-group">
                                 <input id="dTermino" class="form-control" type="date" name="dTermino" min="{{ date('Y-m-d')}}" required/>
                             </div>
+                            <span id="dataTermino" class="text-danger"></span>
                         </div>
                     </div>
 
@@ -83,7 +83,7 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <button type="submit" class="btn btn-outline-dark">Enviar</button>
+                <button type="submit" onclick = "return validarData();" class="btn btn-outline-dark">Enviar</button>
             </div>
             <br/>
         </form>

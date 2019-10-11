@@ -1,0 +1,78 @@
+function validarData(){
+
+    var dInicio = validar.dInicio.value;
+    var dTermino = validar.dTermino.value;
+
+    if (dInicio <= dTermino){
+        return true;
+    }else{
+        mensagemData();
+        return false;
+    }
+
+    function mensagemData(){
+        var erro = "Digite uma data de término valida"
+        var span = document.getElementById("dataTermino");
+
+        span.innerText = erro;
+
+        //alert("Data de término maior que a de início!");
+        $("#dTermino").focus().css("borderColor", "red").css("color", "red");
+
+    }
+}
+
+function validarDataeHora(){
+
+    var dInicio = validar.dInicio.value;
+    var dTermino = validar.dTermino.value;
+
+    var hInicio = validar.hInicio.value;
+    var hTermino = validar.hTermino.value;
+
+    if((dInicio != "")||(dTermino != "")||(hInicio != "")||(hTermino != "")){
+        if (dInicio <= dTermino){
+            
+            if(dInicio == dTermino){
+
+                if(hInicio < hTermino){
+                    return true;
+                }else{
+                    mensagemHora();
+                    return false;
+                }
+            }else{
+                return true;
+            }
+
+        }else{
+            mensagemData();
+            return false;
+        }
+    }else{
+        alert("Você deixou alguns campos sem preencher");
+        return false;
+    }
+
+    function mensagemData(){
+        var erro = "Digite uma data de término valida"
+        var span = document.getElementById("dataTermino");
+
+        span.innerText = erro;
+
+        //alert("Data de término maior que a de início!");
+        $("#dTermino").focus().css("borderColor", "red").css("color", "red");
+
+    }
+
+    function mensagemHora(){
+        var erro = "Digite uma hora de término valida"
+        var span = document.getElementById("horaTermino");
+
+        span.innerText = erro;
+
+        //alert("Data de término maior que a de início!");
+        $("#hTermino").focus().css("borderColor", "red").css("color", "red");
+
+    }
+}
