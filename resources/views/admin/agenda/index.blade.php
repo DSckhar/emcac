@@ -1,9 +1,9 @@
 @extends('admin.admin') 
 @section('adm')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Agenda</h1>
+        <h1 class="h2">Agendas</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
-            <button class="btn btn-outline-dark" onclick="window.location.href='/admr/agenda/cadastrar'" ><span data-feather="plus"></span></button>
+            <button class="btn btn-outline-dark" onclick="window.location.href='/admr/agenda/cadastrar'" ><span data-feather="user-plus"></span></button>
         </div>
     </div>
     
@@ -25,12 +25,14 @@
                 <?php $cont = 1;?>
                 @foreach($agendas as $agenda)
                 <tr>
-                    <td class="align-middle">{{$cont}}</td>
-                    <td class="align-middle">{{$agenda->titulo}}</td>
-                    <td class="align-middle">{{$agenda->descricao}}</td>
-                    <td class="align-middle">{{date('d/m/Y', strtotime($agenda->dInicio))}}</td>
-                    <td class="align-middle">{{date('d/m/Y', strtotime($agenda->dTermino))}}</td>
-                    <td style="background-color: {{$agenda->cor}};"></td>
+                    <td>{{$cont}}</td>
+                    <td>{{$agenda->titulo}}</td>
+                    <td>{{$agenda->descricao}}</td>
+                    <td>{{date('d/m/Y', strtotime($agenda->dInicio))}}</td>
+                    <td>{{date('d/m/Y', strtotime($agenda->dTermino))}}</td>
+                    <td style="background-color: {{$agenda->cor}};">
+
+                    </td>
                     <td>
                         <button class="btn btn-outline-dark" onclick="window.location.href='/admr/agenda/editar/{{$agenda->id}}'" >
                             <span data-feather="edit"></span>
