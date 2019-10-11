@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alunos;
-use App\Models\Responsaveis;
 use Illuminate\Http\Request;
 
 class AlunosController extends Controller
@@ -16,16 +15,6 @@ class AlunosController extends Controller
     public function index()
     {
         $alunos = Alunos::all();
-        $responsaveis = Responsaveis::all();
-
-        foreach ($alunos as $aluno) {
-            foreach ($responsaveis as $responsavel) {
-                if ($aluno['idResponsavel'] == $responsavel['id']) {
-                    $aluno['nomeResponsavel'] = $responsavel['nome'];
-                }
-            }
-        }
-
         return view('admin.aluno.index', array('alunos' => $alunos));
     }
 

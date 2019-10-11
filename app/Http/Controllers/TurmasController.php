@@ -15,7 +15,9 @@ class TurmasController extends Controller
      */
     public function index()
     {
-        return view('admin.turma.index');
+        $turmas = Turmas::all();
+
+        return view('admin.turma.index', array('turmas' => $turmas));
     }
 
     /**
@@ -58,9 +60,11 @@ class TurmasController extends Controller
      * @param  \App\Models\Turmas  $turmas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Turmas $turmas)
+    public function edit($id)
     {
-        //
+        $turma = Turmas::find($id);
+
+        return view('admin.turma.update', array('turma' => $turma)->oderBy());
     }
 
     /**
@@ -70,9 +74,19 @@ class TurmasController extends Controller
      * @param  \App\Models\Turmas  $turmas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Turmas $turmas)
+    public function update(Request $request)
     {
-        //
+        $turmas = $request->except('_token');
+        $id = $turmas['id'];  
+
+        $turma = Turmas::find($id);
+
+        $turma->nome = $turmas['nome'];
+        $turma->ano = $turmas['ano'];
+        $turma->status = $turmas['status'];
+        $turma->save(); 
+
+        return redirect()->action('TurmasController@index');
     }
 
     /**
@@ -81,8 +95,10 @@ class TurmasController extends Controller
      * @param  \App\Models\Turmas  $turmas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Turmas $turmas)
+    public function destroy($id)
     {
-        //
+        $turma = Turmas::find($id)->delete();
+
+        return redirect()->action('TurmasController@index');
     }
 }

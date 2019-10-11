@@ -8,7 +8,8 @@ class Turmas extends Model
 {
     protected $fillable = [
         'nome',
-        'ano'
+        'ano',
+        'status'
     ];
 
     public static function store($turmas){
@@ -17,6 +18,7 @@ class Turmas extends Model
 
         $turma->nome = $turmas['nome'];
         $turma->ano = $turmas['ano'];
-        $turma->save();
+        $turma->status = $turmas['status'];
+        $turma->save(); 
     }
 }

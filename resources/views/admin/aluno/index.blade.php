@@ -1,7 +1,7 @@
 @extends('admin.admin') 
 @section('adm')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Funcionários</h1>
+    <h1 class="h2">Alunos</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
         <button class="btn btn-outline-dark" onclick="window.location.href='/admr/aluno/cadastrar'" ><span data-feather="user-plus"></span></button>
     </div>
@@ -13,7 +13,6 @@
             <tr>
                 <th>Nº</th>
                 <th>Nome</th>
-                <th>Responsável</th>
                 <th class="no-sort"></th>
                 <th class="no-sort"></th>
                 <th class="no-sort"></th>
@@ -25,7 +24,6 @@
             <tr>
                 <td>{{$cont}}</td>
                 <td>{{$aluno->nome}}</td>
-                <td>{{$aluno->nomeResponsavel}}</td>
                 <td>
                     <button class="btn btn-outline-dark" onclick="window.location.href='/admr/aluno/{{$aluno->id}}'" >
                         <span data-feather="eye"></span>
@@ -48,7 +46,6 @@
             <tr>
                 <th>Nº</th>
                 <th>Nome</th>
-                <th>Responsável</th>
                 <th></th>
                 <th></th>
                 <th></th>

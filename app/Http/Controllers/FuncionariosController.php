@@ -78,7 +78,7 @@ class FuncionariosController extends Controller
     {
         $funcionarios = $request->except('_token');
         $id = $funcionarios['id'];  
-  
+        
         $funcionario = Funcionarios::find($id);
 
         $funcionario->nome = $funcionarios['nome'];
