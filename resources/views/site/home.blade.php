@@ -413,11 +413,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div><!-- .footer-bar -->
     </footer><!-- .site-footer -->
 
-<script type='text/javascript' src='site/js/jquery.js'></script>
-<script type='text/javascript' src='site/js/swiper.min.js'></script>
-<script type='text/javascript' src='site/js/masonry.pkgd.min.js'></script>
-<script type='text/javascript' src='site/js/jquery.collapsible.min.js'></script>
-<script type='text/javascript' src='site/js/custom.js'></script>
+    <script type='text/javascript' src='site/js/jquery.js'></script>
+    <script type='text/javascript' src='site/js/swiper.min.js'></script>
+    <script type='text/javascript' src='site/js/masonry.pkgd.min.js'></script>
+    <script type='text/javascript' src='site/js/jquery.collapsible.min.js'></script>
+    <script type='text/javascript' src='site/js/custom.js'></script>
 
 </body>
 </html>

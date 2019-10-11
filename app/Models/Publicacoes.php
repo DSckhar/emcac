@@ -16,7 +16,7 @@ class Publicacoes extends Model
         'descricao'
     ];
 
-    public static function store($publicacoes){
+    public static function store($publicacoes, $nameFile){
 
         $publicacao = new Publicacoes;
 
@@ -26,6 +26,7 @@ class Publicacoes extends Model
         $publicacao->hInicio = $publicacoes['hInicio'];
         $publicacao->hTermino = $publicacoes['hTermino'];
         $publicacao->descricao = $publicacoes['descricao'];
+        $publicacao->arquivo = $nameFile;
         $publicacao->idTipoPublicacao = $publicacoes['idTipoPublicacao'];
         $publicacao->save();
 

@@ -41,17 +41,15 @@
                         <div class="col-3 col-lg-9 flex justify-content-end align-content-center">
                             <nav class="site-navigation flex justify-content-end align-items-center">
                                 <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
-                                    <li class="current-menu-item" disabled><a href="">Home</a></li>
+                                    <li class="current-menu-item" disabled><a href="">EMCAC</a></li>
                                     <li><a href="{{asset('/')}}">Home</a></li>
                                     <li><a href="/publicacao">Publicações</a></li>
                                     <li><a href="/documento">Documentos</a></li>
-                                    <li><a href="/boletim">Boletins</a></li>
                                     <li><a href="/sobre">Sobre</a></li>
                                 </ul>
                                 
 
                                 <div class="hamburger-menu d-lg-none">
-                                    <span></span>
                                     <span></span>
                                     <span></span>
                                     <span></span>
@@ -156,10 +154,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div><!-- .footer-bar -->
     </footer><!-- .site-footer -->
 
-<script type='text/javascript' src='site/js/jquery.js'></script>
-<script type='text/javascript' src='site/js/swiper.min.js'></script>
-<script type='text/javascript' src='site/js/masonry.pkgd.min.js'></script>
-<script type='text/javascript' src='site/js/jquery.collapsible.min.js'></script>
-<script type='text/javascript' src='site/js/custom.js'></script>
+<script type='text/javascript' src="{{asset('site/js/jquery.js')}}"></script>
+<script type='text/javascript' src="{{asset('site/js/swiper.min.js')}}"></script>
+<script type='text/javascript' src="{{asset('site/js/masonry.pkgd.min.js')}}"></script>
+<script type='text/javascript' src="{{asset('site/js/jquery.collapsible.min.js')}}"></script>
+<script type='text/javascript' src="{{asset('site/js/custom.js')}}"></script>
+<script type='text/javascript' src="{{asset('site/js/modal.js')}}"></script>
 <body>
 </html>

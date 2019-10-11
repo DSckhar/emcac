@@ -26,6 +26,7 @@
                             <th>Data Término</th>
                             <th>Hora início</th>
                             <th>Hora Término</th>
+                            <th>Arquivo</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,6 +36,13 @@
                             <td>{{date('d/m/Y', strtotime($publicacao->dTermino))}}</td>
                             <td>{{$publicacao->hInicio}}</td>
                             <td>{{$publicacao->hTermino}}</td>
+                            <td>
+                                @if($publicacao->arquivo != null)
+                                    <a class="text-dark" href='{{asset("storage/media/arquivo/{$publicacao->arquivo}")}}' target="_blank">Clique para abrir</a>
+                                @else
+                                    Publicação sem arquivo
+                                @endif
+                            </td>
                         </tr>
                     </tbody>
                 </table>                                
@@ -55,7 +63,7 @@
             <thead>
                 <tr>
                     <th>Nº</th>
-                    <th>Descrção</th>
+                    <th>Descrição</th>
                     <th class="no-sort">Foto</th>
                     <th class="no-sort"></th>
                 </tr>

@@ -1,6 +1,5 @@
 @extends('site.site') 
 @section('site')
-
 <div class="container mt-3 mb-3">
     <h1>Publicações</h1>
 

@@ -5,7 +5,7 @@
     </div>
 
     <div class="contanier-fluid">
-        <form method='post' action="/admr/publicacao/editado">
+        <form method='post' enctype="multipart/form-data" action="/admr/publicacao/editado">
             <div class="row justify-content-center">
                 <div class="col-6">
                     {!! csrf_field() !!}
@@ -59,6 +59,14 @@
                     <div class="form-group">
                         <textarea id="descricao" type="text" rows="10" class="form-control" name="descricao" maxlength="500" required>{{$publicacoes->descricao}}</textarea>
                     </div>
+
+                    <!-- Valor arquivo bd -->
+                    <input id="arquivoOld" class="form-control" type="text" name="arquivoOld" value="{{$publicacoes->arquivo}}" hidden required/>
+                    
+                    <label for="arquivo">Arquivo</label>
+                    <div class="form-group">
+                        <input type="file" id="arquivo" name="arquivo"/>
+                    </div> 
 
                     <div class="row justify-content-center">
                         <div class="col-2">

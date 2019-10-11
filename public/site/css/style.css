@@ -1,3 +1,45 @@
 span.fc-title{
     color:  white !important;
 }
+
+.modalVisual{
+    display:none;
+    position:fixed;
+    z-index:1;
+    padding-top:100px;
+    left:0;
+    top:0;
+    width:100%;
+    overflow:auto;
+    background-color:rgba(0,0,0,0.8);
+}
+
+.modalConteudo{
+    margin:auto;
+    display:block;
+    width:100%;
+    max-width:800px;
+}
+
+#txtImg{
+    margin:auto;
+    display:block;
+    width:80%;
+    max-width:700px;
+    text-align:center;
+    color:#ccc;
+    padding:10px 0;
+    height:150px;
+}
+
+.fechar{
+    position:absolute;
+    top:15px;
+    right:35px;   
+    /* top:10%;
+    right:18%; */
+    color:#fff;
+    font-size:40px;
+    font-weight:bold;
+    cursor:pointer;
+}

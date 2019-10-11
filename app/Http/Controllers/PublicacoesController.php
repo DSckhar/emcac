@@ -13,6 +13,11 @@ use App\Models\TipoPublicacoes;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+//arquivo
+use Illuminate\Support\Facades\Storage;
+
+use DB;
+
 class PublicacoesController extends Controller
 {
     /**
@@ -44,8 +49,11 @@ class PublicacoesController extends Controller
     
     public function index()
     {
-        //buscando dados da tabela agenda
-        $publicacoes = Publicacoes::all();
+        //buscando dados da tabela publicações e tipo de publicações
+        $publicacoes = DB::table('publicacoes')
+            ->join('tipo_publicacoes', 'tipo_publicacoes.id', '=', 'publicacoes.idTipoPublicacao')
+            ->select('publicacoes.*', 'tipo_publicacoes.nome')
+            ->get();
 
         return view('admin.publicacao.index', compact('publicacoes'));
     }
@@ -69,8 +77,29 @@ class PublicacoesController extends Controller
      */
     public function store(Request $request)
     {
+        $nameFile = null;
+        // Verifica se informou o arquivo e se é válido
+        if ($request->hasFile('arquivo') && $request->file('arquivo')->isValid()) {
+
+            $nome = uniqid(date('HisYmd'));
+            
+            // Extensão do arquivo
+            $fileExtensao = $request->arquivo->extension();
+            
+            $file = $request->file('arquivo');
+
+            // Define finalmente o nome
+            $nameFile = "{$nome}.{$fileExtensao}";
+
+            // Faz o upload:
+            $upload = $file->storeAs('media/arquivo', $nameFile);
+
+            if ( !$upload )
+                return redirect()->action('PublicacoesController@create');
+        }
+
         $publicacaoes = $request->except('_token');
-        $publicacaoes = Publicacoes::store($publicacaoes);
+        $publicacaoes = Publicacoes::store($publicacaoes, $nameFile);
 
         return redirect()->action('PublicacoesController@show', $publicacaoes->id);
     }
@@ -117,6 +146,35 @@ class PublicacoesController extends Controller
      */
     public function update(Request $request)
     {
+        $nameFile = null;
+        $nameFileOld = $request->input('arquivoOld');
+        //verificar se há imagem
+        if ($request->hasFile('arquivo') && $request->file('arquivo')->isValid()) {
+
+            $nome = uniqid(date('HisYmd'));
+            
+            // Extensão do arquivo
+            $fileExtensao = $request->arquivo->extension();
+            
+            $file = $request->file('arquivo');
+
+            // Define finalmente o nome
+            $nameFile = "{$nome}.{$fileExtensao}";
+
+            // Faz o upload:
+            $upload = $file->storeAs('media/arquivo', $nameFile);
+
+            if ( !$upload ){
+                return redirect()->action('PublicacoesController@create');
+            }
+
+            //deletar imagem antiga
+            Storage::delete("media/arquivo/{$nameFileOld}");
+        }else{
+            $nameFile = $nameFileOld;
+        }
+
+        //atualizar
         $publicacoes = $request->except('_token');
         $id = $publicacoes['id'];
 
@@ -129,6 +187,7 @@ class PublicacoesController extends Controller
         $publicacao->dTermino = $publicacoes['dTermino'];
         $publicacao->hInicio = $publicacoes['hInicio'];
         $publicacao->hTermino = $publicacoes['hTermino'];
+        $publicacao->arquivo = $nameFile;
 
         $publicacao->save();
 
@@ -143,6 +202,9 @@ class PublicacoesController extends Controller
      */
     public function destroy($id)
     {
+        $publicacao = Publicacoes::find($id);
+        Storage::delete("media/arquivo/{$publicacao->arquivo}");
+
         $publicacao = Publicacoes::find($id)->delete();
 
         return redirect()->action('PublicacoesController@index');

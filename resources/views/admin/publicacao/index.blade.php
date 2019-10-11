@@ -28,7 +28,7 @@
                     <tr>
                         <td>{{$cont}}</td>
                         <td>{{$publicacao->titulo}}</td>
-                        <td>{{$publicacao->tipo}}</td>
+                        <td>{{$publicacao->nome}}</td>
                         <td>{{date('d/m/Y', strtotime($publicacao->dInicio))}}</td>
                         <td>{{date('d/m/Y', strtotime($publicacao->dTermino))}}</td>
                         <td>
