@@ -29,6 +29,11 @@
                 <td>{{$turma->ano}}</td>
                 <td>{{$turma->status}}</td>
                 <td>
+                    <button class="btn btn-outline-dark" onclick="window.location.href='/admr/turma/{{$turma->id}}'" >
+                        <span data-feather="eye"></span>
+                    </button>
+                </td>
+                <td>
                     <button class="btn btn-outline-dark" onclick="window.location.href='/admr/turma/editar/{{$turma->id}}'" >
                         <span data-feather="edit"></span>
                     </button>
