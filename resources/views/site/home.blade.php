@@ -44,7 +44,7 @@
                                 <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
                                     <li class="current-menu-item" disabled><a href="">Home</a></li>
                                     <li><a href="/">Home</a></li>
-                                    <li><a href="/publicacao">Publicações</a></li>
+                                    <li><a href="/publicacoes">Publicações</a></li>
                                     <li><a href="/documento">Documentos</a></li>
                                     <li><a href="/sobre">Sobre</a></li>
                                 </ul>
@@ -118,7 +118,7 @@
                     </div><!-- .entry-content -->
 
                     <footer class="entry-footer read-more">
-                        <a href="/publicacao">Saiba mais</a>
+                        <a href="/publicacoes">Saiba mais</a>
                     </footer><!-- .entry-footer -->
                 </div><!-- .icon-box -->
 

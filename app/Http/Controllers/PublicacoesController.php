@@ -24,21 +24,31 @@ class PublicacoesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexSite()
-    { 
+    public function indexSite($idTipoPublicacao = null)
+    {   
         $tipos = TipoPublicacoes::all();
 
-        //buscando dados da tabela publicacao
-        $publicacoes = Publicacoes::all();
-
-        foreach($publicacoes as $key => $publicacao){
-            $fotos = fotos::listarIdPublicacoes($publicacao->id);
-            foreach($fotos as $foto){
-                $publicacoes[$key]['foto'] =  $foto->foto;
-            }
+        if($idTipoPublicacao == null){
+            
+            //buscando todos dados da tabela publicacao
+            $publicacoes = Publicacoes::all();
+            
+        }else{
+            //buscando dados da tabela publicacao pelo id de tipo
+            $publicacoes = Publicacoes::listarPeloTipo($idTipoPublicacao);
         }
 
+        //selecionando fotos
+        foreach($publicacoes as $key => $publicacao){
+            $publicacao->foto = null;
+            $fotos = fotos::listarIdPublicacoes($publicacao->id);
+            foreach($fotos as $foto){
+                $publicacao->foto =  $foto->foto;
+            }
+        }
+        
         return view('site.publicacao.index', compact('publicacoes', 'tipos'));
+
     }
 
     public function showSite($id)

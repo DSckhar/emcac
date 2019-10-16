@@ -44,4 +44,16 @@ class Publicacoes extends Model
         
         return $publicacoes;
     }
+
+    public static function listarPeloTipo($idTipo){
+
+        //buscando dados da tabela publicações e tipo de publicações
+        $publicacoes = DB::table('publicacoes')
+            ->join('tipo_publicacoes', 'tipo_publicacoes.id', '=', 'publicacoes.idTipoPublicacao')
+            ->where('publicacoes.idTipoPublicacao', '=', $idTipo)
+            ->select('publicacoes.*, tipo_publicacoes.nome AS tipo')
+            ->get();
+        
+        return $publicacoes;
+    }
 }

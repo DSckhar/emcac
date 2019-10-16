@@ -8,8 +8,9 @@
 
             <div id="livro" class="list-group">
                 @foreach($tipos as $tipo)
-                    <a class="list-group-item list-group-item-action" href="#">{{$tipo->nome}}</a>
+                    <a class="list-group-item list-group-item-action" href="/publicacoes/{{$tipo->id}}">{{$tipo->nome}}</a>
                 @endforeach
+                <a class="list-group-item list-group-item-action" href="/publicacoes">Limpar filtro</a>
             </div>
         </div>
         <div class="col-8">
@@ -29,8 +30,10 @@
                                 <div class="card-body col-6 text-white">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title">{{$publicacao->titulo}}</h5>
-                                            <p class="card-text">{{$publicacao->descricao}}</p>
+                                            <h4 class="card-title" style="text-transform: uppercase">{{$publicacao->titulo}}</h4>
+                                            <span class="badge badge-pill badge-info">{{$publicacao->tipo}}</span>
+                                            <p class="card-text">Data de Início: <br/>{{$publicacao->dInicio}}</p>
+                                            <p class="card-text">Data de Término: <br/>{{$publicacao->dTermino}}</p>
                                         </div>
                                     </div>
                                     <div id="more" class="row justify-content-end">
