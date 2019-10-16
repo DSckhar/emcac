@@ -5,7 +5,7 @@
     </div>
 
     <div class="contanier-fluid">
-        <form method='post' enctype="multipart/form-data" action="/admr/foto/cadastrado">
+        <form name="validar" method='post' enctype="multipart/form-data" action="/admr/foto/cadastrado">
             <div class="row justify-content-center">
                 <div class="col-6">
                     {!! csrf_field() !!}
@@ -17,8 +17,9 @@
 
                     <label for="arquivo">Imagem</label>
                     <div class="form-group">
-                        <input type="file" id="arquivo" name="arquivo" required/>
+                        <input type="file" id="arquivo" name="arquivo" accept="image/*" required/>
                     </div>  
+                    <span id="tamanhoArquivo" class="text-danger mb-3"></span>
 
                     <input id="idPublicacao" class="form-control" type="text" name="idPublicacao" value="{{$publicacao->id}}" hidden required/>
                             
