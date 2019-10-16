@@ -21,7 +21,11 @@ Route::get('/sobre', function () {
 });
 
 //publicações
-Route::get('/publicacao', 'PublicacoesController@indexSite'); 
+//publicações lista
+Route::get('/publicacoes', 'PublicacoesController@indexSite'); 
+Route::get('/publicacoes/{id}', 'PublicacoesController@indexSite'); 
+
+//publicação show
 Route::get('/publicacao/{id}', 'PublicacoesController@showSite'); 
 
 //Agenda
