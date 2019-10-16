@@ -45,7 +45,7 @@ class TipoPublicacoesController extends Controller
 
         $tipopublicacoes = $request->except('_token');
         $tipopublicacoes = TipoPublicacoes::store($tipopublicacoes);
-        return redirect()->action('TipoPublicacoesController@index', 'user' => $user);
+        return redirect()->action('TipoPublicacoesController@index', array('user' => $user));
     }
 
     /**
@@ -94,6 +94,6 @@ class TipoPublicacoesController extends Controller
 
         $tipoPublicacao = TipoPublicacoes::find($id)->delete();
 
-        return redirect()->action('TipoPublicacoesController@index', 'user' => $user);
+        return redirect()->action('TipoPublicacoesController@index', array('user' => $user));
     }
 }
