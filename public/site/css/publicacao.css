@@ -48,3 +48,11 @@ main .content {
 	padding-left: 10px;
 	padding-top: 20px;
 }
+
+#texto{
+	float: right;
+    position: sticky;
+    right: 10%;
+    top: 90%;
+	transform: translateX(-50%)
+}

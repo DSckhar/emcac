@@ -76,3 +76,16 @@ function validarDataeHora(){
 
     }
 }
+
+//validar arquivos true <= 20mb
+validar.arquivo.onchange = function() {
+    if(this.files[0].size > 20000000){
+        var erro = "Arquivo ultrapassando o tamanho 20MB"
+        var span = document.getElementById("tamanhoArquivo");
+
+        span.innerText = erro;
+
+        $("#arquivo").focus().css("borderColor", "red").css("color", "red");
+        this.value = "";
+    };
+};

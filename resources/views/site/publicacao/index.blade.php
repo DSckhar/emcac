@@ -14,57 +14,39 @@
         </div>
         <div class="col-8">
 
-        <div class="content">
-            <div class="container">
-                <div class="row">
-                    <div class="card" style="width: 65rem;">
-                        <div class="card-body">
-                            <h1 class="card-title">Publicação 1</h1>
-                            <figure id="figura">
-                                <img src="https://pt.seaicons.com/wp-content/uploads/2015/06/news-icon1.png" alt="">
-                            </figure>
-                            <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint iusto laborum dolorem enim cumque minus, alias exercitationem repudiandae
-                                repellat nulla sequi quam ducimus maxime saepe eaque consequatur illum voluptas officia.
-                                <button type="button" class="btn btn-light">Mais...</button>
-                            </p>
+            <div class="content">
+                <div class="container">
+                    @foreach($publicacoes as $publicacao)
+                        <div class="card mb-3" style="background-color: #56555B">
+                            <div id="espaco" class="row">
+                                <div class="col-6">
+                                    @if($publicacao->foto != '')
+                                        <img class="card-img-top" src='{{asset("storage/media/fotos/{$publicacao->foto}")}}' style="width: 100%;" alt="">
+                                    @elseif($publicacao->foto == '')
+                                        <img class="card-img-top" src='{{asset("site/images/semFoto.png")}}' style="width: 100%;" alt="">
+                                    @endif
+                                </div>
+                                <div class="card-body col-6 text-white">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5 class="card-title">{{$publicacao->titulo}}</h5>
+                                            <p class="card-text">{{$publicacao->descricao}}</p>
+                                        </div>
+                                    </div>
+                                    <div id="more" class="row justify-content-end">
+                                        <div class="col-4">
+                                            <button class="btn btn-info" onclick="window.location.href='/publicacao/{{$publicacao->id}}'" >Mais...</button>                          
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    @endforeach 
                 </div>
-                <div class="row">
-                    <div class="card" style="width: 65rem; margin-top: 2%;">
-                        <div class="card-body">
-                            <h1 class="card-title">Publicação 2</h1>
-                            <figure id="figura">
-                                <img src="https://pt.seaicons.com/wp-content/uploads/2015/06/news-icon1.png" alt="">
-                            </figure>
-                            <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint iusto laborum dolorem enim cumque minus, alias exercitationem repudiandae
-                                    repellat nulla sequi quam ducimus maxime saepe eaque consequatur illum voluptas officia.
-                                    <button type="button" class="btn btn-light">Mais...</button>
-                            </p>
-                        </div>
-                    </div>
-                </div> 
-                <div class="row">
-                    <div class="card" style="width: 65rem; margin-top: 2%;">
-                        <div class="card-body">
-                            <h1 class="card-title">Publicação 3</h1>
-                            <figure id="figura">
-                                <img src="https://pt.seaicons.com/wp-content/uploads/2015/06/news-icon1.png" alt="">
-                            </figure>
-                            <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint iusto laborum dolorem enim cumque minus, alias exercitationem repudiandae
-                                    repellat nulla sequi quam ducimus maxime saepe eaque consequatur illum voluptas officia.
-                                    <button type="button" class="btn btn-light">Mais...</button>
-                            </p>
-                        </div>
-                    </div>
-                </div>   
             </div>
         </div>
     </div>
 </div>
-
 
 @endsection

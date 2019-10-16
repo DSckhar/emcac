@@ -43,3 +43,8 @@ span.fc-title{
     font-weight:bold;
     cursor:pointer;
 }
+
+div #espaco{
+    padding-top: 1.5%;
+    padding-left: 1.5%;
+}

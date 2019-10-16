@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Publicacoes;
 
 //model fotos
@@ -24,11 +25,18 @@ class PublicacoesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function indexSite()
-    {
-        //buscando dados da tabela agenda
+    { 
+        $tipos = TipoPublicacoes::all();
+
+        //buscando dados da tabela publicacao
         $publicacoes = Publicacoes::all();
 
-        $tipos = TipoPublicacoes::all();
+        foreach($publicacoes as $key => $publicacao){
+            $fotos = fotos::listarIdPublicacoes($publicacao->id);
+            foreach($fotos as $foto){
+                $publicacoes[$key]['foto'] =  $foto->foto;
+            }
+        }
 
         return view('site.publicacao.index', compact('publicacoes', 'tipos'));
     }
@@ -47,10 +55,10 @@ class PublicacoesController extends Controller
     
     public function index()
     {
-        
+        $user = Auth::user();
         $publicacoes = Publicacoes::listar();
 
-        return view('admin.publicacao.index', compact('publicacoes'));
+        return view('admin.publicacao.index', compact('publicacoes', 'user'));
     }
 
     /**
@@ -60,8 +68,9 @@ class PublicacoesController extends Controller
      */
     public function create()
     {
+        $user = Auth::user();
         $tipos = TipoPublicacoes::all();
-        return view('admin.publicacao.store', compact('tipos'));
+        return view('admin.publicacao.store', compact('tipos', 'user'));
     }
 
     /**
@@ -107,13 +116,15 @@ class PublicacoesController extends Controller
      */
     public function show($id)
     {
+        $user = Auth::user();
+
         $publicacao = Publicacoes::find($id);
 
         $fotos = Fotos::all()->where('idPublicacao', '=', $id);
 
         $tipo = TipoPublicacoes::find($publicacao->idTipoPublicacao);
 
-        return view('admin.publicacao.show', compact('publicacao', 'fotos', 'tipo'));
+        return view('admin.publicacao.show', compact('publicacao', 'fotos', 'tipo', 'user'));
     }
 
     /**
@@ -124,12 +135,14 @@ class PublicacoesController extends Controller
      */
     public function edit($id)
     {
-        //selecionando a agenda com base no id
+        $user = Auth::user();
+
+        //selecionando a publicacoes com base no id
         $publicacoes = Publicacoes::find($id);
 
         $tipos = TipoPublicacoes::all();
         
-        return view('admin.publicacao.update', compact('publicacoes', 'tipos'));
+        return view('admin.publicacao.update', compact('publicacoes', 'tipos', 'user'));
     }
 
     /**

@@ -67,8 +67,9 @@
                     
                     <label for="arquivo">Arquivo</label>
                     <div class="form-group">
-                        <input type="file" id="arquivo" name="arquivo"/>
+                        <input type="file" id="arquivo" name="arquivo" accept=".pdf"/>
                     </div> 
+                    <span id="tamanhoArquivo" class="text-danger mb-3"></span>
 
                     <div class="row justify-content-center">
                         <div class="col-2">
