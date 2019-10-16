@@ -22,7 +22,7 @@
                 <div class="col-6 col-md-3 justify-content-end offset-md-4">
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="btn btn-outline-dark" href="#">Nome do Usuário</a>
+                            <a class="btn btn-outline-dark" href="#">{{$user->name}}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Sair</a>

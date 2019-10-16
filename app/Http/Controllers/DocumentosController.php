@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Documentos;
 use App\Models\Capitulos;
@@ -17,9 +18,10 @@ class DocumentosController extends Controller
      */
     public function index()
     {   
+        $user = Auth::user();
         $documentos = Documentos::all()->sortByDesc('updated_at');
 
-        return view('admin.documento.index', array('documentos' => $documentos));
+        return view('admin.documento.index', array('documentos' => $documentos, 'user' => $user));
     }
 
     /**

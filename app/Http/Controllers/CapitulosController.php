@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Capitulos;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,7 +16,8 @@ class CapitulosController extends Controller
      */
     public function index()
     {
-        return view('admin.capituloDoc.index');
+        $user = Auth::user();
+        return view('admin.capituloDoc.index', array('user' => $user));
     }
 
     /**

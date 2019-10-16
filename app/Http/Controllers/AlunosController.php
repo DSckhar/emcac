@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Alunos;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,9 @@ class AlunosController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
         $alunos = Alunos::all();
-        return view('admin.aluno.index', array('alunos' => $alunos));
+        return view('admin.aluno.index', array('alunos' => $alunos, 'user' => $user));
     }
 
     /**

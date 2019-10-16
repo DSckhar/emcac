@@ -33,70 +33,74 @@ Route::get('/admr', function () {
 });
 
 //aluno
-Route::get('/admr/aluno/cadastrar', 'AlunosController@create');
-Route::post('/admr/aluno/cadastrado', 'AlunosController@store');
-Route::get('/admr/aluno/editar/{id}', 'AlunosController@edit');
-Route::post('/admr/aluno/editado', 'AlunosController@update');
-Route::get('/admr/aluno/delete/{id}', 'AlunosController@destroy');
-Route::resource('/admr/aluno', 'AlunosController');
+Route::get('/admr/aluno/cadastrar', 'AlunosController@create')->middleware('auth');
+Route::post('/admr/aluno/cadastrado', 'AlunosController@store')->middleware('auth');
+Route::get('/admr/aluno/editar/{id}', 'AlunosController@edit')->middleware('auth');
+Route::post('/admr/aluno/editado', 'AlunosController@update')->middleware('auth');
+Route::get('/admr/aluno/delete/{id}', 'AlunosController@destroy')->middleware('auth');
+Route::resource('/admr/aluno', 'AlunosController')->middleware('auth');
 
 //funcionarios
-Route::get('/admr/funcionario/cadastrar', 'FuncionariosController@create');
-Route::post('/admr/funcionario/cadastrado', 'FuncionariosController@store');
-Route::get('/admr/funcionario/editar/{id}', 'FuncionariosController@edit');
-Route::post('/admr/funcionario/editado', 'FuncionariosController@update');
-Route::get('/admr/funcionario/delete/{id}', 'FuncionariosController@destroy');
-Route::resource('/admr/funcionario', 'FuncionariosController');
+Route::get('/admr/funcionario/cadastrar', 'FuncionariosController@create')->middleware('auth');
+Route::post('/admr/funcionario/cadastrado', 'FuncionariosController@store')->middleware('auth');
+Route::get('/admr/funcionario/editar/{id}', 'FuncionariosController@edit')->middleware('auth');
+Route::post('/admr/funcionario/editado', 'FuncionariosController@update')->middleware('auth');
+Route::get('/admr/funcionario/delete/{id}', 'FuncionariosController@destroy')->middleware('auth');
+Route::resource('/admr/funcionario', 'FuncionariosController')->middleware('auth');
 
 //documentos
-Route::get('/admr/documento/cadastrar', 'DocumentosController@create');
-Route::post('/admr/documento/cadastrado', 'DocumentosController@store');
-Route::get('/admr/documento/editar/{id}', 'DocumentosController@edit');
-Route::post('/admr/documento/editado', 'DocumentosController@update');
-Route::get('/admr/documento/delete/{id}', 'DocumentosController@destroy');
-Route::resource('/admr/documento', 'DocumentosController');
+Route::get('/admr/documento/cadastrar', 'DocumentosController@create')->middleware('auth');
+Route::post('/admr/documento/cadastrado', 'DocumentosController@store')->middleware('auth');
+Route::get('/admr/documento/editar/{id}', 'DocumentosController@edit')->middleware('auth');
+Route::post('/admr/documento/editado', 'DocumentosController@update')->middleware('auth');
+Route::get('/admr/documento/delete/{id}', 'DocumentosController@destroy')->middleware('auth');
+Route::resource('/admr/documento', 'DocumentosController')->middleware('auth');
 
 //publicacoes
-Route::get('/admr/publicacao/cadastrar', 'PublicacoesController@create');
-Route::post('/admr/publicacao/cadastrado', 'PublicacoesController@store');
-Route::get('/admr/publicacao/editar/{id}', 'PublicacoesController@edit');
-Route::post('/admr/publicacao/editado', 'PublicacoesController@update');
-Route::get('/admr/publicacao/delete/{id}', 'PublicacoesController@destroy');
-Route::resource('/admr/publicacao', 'PublicacoesController');
+Route::get('/admr/publicacao/cadastrar', 'PublicacoesController@create')->middleware('auth');
+Route::post('/admr/publicacao/cadastrado', 'PublicacoesController@store')->middleware('auth');
+Route::get('/admr/publicacao/editar/{id}', 'PublicacoesController@edit')->middleware('auth');
+Route::post('/admr/publicacao/editado', 'PublicacoesController@update')->middleware('auth');
+Route::get('/admr/publicacao/delete/{id}', 'PublicacoesController@destroy')->middleware('auth');
+Route::resource('/admr/publicacao', 'PublicacoesController')->middleware('auth');
 
 //tipoPublicações
-Route::post('/admr/tipopublicacao/cadastrado', 'TipoPublicacoesController@store');
-Route::get('/admr/tipopublicacao/delete/{id}', 'TipoPublicacoesController@destroy');
-Route::resource('/admr/tipopublicacao', 'TipoPublicacoesController');
+Route::post('/admr/tipopublicacao/cadastrado', 'TipoPublicacoesController@store')->middleware('auth');
+Route::get('/admr/tipopublicacao/delete/{id}', 'TipoPublicacoesController@destroy')->middleware('auth');
+Route::resource('/admr/tipopublicacao', 'TipoPublicacoesController')->middleware('auth');
 
 //turmas
-Route::get('/admr/turma/cadastrar', 'TurmasController@create');
-Route::post('/admr/turma/cadastrado', 'TurmasController@store');
-Route::get('/admr/turma/editar/{id}', 'TurmasController@edit');
-Route::post('/admr/turma/editado', 'TurmasController@update');
-Route::get('/admr/turma/delete/{id}', 'TurmasController@destroy');
-Route::resource('/admr/turma', 'TurmasController');
+Route::get('/admr/turma/cadastrar', 'TurmasController@create')->middleware('auth');
+Route::post('/admr/turma/cadastrado', 'TurmasController@store')->middleware('auth');
+Route::get('/admr/turma/editar/{id}', 'TurmasController@edit')->middleware('auth');
+Route::post('/admr/turma/editado', 'TurmasController@update')->middleware('auth');
+Route::get('/admr/turma/delete/{id}', 'TurmasController@destroy')->middleware('auth');
+Route::resource('/admr/turma', 'TurmasController')->middleware('auth');
 
 //capítulo
-Route::get('/admr/capitulo/cadastrar/', 'CapitulosController@create');
-Route::post('/admr/capitulo/cadastrado', 'CapitulosController@store');
-Route::get('/admr/capitulo/editar/{id}', 'CapitulosController@edit');
-Route::post('/admr/capitulo/editado', 'CapitulosController@update');
-Route::get('/admr/capitulo/delete/{id}', 'CapitulosController@destroy');
-Route::resource('/admr/capitulo', 'CapitulosController');
+Route::get('/admr/capitulo/cadastrar/', 'CapitulosController@create')->middleware('auth');
+Route::post('/admr/capitulo/cadastrado', 'CapitulosController@store')->middleware('auth');
+Route::get('/admr/capitulo/editar/{id}', 'CapitulosController@edit')->middleware('auth');
+Route::post('/admr/capitulo/editado', 'CapitulosController@update')->middleware('auth');
+Route::get('/admr/capitulo/delete/{id}', 'CapitulosController@destroy')->middleware('auth');
+Route::resource('/admr/capitulo', 'CapitulosController')->middleware('auth');
 
 //agenda
-Route::get('/admr/agenda/cadastrar', 'AgendasController@create');
-Route::post('/admr/agenda/cadastrado', 'AgendasController@store');
-Route::get('/admr/agenda/editar/{id}', 'AgendasController@edit');
-Route::post('/admr/agenda/editado', 'AgendasController@update');
-Route::get('/admr/agenda/delete/{id}', 'AgendasController@destroy');
-Route::resource('/admr/agenda', 'AgendasController');
+Route::get('/admr/agenda/cadastrar', 'AgendasController@create')->middleware('auth');
+Route::post('/admr/agenda/cadastrado', 'AgendasController@store')->middleware('auth');
+Route::get('/admr/agenda/editar/{id}', 'AgendasController@edit')->middleware('auth');
+Route::post('/admr/agenda/editado', 'AgendasController@update')->middleware('auth');
+Route::get('/admr/agenda/delete/{id}', 'AgendasController@destroy')->middleware('auth');
+Route::resource('/admr/agenda', 'AgendasController')->middleware('auth');
 
 //foto
-Route::get('/admr/foto/cadastrar/{id}', 'FotosController@create');
-Route::post('/admr/foto/cadastrado', 'FotosController@store');
-Route::get('/admr/foto/editar/{id}', 'FotosController@edit');
-Route::post('/admr/foto/editado', 'FotosController@update');
-Route::get('/admr/foto/delete/{id}', 'FotosController@destroy');
-Route::resource('/admr/foto', 'FotosController');
+Route::get('/admr/foto/cadastrar/{id}', 'FotosController@create')->middleware('auth');
+Route::post('/admr/foto/cadastrado', 'FotosController@store')->middleware('auth');
+Route::get('/admr/foto/editar/{id}', 'FotosController@edit')->middleware('auth');
+Route::post('/admr/foto/editado', 'FotosController@update')->middleware('auth');
+Route::get('/admr/foto/delete/{id}', 'FotosController@destroy')->middleware('auth');
+Route::resource('/admr/foto', 'FotosController')->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
