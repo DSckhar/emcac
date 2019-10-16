@@ -47,4 +47,12 @@ span.fc-title{
 div #espaco{
     padding-top: 1.5%;
     padding-left: 1.5%;
+    padding-bottom: 1.5%;
+}
+
+div #img{
+    background-repeat: no-repeat;
+    background-size: cover;  
+    padding-left: 1.5%;
+
 }

@@ -51,7 +51,7 @@ class Publicacoes extends Model
         $publicacoes = DB::table('publicacoes')
             ->join('tipo_publicacoes', 'tipo_publicacoes.id', '=', 'publicacoes.idTipoPublicacao')
             ->where('publicacoes.idTipoPublicacao', '=', $idTipo)
-            ->select('publicacoes.*, tipo_publicacoes.nome AS tipo')
+            ->select('publicacoes.*', 'tipo_publicacoes.nome')
             ->get();
         
         return $publicacoes;

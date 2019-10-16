@@ -31,7 +31,7 @@ class PublicacoesController extends Controller
         if($idTipoPublicacao == null){
             
             //buscando todos dados da tabela publicacao
-            $publicacoes = Publicacoes::all();
+            $publicacoes = Publicacoes::listar();
             
         }else{
             //buscando dados da tabela publicacao pelo id de tipo
@@ -47,7 +47,7 @@ class PublicacoesController extends Controller
             }
         }
         
-        return view('site.publicacao.index', compact('publicacoes', 'tipos'));
+        return view('site.publicacao.index', compact('publicacoes', 'tipos', 'idTipoPublicacao'));
 
     }
 
