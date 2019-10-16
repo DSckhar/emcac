@@ -108,3 +108,4 @@ Route::resource('/admr/foto', 'FotosController')->middleware('auth');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/sair', 'HomeController@logout');

@@ -25,7 +25,7 @@
                             <a class="btn btn-outline-dark" href="#">{{$user->name}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sair</a>
+                            <a class="nav-link" href="/sair">Sair</a>
                         </li>
                     </ul>
                 </div>
