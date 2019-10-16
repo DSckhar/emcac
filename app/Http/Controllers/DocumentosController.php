@@ -19,6 +19,7 @@ class DocumentosController extends Controller
     public function index()
     {   
         $user = Auth::user();
+
         $documentos = Documentos::all()->sortByDesc('updated_at');
 
         return view('admin.documento.index', array('documentos' => $documentos, 'user' => $user));
@@ -31,7 +32,9 @@ class DocumentosController extends Controller
      */
     public function create()
     {
-        return view('admin.documento.store');
+        $user = Auth::user();
+
+        return view('admin.documento.store', array('user' => $user));
     }
 
     /**
@@ -42,6 +45,8 @@ class DocumentosController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
+
         $nameFile = null;
  
         // Verifica se informou o arquivo e se é válido
@@ -75,7 +80,7 @@ class DocumentosController extends Controller
 
         $id = $documento['id'];
 
-        return redirect()->action('DocumentosController@show', $id);
+        return redirect()->action('DocumentosController@show', $id, array('user' => $user));
     }
 
     /**
@@ -86,11 +91,13 @@ class DocumentosController extends Controller
      */
     public function show($id)
     {
+        $user = Auth::user();
+
         $documento = Documentos::find($id);
 
         $capitulos = Capitulos::all()->where('idDocumento', '=', $id);
 
-        return view('admin.documento.show', array('documento' => $documento, 'capitulos' => $capitulos));
+        return view('admin.documento.show', array('documento' => $documento, 'capitulos' => $capitulos, 'user' => $user));
     }
 
     /**
@@ -124,11 +131,13 @@ class DocumentosController extends Controller
      */
     public function destroy($id)
     {
+        $user = Auth::user();
+        
         $documento = Documentos::find($id);
         Storage::delete("media/arquivo/{$documento->arquivo}");
 
         $documento = Documentos::find($id)->delete();
 
-        return redirect()->action('DocumentosController@index');  
+        return redirect()->action('DocumentosController@index', array('user' => $user));  
     }
 }

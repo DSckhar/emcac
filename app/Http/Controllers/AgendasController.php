@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Agendas;
 
 //model publicações
@@ -28,10 +29,12 @@ class AgendasController extends Controller
 
     public function index()
     {
+        $user = Auth::user();
+
         //buscando dados da tabela agenda
         $agendas = Agendas::all();
 
-        return view('admin.agenda.index', compact('agendas'));
+        return view('admin.agenda.index', compact('agendas', 'user'));
     }
 
     /**
@@ -41,7 +44,9 @@ class AgendasController extends Controller
      */
     public function create()
     {
-        return view('admin.agenda.store');
+        $user = Auth::user();
+
+        return view('admin.agenda.store', array('user' => $user));
     }
 
     /**
@@ -52,9 +57,11 @@ class AgendasController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
+
         $agenda = $request->except('_token');
         $agenda = Agendas::store($agenda);
-        return redirect()->action('AgendasController@index');
+        return redirect()->action('AgendasController@index', array('user' => $user));
     }
 
     /**
@@ -76,10 +83,12 @@ class AgendasController extends Controller
      */
     public function edit($id)
     {
+        $user = Auth::user();
+
         //selecionando a agenda com base no id
         $agenda = Agendas::find($id);
         
-        return view('admin.agenda.update', compact('agenda'));
+        return view('admin.agenda.update', compact('agenda', 'user'));
     }
 
     /**
@@ -91,6 +100,8 @@ class AgendasController extends Controller
      */
     public function update(Request $request)
     {
+        $user = Auth::user();
+
         $agendas = $request->except('_token');
         $id = $agendas['id'];
 
@@ -104,7 +115,7 @@ class AgendasController extends Controller
 
         $agenda->save();
 
-        return redirect()->action('AgendasController@index');
+        return redirect()->action('AgendasController@index', array('user' => $user));
     }
 
     /**
@@ -115,8 +126,10 @@ class AgendasController extends Controller
      */
     public function destroy($id)
     {
+        $user = Auth::user();
+
         $agenda = Agendas::find($id)->delete();
 
-        return redirect()->action('AgendasController@index');
+        return redirect()->action('AgendasController@index', array('user' => $user));
     }
 }

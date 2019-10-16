@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Funcionarios;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,9 +16,11 @@ class FuncionariosController extends Controller
      */
     public function index()
     {   
+        $user = Auth::user();
+
         $funcionarios = Funcionarios::all();
 
-        return view('admin.funcionario.index', array('funcionarios' => $funcionarios));
+        return view('admin.funcionario.index', array('funcionarios' => $funcionarios, 'user' => $user));
     }
 
     /**
@@ -27,7 +30,9 @@ class FuncionariosController extends Controller
      */
     public function create()
     {
-        return view('admin.funcionario.store');
+        $user = Auth::user();
+
+        return view('admin.funcionario.store', array('user' => $user));
     }
 
     /**
@@ -38,9 +43,11 @@ class FuncionariosController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
+
         $funcionarios = $request->except('_token');
         $funcionarios = Funcionarios::store($funcionarios);
-        return redirect()->action('FuncionariosController@index');
+        return redirect()->action('FuncionariosController@index', array('user' => $user));
     }
 
     /**
@@ -62,9 +69,11 @@ class FuncionariosController extends Controller
      */
     public function edit($id)
     {
+        $user = Auth::user();
+
         $funcionario = Funcionarios::find($id);
 
-        return view('admin.funcionario.update', array('funcionario' => $funcionario));
+        return view('admin.funcionario.update', array('funcionario' => $funcionario, 'user' => $user));
     }
 
     /**
@@ -76,6 +85,8 @@ class FuncionariosController extends Controller
      */
     public function update(Request $request)
     {
+        $user = Auth::user();
+
         $funcionarios = $request->except('_token');
         $id = $funcionarios['id'];  
         
@@ -87,7 +98,7 @@ class FuncionariosController extends Controller
         $funcionario->foto = $funcionarios['foto'];
         $funcionario->save();
 
-        return redirect()->action('FuncionariosController@index');
+        return redirect()->action('FuncionariosController@index', array('user' => $user));
     }
 
     /**
@@ -98,8 +109,10 @@ class FuncionariosController extends Controller
      */
     public function destroy($id)
     {
+        $user = Auth::user();
+
         $funcionario = Funcionarios::find($id)->delete();
 
-        return redirect()->action('FuncionariosController@index');
+        return redirect()->action('FuncionariosController@index', array('user' => $user));
     }
 }

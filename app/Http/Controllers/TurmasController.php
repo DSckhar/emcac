@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Turmas;
 use App\Models\Alunos;
 use App\Models\TurmaAlunos;
@@ -17,9 +18,11 @@ class TurmasController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
+
         $turmas = Turmas::all();
 
-        return view('admin.turma.index', array('turmas' => $turmas));
+        return view('admin.turma.index', array('turmas' => $turmas, 'user' => $user));
     }
 
     /**
@@ -29,7 +32,9 @@ class TurmasController extends Controller
      */
     public function create()
     {
-        return view('admin.turma.store');
+        $user = Auth::user();
+
+        return view('admin.turma.store', array('user' => $user));
     }
 
     /**
@@ -40,9 +45,11 @@ class TurmasController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
+
         $turmas = $request->except('_token');
         $turmas = Turmas::store($turmas);
-        return redirect()->action('TurmasController@index');
+        return redirect()->action('TurmasController@index', array('user' => $user));
     }
 
     /**
@@ -53,9 +60,11 @@ class TurmasController extends Controller
      */
     public function show($id)
     {
+        $user = Auth::user();
+
         $turma = Turmas::find($id);
 
-        return view('admin.turma.show', array('turma' => $turma));
+        return view('admin.turma.show', array('turma' => $turma, 'user' => $user));
     }
 
     /**
@@ -66,9 +75,11 @@ class TurmasController extends Controller
      */
     public function edit($id)
     {
+        $user = Auth::user();
+
         $turma = Turmas::find($id);
 
-        return view('admin.turma.update', array('turma' => $turma));
+        return view('admin.turma.update', array('turma' => $turma, 'user' => $user));
     }
 
     /**
@@ -80,6 +91,8 @@ class TurmasController extends Controller
      */
     public function update(Request $request)
     {
+        $user = Auth::user();
+
         $turmas = $request->except('_token');
         $id = $turmas['id'];  
 
@@ -90,7 +103,7 @@ class TurmasController extends Controller
         $turma->status = $turmas['status'];
         $turma->save(); 
 
-        return redirect()->action('TurmasController@index');
+        return redirect()->action('TurmasController@index', array('user' => $user));
     }
 
     /**
@@ -101,8 +114,10 @@ class TurmasController extends Controller
      */
     public function destroy($id)
     {
+        $user = Auth::user();
+
         $turma = Turmas::find($id)->delete();
 
-        return redirect()->action('TurmasController@index');
+        return redirect()->action('TurmasController@index', array('user' => $user));
     }
 }

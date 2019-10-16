@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\TipoPublicacoes;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,9 +16,11 @@ class TipoPublicacoesController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
+
         $tipoPublicacoes = TipoPublicacoes::all();
 
-        return view('admin.tipoPublicacao.index', array('tipopublicacoes' => $tipoPublicacoes));
+        return view('admin.tipoPublicacao.index', array('tipopublicacoes' => $tipoPublicacoes, 'user' => $user));
     }
 
     /**
@@ -38,9 +41,11 @@ class TipoPublicacoesController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
+
         $tipopublicacoes = $request->except('_token');
         $tipopublicacoes = TipoPublicacoes::store($tipopublicacoes);
-        return redirect()->action('TipoPublicacoesController@index');
+        return redirect()->action('TipoPublicacoesController@index', 'user' => $user);
     }
 
     /**
@@ -85,8 +90,10 @@ class TipoPublicacoesController extends Controller
      */
     public function destroy($id)
     {
+        $user = Auth::user();
+
         $tipoPublicacao = TipoPublicacoes::find($id)->delete();
 
-        return redirect()->action('TipoPublicacoesController@index');
+        return redirect()->action('TipoPublicacoesController@index', 'user' => $user);
     }
 }

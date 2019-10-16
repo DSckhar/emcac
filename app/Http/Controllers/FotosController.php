@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Fotos;
 //consultar publicações
 use App\Models\Publicacoes;
@@ -30,9 +31,11 @@ class FotosController extends Controller
      */
     public function create($id)
     {
+        $user = Auth::user();
+
         $publicacao = Publicacoes::find($id);
 
-        return view('admin.foto.store', compact('publicacao'));
+        return view('admin.foto.store', compact('publicacao', 'user' => $user));
     }
 
     /**
@@ -43,6 +46,8 @@ class FotosController extends Controller
      */
     public function store(Request $request)
     {   
+        $user = Auth::user();
+
         $nameFile = null;
  
         // Verifica se informou o arquivo e se é válido
@@ -73,7 +78,7 @@ class FotosController extends Controller
         $id = $fotos['idPublicacao'];
         $fotos = Fotos::store($fotos, $nameFile);
         
-        return redirect()->action('PublicacoesController@show', $id);
+        return redirect()->action('PublicacoesController@show', $id, array('user' => $user));
     }
 
     /**
@@ -118,6 +123,8 @@ class FotosController extends Controller
      */
     public function destroy($id)
     {   
+        $user = Auth::user();
+        
         $foto = Fotos::find($id);
         Storage::delete("media/fotos/{$foto->arquivo}");
 
@@ -125,6 +132,6 @@ class FotosController extends Controller
 
         $foto = Fotos::find($id)->delete();
 
-        return redirect()->action('PublicacoesController@show', $idPublicacao);
+        return redirect()->action('PublicacoesController@show', $idPublicacao, array('user' => $user));
     }
 }

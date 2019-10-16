@@ -16,6 +16,7 @@ class AlunosController extends Controller
     public function index()
     {
         $user = Auth::user();
+
         $alunos = Alunos::all();
         return view('admin.aluno.index', array('alunos' => $alunos, 'user' => $user));
     }
@@ -27,7 +28,9 @@ class AlunosController extends Controller
      */
     public function create()
     {
-        return view('admin.aluno.store');
+        $user = Auth::user();
+
+        return view('admin.aluno.store', array('user' => $user));
     }
 
     /**
@@ -38,9 +41,11 @@ class AlunosController extends Controller
      */
     public function store(Request $request)
     {   
+        $user = Auth::user();
+        
         $aluno = $request->except('_token');
         $aluno = Alunos::store($aluno);
-        return redirect()->action('AlunosController@index');
+        return redirect()->action('AlunosController@index', array('user' => $user));
     }
 
     /**
