@@ -17,7 +17,7 @@
             <div class="content">
                 <div class="container">
                     @foreach($publicacoes as $publicacao)
-                        <div class="card mb-3 bg-secondary">
+                        <div class="card mb-3" style="background-color: #56555B">
                             <div id="espaco" class="row">
                                 <div class="col-6">
                                     @if($publicacao->foto != '')
@@ -27,9 +27,18 @@
                                     @endif
                                 </div>
                                 <div class="card-body col-6 text-white">
-                                    <h5 class="card-title">{{$publicacao->titulo}}</h5>
-                                    <p class="card-text">{{$publicacao->descricao}}</p>
-                                    <a href="/publicacao/{{$publicacao->id}}" class="card-link">Mais...</a>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5 class="card-title">{{$publicacao->titulo}}</h5>
+                                            <p class="card-text">{{$publicacao->descricao}}</p>
+                                        </div>
+                                    </div>
+                                    <div id="more" class="row justify-content-end">
+                                        <div class="col-4">
+                                            <button class="btn btn-info" onclick="window.location.href='/publicacao/{{$publicacao->id}}'" >Mais...</button>                          
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -39,6 +48,5 @@
         </div>
     </div>
 </div>
-
 
 @endsection
