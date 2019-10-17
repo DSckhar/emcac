@@ -164,9 +164,13 @@ class PublicacoesController extends Controller
      */
     public function update(Request $request)
     {
+        
+        $publicacoes = $request->except('_token');
+        $id = $publicacoes['id'];
+        
         $nameFile = null;
         $nameFileOld = $request->input('arquivoOld');
-        //verificar se há imagem
+        //verificar se há arquivo
         if ($request->hasFile('arquivo') && $request->file('arquivo')->isValid()) {
 
             $nome = uniqid(date('HisYmd'));
@@ -183,7 +187,7 @@ class PublicacoesController extends Controller
             $upload = $file->storeAs('media/arquivo', $nameFile);
 
             if ( !$upload ){
-                return redirect()->action('PublicacoesController@create');
+                return redirect()->action('PublicacoesController@edit', $id);
             }
 
             //deletar imagem antiga
@@ -193,9 +197,6 @@ class PublicacoesController extends Controller
         }
 
         //atualizar
-        $publicacoes = $request->except('_token');
-        $id = $publicacoes['id'];
-
         $publicacao = Publicacoes::find($id);
         
         $publicacao->titulo = $publicacoes['titulo'];

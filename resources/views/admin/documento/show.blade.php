@@ -52,7 +52,6 @@
                 <tr>
                     <th>Nº</th>
                     <th>Título</th>
-                    <th>Descrição</th>
                     <th class="no-sort"></th>
                     <th class="no-sort"></th>
                     <th class="no-sort"></th>
@@ -64,14 +63,13 @@
                     <tr>
                         <td>{{$cont}}</td>
                         <td>{{$capitulo->titulo}}</td>
-                        <td>{{$capitulo->descricao}}</td>
                         <td>
-                            <button class="btn btn-outline-danger" onclick="window.location.href='/admr/capitulo/{{$capitulo->id}}'" >
+                            <button class="btn btn-outline-dark" onclick="window.location.href='/admr/capitulo/{{$capitulo->id}}'" >
                                 <span data-feather="eye"></span>
                             </button>
                         </td>
                         <td>
-                            <button class="btn btn-outline-danger" onclick="window.location.href='/admr/capitulo/editar/{{$capitulo->id}}'" >
+                            <button class="btn btn-outline-dark" onclick="window.location.href='/admr/capitulo/editar/{{$capitulo->id}}'" >
                                 <span data-feather="edit"></span>
                             </button>
                         </td>
@@ -87,7 +85,6 @@
                 <tr>
                     <th>Nº</th>
                     <th>Título</th>
-                    <th>Descrição</th>
                     <th></th>
                 </tr>
             </tfoot>

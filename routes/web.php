@@ -82,7 +82,7 @@ Route::get('/admr/turma/delete/{id}', 'TurmasController@destroy')->middleware('a
 Route::resource('/admr/turma', 'TurmasController')->middleware('auth');
 
 //capítulo
-Route::get('/admr/capitulo/cadastrar/', 'CapitulosController@create')->middleware('auth');
+Route::get('/admr/capitulo/cadastrar/{id}', 'CapitulosController@create')->middleware('auth');
 Route::post('/admr/capitulo/cadastrado', 'CapitulosController@store')->middleware('auth');
 Route::get('/admr/capitulo/editar/{id}', 'CapitulosController@edit')->middleware('auth');
 Route::post('/admr/capitulo/editado', 'CapitulosController@update')->middleware('auth');

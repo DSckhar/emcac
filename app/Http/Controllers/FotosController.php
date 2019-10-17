@@ -35,7 +35,7 @@ class FotosController extends Controller
 
         $publicacao = Publicacoes::find($id);
 
-        return view('admin.foto.store', compact('publicacao', 'user' => $user));
+        return view('admin.foto.store', compact('publicacao', 'user'));
     }
 
     /**
@@ -46,8 +46,6 @@ class FotosController extends Controller
      */
     public function store(Request $request)
     {   
-        $user = Auth::user();
-
         $nameFile = null;
  
         // Verifica se informou o arquivo e se é válido
@@ -78,7 +76,7 @@ class FotosController extends Controller
         $id = $fotos['idPublicacao'];
         $fotos = Fotos::store($fotos, $nameFile);
         
-        return redirect()->action('PublicacoesController@show', $id, array('user' => $user));
+        return redirect()->action('PublicacoesController@show', $id);
     }
 
     /**
@@ -122,9 +120,7 @@ class FotosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {   
-        $user = Auth::user();
-        
+    {           
         $foto = Fotos::find($id);
         Storage::delete("media/fotos/{$foto->arquivo}");
 
@@ -132,6 +128,6 @@ class FotosController extends Controller
 
         $foto = Fotos::find($id)->delete();
 
-        return redirect()->action('PublicacoesController@show', $idPublicacao, array('user' => $user));
+        return redirect()->action('PublicacoesController@show', $idPublicacao);
     }
 }

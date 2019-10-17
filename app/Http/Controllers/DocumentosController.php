@@ -45,8 +45,6 @@ class DocumentosController extends Controller
      */
     public function store(Request $request)
     {
-        $user = Auth::user();
-
         $nameFile = null;
  
         // Verifica se informou o arquivo e se é válido
@@ -80,7 +78,7 @@ class DocumentosController extends Controller
 
         $id = $documento['id'];
 
-        return redirect()->action('DocumentosController@show', $id, array('user' => $user));
+        return redirect()->action('DocumentosController@show', $id);
     }
 
     /**
@@ -106,9 +104,14 @@ class DocumentosController extends Controller
      * @param  \App\Models\Documentos  $documentos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Documentos $documentos)
-    {
-        //
+    public function edit($id)
+    {   
+        $user = Auth::user();
+        
+        //selecionando o documento com base no id
+        $documento = Documentos::find($id);
+        
+        return view('admin.documento.update', compact('documento',  'user'));
     }
 
     /**
@@ -118,9 +121,50 @@ class DocumentosController extends Controller
      * @param  \App\Models\Documentos  $documentos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Documentos $documentos)
+    public function update(Request $request)
     {
-        //
+        $documentos = $request->except('_token');
+        $id = $documentos['id'];
+
+        $nameFile = null;
+        $nameFileOld = $request->input('arquivoOld');
+
+        //verificar se há arquivo
+        if ($request->hasFile('arquivo') && $request->file('arquivo')->isValid()) {
+
+            $nome = uniqid(date('HisYmd'));
+            
+            // Extensão do arquivo
+            $fileExtensao = $request->arquivo->extension();
+            
+            $file = $request->file('arquivo');
+
+            // Define finalmente o nome
+            $nameFile = "{$nome}.{$fileExtensao}";
+
+            // Faz o upload:
+            $upload = $file->storeAs('media/arquivo', $nameFile);
+
+            if ( !$upload ){
+                return redirect()->action('DocumentosController@edit', $id);
+            }
+
+            //deletar imagem antiga
+            Storage::delete("media/arquivo/{$nameFileOld}");
+        }else{
+            $nameFile = $nameFileOld;
+        }
+
+        //atualizar
+        $documento = Documentos::find($id);
+        
+        $documento->titulo = $documentos['titulo'];
+        $documento->ano = $documentos['ano'];
+        $documento->arquivo = $nameFile;
+
+        $documento->save();
+
+        return redirect()->action('DocumentosController@show', $id);
     }
 
     /**
@@ -131,13 +175,11 @@ class DocumentosController extends Controller
      */
     public function destroy($id)
     {
-        $user = Auth::user();
-        
         $documento = Documentos::find($id);
         Storage::delete("media/arquivo/{$documento->arquivo}");
 
         $documento = Documentos::find($id)->delete();
 
-        return redirect()->action('DocumentosController@index', array('user' => $user));  
+        return redirect()->action('DocumentosController@index');  
     }
 }
