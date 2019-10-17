@@ -14,6 +14,9 @@
     </head>
 
     <body>
+    @if($user->nivel == 0)
+        <h1>Sem permissão</h1>
+    @else
         <div class="container-fluid" >
             <div id="navbar" class="row">
                 <div class="col-6 col-md-4 justify-content-center offset-md-1">
@@ -87,6 +90,7 @@
         </script>
         
        </footer>
+    @endif
     </body>
 
 </html>

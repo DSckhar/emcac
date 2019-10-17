@@ -24,12 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return redirect()->action('AlunosController@index');    
     }
 
     public function logout()
     {
         Auth::logout();
-        return '/admr';
+        return redirect()->route('home');    
     }
 }
