@@ -31,10 +31,10 @@ Route::get('/publicacao/{id}', 'PublicacoesController@showSite');
 //Agenda
 Route::get('/agenda', 'AgendasController@indexSite'); 
 
-//ADMIN
-Route::get('/admr', function () {
-    return view('admin.login');
-});
+//Autentificação de usuário
+Auth::routes();
+Route::get('/admr', 'HomeController@index')->name('home');
+Route::get('/sair', 'HomeController@logout');
 
 //aluno
 Route::get('/admr/aluno/cadastrar', 'AlunosController@create')->middleware('auth');
@@ -104,8 +104,3 @@ Route::get('/admr/foto/editar/{id}', 'FotosController@edit')->middleware('auth')
 Route::post('/admr/foto/editado', 'FotosController@update')->middleware('auth');
 Route::get('/admr/foto/delete/{id}', 'FotosController@destroy')->middleware('auth');
 Route::resource('/admr/foto', 'FotosController')->middleware('auth');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/sair', 'HomeController@logout');
