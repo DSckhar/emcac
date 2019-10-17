@@ -15,7 +15,17 @@
 
     <body>
     @if($user->nivel == 0)
-        <h1>Sem permissão</h1>
+        <div class="contanier-fluid">
+            <div class="row justify-content-center" style="width: 100%; margin-top: 15%; text-align: center;">
+                <div class="col-5">
+                    <h3 >
+                        No momento você ainda não está habilitado a utilizar este sistema 
+                        <br/>Solicite permissão a um adiministrador
+                    </h3>
+                    <a class="btn btn-outline-dark" href="/sair">Sair</a>
+                </div>
+            </div>
+        </div>   
     @else
         <div class="container-fluid" >
             <div id="navbar" class="row">
@@ -55,6 +65,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/admr/agenda"><span data-feather="calendar"></span> Agenda</a>
                             </li>
+                            @if($user->nivel == 2)
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><span data-feather="user"></span> Usuários</a>
+                            </li>
+                            @endif
                         </ul>
                     </div>
                 </nav>
