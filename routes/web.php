@@ -108,3 +108,11 @@ Route::get('/admr/foto/editar/{id}', 'FotosController@edit')->middleware('auth')
 Route::post('/admr/foto/editado', 'FotosController@update')->middleware('auth');
 Route::get('/admr/foto/delete/{id}', 'FotosController@destroy')->middleware('auth');
 Route::resource('/admr/foto', 'FotosController')->middleware('auth');
+
+// Controle de usuários
+Route::resource('/admr/usuario', 'UsersController')->middleware('auth');
+Route::get('/admr/usuario/adiministrador/{id}', 'UsersController@administator')->middleware('auth');
+Route::get('/admr/usuario/habilitar/{id}', 'UsersController@enable')->middleware('auth');
+Route::get('/admr/usuario/desabilitar/{id}', 'UsersController@disable')->middleware('auth');
+Route::get('/admr/usuario/padrao/{id}', 'UsersController@standard')->middleware('auth');
+

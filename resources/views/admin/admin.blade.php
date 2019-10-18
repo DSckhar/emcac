@@ -67,7 +67,7 @@
                             </li>
                             @if($user->nivel == 2)
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><span data-feather="user"></span> Usuários</a>
+                                <a class="nav-link" href="/admr/usuario"><span data-feather="user"></span> Usuários</a>
                             </li>
                             @endif
                         </ul>
