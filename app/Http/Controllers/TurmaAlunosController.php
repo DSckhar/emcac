@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+use App\Models\Turmas;
+use App\Models\Alunos;
 use App\Models\TurmaAlunos;
 use Illuminate\Http\Request;
 
@@ -14,7 +17,11 @@ class TurmaAlunosController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+
+        $turmaAlunos = TurmaAlunos::all();
+
+        return view('admin.turmaAluno.index', array('turmaAlunos' => $turmaAlunos, 'user' => $user));
     }
 
     /**
@@ -44,9 +51,13 @@ class TurmaAlunosController extends Controller
      * @param  \App\Models\TurmaAlunos  $turmaAlunos
      * @return \Illuminate\Http\Response
      */
-    public function show(TurmaAlunos $turmaAlunos)
+    public function show($id)
     {
-        //
+        $user = Auth::user();
+
+        $turmaAluno = TurmaAlunos::find($id);
+
+        return view('admin.turmaAluno.show', array('turmaAluno' => $turmaAluno, 'user' => $user));
     }
 
     /**

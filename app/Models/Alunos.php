@@ -10,7 +10,9 @@ class Alunos extends Model
         'nome',
         'nascimento',
         'parentesco',
-        'idResponsavel'
+        'nomeResponsavel',
+        'emailResponsavel',
+        'telefoneResponsavel'
     ];
 
     public static function store($alunos){
@@ -20,7 +22,9 @@ class Alunos extends Model
         $aluno->nome = $alunos['nome'];
         $aluno->nascimento = $alunos['nascimento'];
         $aluno->parentesco = $alunos['parentesco'];
-        $aluno->idResponsavel = $alunos['idResponsavel'];
+        $aluno->nomeResponsavel = $alunos['nomeResponsavel'];
+        $aluno->emailResponsavel = $alunos['emailResponsavel'];
+        $aluno->telefoneResponsavel = $alunos['telefoneResponsavel'];
         $aluno->save();
     }
 }

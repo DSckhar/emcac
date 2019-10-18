@@ -81,6 +81,12 @@ Route::post('/admr/turma/editado', 'TurmasController@update')->middleware('auth'
 Route::get('/admr/turma/delete/{id}', 'TurmasController@destroy')->middleware('auth');
 Route::resource('/admr/turma', 'TurmasController')->middleware('auth');
 
+//turmaAluno
+Route::get('/admr/turmaaluno/cadastrar', 'TurmaAlunosController@create')->middleware('auth');
+Route::post('/admr/turmaaluno/cadastrado', 'TurmaAlunosController@store')->middleware('auth');
+Route::get('/admr/turmaaluno/delete/{id}', 'TurmaAlunosController@destroy')->middleware('auth');
+Route::resource('/admr/turmaaluno', 'TurmaAlunosController')->middleware('auth');
+
 //capítulo
 Route::get('/admr/capitulo/cadastrar/{id}', 'CapitulosController@create')->middleware('auth');
 Route::post('/admr/capitulo/cadastrado', 'CapitulosController@store')->middleware('auth');

@@ -54,9 +54,13 @@ class AlunosController extends Controller
      * @param  \App\Models\Alunos  $alunos
      * @return \Illuminate\Http\Response
      */
-    public function show(Alunos $alunos)
+    public function show($id)
     {
-        //
+        $user = Auth::user();
+
+        $aluno = Alunos::find($id);
+
+        return view('admin.aluno.show', array('aluno' => $aluno, 'user' => $user));
     }
 
     /**
@@ -65,9 +69,13 @@ class AlunosController extends Controller
      * @param  \App\Models\Alunos  $alunos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Alunos $alunos)
+    public function edit($id)
     {
-        //
+        $user = Auth::user();
+
+        $aluno = Alunos::find($id);
+
+        return view('admin.aluno.update', array('aluno' => $aluno, 'user' => $user));
     }
 
     /**
@@ -79,7 +87,22 @@ class AlunosController extends Controller
      */
     public function update(Request $request, Alunos $alunos)
     {
-        //
+        $user = Auth::user();
+
+        $alunos = $request->except('_token');
+        $id = $alunos['id'];  
+        
+        $aluno = Alunos::find($id);
+
+        $aluno->nome = $alunos['nome'];
+        $aluno->nascimento = $alunos['nascimento'];
+        $aluno->parentesco = $alunos['parentesco'];
+        $aluno->nomeResponsavel = $alunos['nomeResponsavel'];
+        $aluno->emailResponsavel = $alunos['emailResponsavel'];
+        $aluno->telefoneResponsavel = $alunos['telefoneResponsavel'];
+        $aluno->save();
+        
+        return redirect()->action('AlunosController@index', array('user' => $user));
     }
 
     /**
@@ -88,8 +111,12 @@ class AlunosController extends Controller
      * @param  \App\Models\Alunos  $alunos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Alunos $alunos)
+    public function destroy($id)
     {
-        //
+        $user = Auth::user();
+
+        $aluno = Alunos::find($id)->delete();
+
+        return redirect()->action('AlunosController@index', array('user' => $user));
     }
 }
