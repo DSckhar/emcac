@@ -11,9 +11,7 @@ Route::get('/funcionario', function () {
 });
 
 //documentos
-Route::get('/documento', function () {
-    return view('site.documento.index');
-});
+Route::get('/documento', 'DocumentosController@indexSite'); 
 
 //sobre
 Route::get('/sobre', function () {
