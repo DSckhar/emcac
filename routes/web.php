@@ -115,4 +115,4 @@ Route::get('/admr/usuario/adiministrador/{id}', 'UsersController@administator')-
 Route::get('/admr/usuario/habilitar/{id}', 'UsersController@enable')->middleware('auth');
 Route::get('/admr/usuario/desabilitar/{id}', 'UsersController@disable')->middleware('auth');
 Route::get('/admr/usuario/padrao/{id}', 'UsersController@standard')->middleware('auth');
-
+Route::get('/admr/usuario/perfil', 'UsersController@profile')->middleware('auth');

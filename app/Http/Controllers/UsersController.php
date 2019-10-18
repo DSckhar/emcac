@@ -62,6 +62,13 @@ class UsersController extends Controller
         return redirect()->action('UsersController@index');
     }
 
+    public function profile()
+    {
+        $user = Auth::user();
+
+        return view('admin.usuario.perfil', compact('user'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

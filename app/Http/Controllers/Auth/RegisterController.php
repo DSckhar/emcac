@@ -61,6 +61,12 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+
+    protected function redirectTo()
+    {
+        return '/admr/aluno';
+    }
+    
     protected function create(array $data)
     {
         return User::create([
