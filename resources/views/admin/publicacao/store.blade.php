@@ -5,7 +5,7 @@
     </div>
 
     <div class="contanier-fluid">
-        <form name="validar" method='post' enctype="multipart/form-data" action="/admr/publicacao/cadastrado">
+        <form name="validar" method='post' enctype="multipart/form-data" action="{{route('publicacao.store')}}">
             <div class="row justify-content-center">
                 <div class="col-6">
                     {!! csrf_field() !!}
