@@ -30,7 +30,7 @@ Route::get('/agenda', 'AgendasController@indexSite');
 //Autentificação de usuário
 Auth::routes();
 Route::get('/admr', 'HomeController@index')->name('home');
-Route::get('/sair', 'HomeController@logout');
+Route::get('/sair', 'HomeController@logout')->name('logout');
 
 Route::group(['prefix' => 'admr', 'middleware' => 'auth'], function () {
     
@@ -55,6 +55,7 @@ Route::group(['prefix' => 'admr', 'middleware' => 'auth'], function () {
     //foto
     Route::resource('foto', 'FotosController');
     //usuario
+    Route::get('usuario/perfil/{id}', 'UsersController@profile')->name('usuario.perfil');
     Route::resource('usuario', 'UsersController');
 
 });

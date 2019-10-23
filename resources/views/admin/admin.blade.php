@@ -22,7 +22,7 @@
                         No momento você ainda não está habilitado a utilizar este sistema 
                         <br/>Solicite permissão a um adiministrador
                     </h3>
-                    <a class="btn btn-outline-dark" href="/sair">Sair</a>
+                    <a class="btn btn-outline-dark" href="{{route('logout')}}">Sair</a>
                 </div>
             </div>
         </div>   
@@ -35,10 +35,10 @@
                 <div class="col-6 col-md-3 justify-content-end offset-md-4">
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="btn btn-outline-dark" href="/admr/usuario/perfil/{{$user->id}}">{{$user->name}}</a>
+                            <a class="btn btn-outline-dark" href="{{route('usuario.perfil', $user->id)}}">{{$user->name}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/sair">Sair</a>
+                            <a class="nav-link" href="{{route('logout')}}">Sair</a>
                         </li>
                     </ul>
                 </div>
@@ -48,26 +48,26 @@
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column"> 
                             <li class="nav-item">
-                                <a class="nav-link" href="/admr/aluno"><span data-feather="users"></span> Alunos</a>
+                                <a class="nav-link" href="{{route('aluno.index')}}"><span data-feather="users"></span> Alunos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/admr/funcionario"><span data-feather="briefcase"></span> Funcionários</a>
+                                <a class="nav-link" href="{{route('funcionario.index')}}"><span data-feather="briefcase"></span> Funcionários</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/admr/turma"><span data-feather="smile"></span> Turmas</a>
+                                <a class="nav-link" href="{{route('turma.index')}}"><span data-feather="smile"></span> Turmas</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/admr/documento"><span data-feather="file-text"></span> Documentos</a>
+                                <a class="nav-link" href="{{route('documento.index')}}"><span data-feather="file-text"></span> Documentos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/admr/publicacao"><span data-feather="book-open"></span> Publicações</a>
+                                <a class="nav-link" href="{{route('publicacao.index')}}"><span data-feather="book-open"></span> Publicações</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/admr/agenda"><span data-feather="calendar"></span> Agenda</a>
+                                <a class="nav-link" href="{{route('agenda.index')}}"><span data-feather="calendar"></span> Agenda</a>
                             </li>
                             @if($user->nivel == 2)
                             <li class="nav-item">
-                                <a class="nav-link" href="/admr/usuario"><span data-feather="user"></span> Usuários</a>
+                                <a class="nav-link" href="{{route('usuario.index')}}"><span data-feather="user"></span> Usuários</a>
                             </li>
                             @endif
                         </ul>
