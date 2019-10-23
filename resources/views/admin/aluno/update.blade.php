@@ -5,7 +5,7 @@
     </div>
 
     <div class="contanier-fluid">
-        <form method='post' action="/admr/aluno/editado">
+        <form method='post' action="{{route('aluno.editado')}}">
             <div class="row justify-content-center">
                 <div class="col-6">
                     {!! csrf_field() !!}

@@ -35,7 +35,7 @@
                 <div class="col-6 col-md-3 justify-content-end offset-md-4">
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="btn btn-outline-dark" href="{{route('usuario.perfil', $user->id)}}">{{$user->name}}</a>
+                            <a class="btn btn-outline-dark" href="{{route('usuario.perfil')}}">{{$user->name}}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('logout')}}">Sair</a>

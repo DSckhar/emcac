@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Agenda</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
-            <button class="btn btn-outline-dark" onclick="window.location.href='/admr/agenda/cadastrar'" ><span data-feather="plus"></span></button>
+            <button class="btn btn-outline-dark" onclick="window.location.href='{{route('agenda.create')}}'" ><span data-feather="plus"></span></button>
         </div>
     </div>
     
@@ -32,12 +32,12 @@
                     <td class="align-middle">{{date('d/m/Y', strtotime($agenda->dTermino))}}</td>
                     <td style="background-color: {{$agenda->cor}};"></td>
                     <td>
-                        <button class="btn btn-outline-dark" onclick="window.location.href='/admr/agenda/editar/{{$agenda->id}}'" >
+                        <button class="btn btn-outline-dark" onclick="window.location.href='{{route('agenda.edit', $agenda->id)}}'" >
                             <span data-feather="edit"></span>
                         </button>
                     </td>
                     <td>
-                        <button class="btn btn-outline-danger" onclick="window.location.href='/admr/agenda/delete/{{$agenda->id}}'" >
+                        <button class="btn btn-outline-danger" onclick="window.location.href='{{route('agenda.delete', $agenda->id)}}'" >
                             <span data-feather="trash-2"></span>
                         </button>
                     </td>

@@ -5,7 +5,7 @@
         <h1 class="h2">Cadastrar agenda</h1>
     </div>
     <div class="contanier-fluid">
-        <form name="validar" method='post' action="/admr/agenda/editado">
+        <form name="validar" method='post' action="{{route('agenda.editado')}}">
             <div class="row justify-content-center">
                 <div class="col-6">
                     {!! csrf_field() !!}

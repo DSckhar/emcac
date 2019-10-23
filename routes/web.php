@@ -89,7 +89,8 @@ Route::group(['prefix' => 'admr', 'middleware' => 'auth'], function () {
     Route::get('usuario/habilitar/{id}', 'UsersController@enable')->name('usuario.habilitar');
     Route::get('usuario/desabilitar/{id}', 'UsersController@disable')->name('usuario.desabilitar');
     Route::get('usuario/padrao/{id}', 'UsersController@standard')->name('usuario.padrao');
-    Route::get('usuario/perfil/{id}', 'UsersController@profile')->name('usuario.perfil');
+    Route::post('usuario/editado', 'UsersController@update')->name('usuario.editado');
+    Route::get('usuario/perfil', 'UsersController@profile')->name('usuario.perfil');
     Route::resource('usuario', 'UsersController');
 
 });

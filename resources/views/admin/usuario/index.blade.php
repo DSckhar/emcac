@@ -30,7 +30,7 @@
                     </button>
                 </td>
                 <td>
-                    <button class="btn btn-outline-dark" onclick="window.location.href='/admr/usuario/padrao/{{$usuario->id}}'" >
+                    <button class="btn btn-outline-dark" onclick="window.location.href='{{route('usuario.padrao', $usuario->id)}}'" >
                         Tornar Usuário Padrão    
                     </button>
                 </td>
@@ -41,13 +41,13 @@
                     </button>
                 </td>
                 <td>
-                    <button class="btn btn-outline-dark" onclick="window.location.href='/admr/usuario/adiministrador/{{$usuario->id}}'" >
+                    <button class="btn btn-outline-dark" onclick="window.location.href='{{route('usuario.adiministrador', $usuario->id)}}'" >
                         Tornar Adiminitrador    
                     </button>
                 </td>
                 @else
                 <td>
-                    <button class="btn btn-outline-dark" onclick="window.location.href='/admr/usuario/habilitar/{{$usuario->id}}'" >
+                    <button class="btn btn-outline-dark" onclick="window.location.href='{{route('usuario.habilitar', $usuario->id)}}'" >
                         Habilitar Usuário
                     </button>
                 </td>

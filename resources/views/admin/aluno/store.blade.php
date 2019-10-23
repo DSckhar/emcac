@@ -5,7 +5,7 @@
     </div>
 
     <div class="contanier-fluid">
-        <form method='post' action="/admr/aluno/cadastrado">
+        <form method='post' action="{{route('aluno.store')}}">
             <div class="row justify-content-center">
                 <div class="col-6">
                     {!! csrf_field() !!}
@@ -22,7 +22,7 @@
                         <select id="parentesco" class="form-control" name="parentesco" required>
                             <option selected disabled hidden>Selecione o Grau de Parentesco</option>
                             <option value="Filho(a)">Filho(a)</option>
-                            <option value="Entiado(a)">Entiado(a)</option>
+                            <option value="Enteado(a)">Enteado(a)</option>
                             <option value="Neto(a)">Neto(a)</option>
                             <option value="Sobrinho(a)">Sobrinho(a)</option>
                         </select>

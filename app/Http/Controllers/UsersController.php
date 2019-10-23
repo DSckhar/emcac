@@ -66,7 +66,12 @@ class UsersController extends Controller
     {
         $user = Auth::user();
 
-        return view('admin.usuario.perfil', compact('user'));
+        if ($user['nivel'] == '1') {
+            $user['tipo'] = 'Padrão';
+        }elseif($user['nivel'] == '2') {
+            $user['tipo'] = 'Adminstrador';
+        }
+        return view('admin.usuario.update', compact('user'));
     }
 
     /**
@@ -75,7 +80,7 @@ class UsersController extends Controller
      * @param  \App\Models\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function edit(Users $users)
+    public function edit()
     {
         //
     }
@@ -87,9 +92,24 @@ class UsersController extends Controller
      * @param  \App\Models\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Users $users)
+    public function update(Request $request)
     {
-        //
+        $user = $request->except('_token');
+        $id = $user['id'];  
+        $users = Users::find($id);
+
+        $usuarios = Users::all()->where('id', '!=', $id)->where('email', '=', $user['email']);
+
+        if (count($usuarios) > 0 ) {
+            return back()->with('mensagem', 'E-Mail já cadastrados para um usuário!');
+        }else{
+            $users->name = $user['name'];
+            $users->email = $user['email'];
+            $users->save();
+        
+            return redirect()->action('UsersController@profile');
+        }
+        
     }
 
     /**

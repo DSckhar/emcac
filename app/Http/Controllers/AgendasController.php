@@ -57,11 +57,9 @@ class AgendasController extends Controller
      */
     public function store(Request $request)
     {
-        $user = Auth::user();
-
         $agenda = $request->except('_token');
         $agenda = Agendas::store($agenda);
-        return redirect()->action('AgendasController@index', array('user' => $user));
+        return redirect()->action('AgendasController@index');
     }
 
     /**
@@ -100,8 +98,6 @@ class AgendasController extends Controller
      */
     public function update(Request $request)
     {
-        $user = Auth::user();
-
         $agendas = $request->except('_token');
         $id = $agendas['id'];
 
@@ -115,7 +111,7 @@ class AgendasController extends Controller
 
         $agenda->save();
 
-        return redirect()->action('AgendasController@index', array('user' => $user));
+        return redirect()->action('AgendasController@index');
     }
 
     /**
@@ -126,10 +122,8 @@ class AgendasController extends Controller
      */
     public function destroy($id)
     {
-        $user = Auth::user();
-
         $agenda = Agendas::find($id)->delete();
 
-        return redirect()->action('AgendasController@index', array('user' => $user));
+        return redirect()->action('AgendasController@index');
     }
 }

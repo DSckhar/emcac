@@ -41,11 +41,9 @@ class AlunosController extends Controller
      */
     public function store(Request $request)
     {   
-        $user = Auth::user();
-        
         $aluno = $request->except('_token');
         $aluno = Alunos::store($aluno);
-        return redirect()->action('AlunosController@index', array('user' => $user));
+        return redirect()->action('AlunosController@index');
     }
 
     /**
@@ -87,8 +85,6 @@ class AlunosController extends Controller
      */
     public function update(Request $request, Alunos $alunos)
     {
-        $user = Auth::user();
-
         $alunos = $request->except('_token');
         $id = $alunos['id'];  
         
@@ -102,7 +98,7 @@ class AlunosController extends Controller
         $aluno->telefoneResponsavel = $alunos['telefoneResponsavel'];
         $aluno->save();
         
-        return redirect()->action('AlunosController@index', array('user' => $user));
+        return redirect()->action('AlunosController@index');
     }
 
     /**
@@ -113,10 +109,8 @@ class AlunosController extends Controller
      */
     public function destroy($id)
     {
-        $user = Auth::user();
-
         $aluno = Alunos::find($id)->delete();
 
-        return redirect()->action('AlunosController@index', array('user' => $user));
+        return redirect()->action('AlunosController@index');
     }
 }
