@@ -2,13 +2,13 @@
 @section('site')
 
     <div class="container mt-3">
-        <h1>Publicação - {{$publicacao->titulo}}</h1>
+        <h1 style="text-transform: uppercase">Publicação - {{$publicacao->titulo}}</h1>
     </div>
 
     <div class="container">
         <div class="mb-3 text-justific">
             <b>Descrição</b><br>
-            <p class="text-justify">{{$publicacao->descricao}}</p>
+            <p style="text-indent: 2.5em; text-align: justify;" class="text-justify">{{$publicacao->descricao}}</p>
         </div>
         <table class="display" style="width:100%">
             <thead>

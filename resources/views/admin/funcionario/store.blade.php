@@ -5,7 +5,7 @@
 </div>
 
 <div class="contanier-fluid">
-    <form method='post' action="/admr/funcionario/cadastrado">
+    <form method='post' enctype="multipart/form-data" action="/admr/funcionario/cadastrado">
         <div class="row justify-content-center">
             <div class="col-6">
                 {!! csrf_field() !!}

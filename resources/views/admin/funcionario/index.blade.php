@@ -25,7 +25,13 @@
             @foreach($funcionarios as $funcionario)
             <tr>
                 <td class="align-middle">{{$cont}}</td>
-                <td class="align-middle"><img src="{{asset('admin/media/funcionario/user.png')}}" class="img-thumbnail" width="50px"></td>
+                <td class="align-middle">
+                    @if($funcionario->foto == '')
+                        <img src="{{asset('admin/media/funcionario/user.png')}}" class="img-thumbnail" width="50px">
+                    @else
+                        <img src='{{asset("storage/media/funcionarios/{$funcionario->foto}")}}' class="img-thumbnail" width="50px">
+                    @endif
+                </td>
                 <td class="align-middle">{{$funcionario->nome}}</td>
                 <td class="align-middle">{{$funcionario->cargo}}</td>
                 <td class="align-middle">{{$funcionario->formacao}}</td>

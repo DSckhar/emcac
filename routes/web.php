@@ -6,9 +6,7 @@ Route::get('/', function () {
 });
 
 //conheça nossa equipe
-Route::get('/funcionario', function () {
-    return view('site.funcionario.index');
-});
+Route::get('/funcionario', 'FuncionariosController@indexSite'); 
 
 //documentos
 Route::get('/documento', 'DocumentosController@indexSite'); 

@@ -160,5 +160,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script type='text/javascript' src="{{asset('site/js/jquery.collapsible.min.js')}}"></script>
 <script type='text/javascript' src="{{asset('site/js/custom.js')}}"></script>
 <script type='text/javascript' src="{{asset('site/js/modal.js')}}"></script>
+
+<script src="https://unpkg.com/feather-icons"></script>
+
+<script>
+    feather.replace()
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type='text/javascript' src="{{asset('site/js/voltarTopo.js')}}"></script>
+
 <body>
 </html>

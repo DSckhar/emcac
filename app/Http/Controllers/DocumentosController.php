@@ -16,6 +16,20 @@ class DocumentosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function indexSite()
+    {   
+        $documentos = Documentos::orderBy('id', 'desc')->take(1)->get();
+
+        $documento = $documentos[0];
+
+        $documentos = Documentos::orderBy('id', 'desc')->get();
+
+        $capitulos = Capitulos::all()->where('idDocumento', '=', $documento->id);
+
+        return view('site.documento.index', array('documento' => $documento, 'capitulos' => $capitulos, 'documentos' => $documentos));
+    }
+
     public function index()
     {   
         $user = Auth::user();

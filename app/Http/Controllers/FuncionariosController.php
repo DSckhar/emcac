@@ -7,6 +7,8 @@ use App\Models\Funcionarios;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Facades\Storage;
+
 class FuncionariosController extends Controller
 {
     /**
@@ -14,6 +16,13 @@ class FuncionariosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function indexSite()
+    {
+        $funcionarios = Funcionarios::all();
+
+        return view('site.funcionario.index', array('funcionarios' => $funcionarios));
+    }
+
     public function index()
     {   
         $user = Auth::user();
@@ -45,7 +54,34 @@ class FuncionariosController extends Controller
     {
         $user = Auth::user();
 
+        $nameFile = null;
+ 
+        // Verifica se informou o arquivo e se é válido
+        if ($request->hasFile('foto') && $request->file('foto')->isValid()) {
+
+            $nome = uniqid(date('HisYmd'));
+            
+            // Extensão do arquivo
+            $fileExtensao = $request->foto->extension();
+            
+            $file = $request->file('foto');
+
+            // Define finalmente o nome
+            $nameFile = "{$nome}.{$fileExtensao}";
+
+            // Faz o upload:
+            $upload = $file->storeAs('media/funcionarios', $nameFile);
+
+            if ( !$upload )
+            return redirect()
+                        ->back()
+                        ->with('error', 'Falha ao fazer upload')
+                        ->withInput();
+
+        }
+
         $funcionarios = $request->except('_token');
+        $funcionarios['foto'] =  $nameFile;
         $funcionarios = Funcionarios::store($funcionarios);
         return redirect()->action('FuncionariosController@index', array('user' => $user));
     }
@@ -89,13 +125,42 @@ class FuncionariosController extends Controller
 
         $funcionarios = $request->except('_token');
         $id = $funcionarios['id'];  
-        
+
+        $nameFile = null;
+        $nameFileOld = $request->input('fotoOld');
+
+        //verificar se há arquivo
+        if ($request->hasFile('foto') && $request->file('foto')->isValid()) {
+
+            $nome = uniqid(date('HisYmd'));
+            
+            // Extensão do arquivo
+            $fileExtensao = $request->foto->extension();
+            
+            $file = $request->file('foto');
+
+            // Define finalmente o nome
+            $nameFile = "{$nome}.{$fileExtensao}";
+
+            // Faz o upload:
+            $upload = $file->storeAs('media/funcionarios', $nameFile);
+
+            if ( !$upload ){
+                return redirect()->action('FuncionariosController@edit', $id);
+            }
+
+            //deletar imagem antiga
+            Storage::delete("media/funcionarios/{$nameFileOld}");
+        }else{
+            $nameFile = $nameFileOld;
+        }
+
         $funcionario = Funcionarios::find($id);
 
         $funcionario->nome = $funcionarios['nome'];
         $funcionario->cargo = $funcionarios['cargo'];
         $funcionario->formacao = $funcionarios['formacao'];
-        $funcionario->foto = $funcionarios['foto'];
+        $funcionario->foto = $nameFile;
         $funcionario->save();
 
         return redirect()->action('FuncionariosController@index', array('user' => $user));
@@ -109,9 +174,13 @@ class FuncionariosController extends Controller
      */
     public function destroy($id)
     {
+        
         $user = Auth::user();
 
-        $funcionario = Funcionarios::find($id)->delete();
+        $funcionario = Funcionarios::find($id);
+        Storage::delete("media/funcionarios/{$funcionario->foto}");
+
+        Funcionarios::find($id)->delete();
 
         return redirect()->action('FuncionariosController@index', array('user' => $user));
     }
