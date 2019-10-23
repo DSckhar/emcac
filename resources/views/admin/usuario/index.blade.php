@@ -25,7 +25,7 @@
                 <td>{{$usuario->email}}</td>
                 @if($usuario->nivel == '2')
                 <td>
-                    <button class="btn btn-outline-dark" onclick="window.location.href='/admr/usuario/desabilitar/{{$usuario->id}}'" >
+                    <button class="btn btn-outline-dark" onclick="window.location.href='{{route('usuario.desabilitar', $usuario->id)}}'" >
                         Desabilitar Usuário
                     </button>
                 </td>
@@ -36,7 +36,7 @@
                 </td>
                 @elseif($usuario->nivel == '1')
                 <td>
-                    <button class="btn btn-outline-dark" onclick="window.location.href='/admr/usuario/desabilitar/{{$usuario->id}}'" >
+                    <button class="btn btn-outline-dark" onclick="window.location.href='{{route('usuario.desabilitar', $usuario->id)}}'" >
                         Desabilitar Usuário
                     </button>
                 </td>
