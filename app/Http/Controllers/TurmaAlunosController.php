@@ -50,8 +50,12 @@ class TurmaAlunosController extends Controller
 
         $turmaAlunos = $request->except('_token');
         $turmaAlunos = TurmaAlunos::store($turmaAlunos);
-        dd($turmaAlunos);
-        return redirect()->action('TurmaAlunosController@index', array('user' => $user));
+
+        $turmaAlunos = TurmaAlunos::all()->sortByDesc('created_at')->first();
+
+        $id = $turmaAlunos['idTurma'];
+        
+        return redirect()->action('TurmaAlunosController@show', array('user' => $user,  $id));
     }
 
     /**

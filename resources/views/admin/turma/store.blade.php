@@ -5,7 +5,7 @@
     </div>
     
     <div class="contanier-fluid">
-        <form method='post' action="/admr/turma/cadastrado">
+        <form method='post' action="{{route('turma.store')}}">
             <div class="row justify-content-center">
                 <div class="col-6">
                     {!! csrf_field() !!}
