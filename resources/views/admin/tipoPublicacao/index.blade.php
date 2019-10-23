@@ -7,7 +7,7 @@
         <div class="row justify-content-between">
             <div class="col-3"><br/>
                 <h5 style="text-align: center">Novo Tipo de Publicação</h5>
-                <form name="validar" method='post' action="/admr/tipopublicacao/cadastrado">
+                <form name="validar" method='post' action="{{route('tipopublicacao.store')}}">
                     {!! csrf_field() !!}
                     <div class="form-group">
                         <label for="nome">Nome</label>
@@ -36,7 +36,7 @@
                         <td>{{$cont}}</td>
                         <td>{{$tipopublicacao->nome}}</td>
                         <td>
-                            <button class="btn btn-outline-danger" onclick="window.location.href='/admr/tipopublicacao/delete/{{$tipopublicacao->id}}'" >
+                            <button class="btn btn-outline-danger" onclick="window.location.href='{{route('tipopublicacao.delete', $tipopublicacao->id)}}'" >
                                 <span data-feather="trash-2"></span>
                             </button>
                         </td>

@@ -24,6 +24,13 @@ class PublicacoesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function homeSite(){
+
+        $publicacoes = Publicacoes::listar();
+        return view('site.home', compact('publicacoes'));
+        
+    }
     public function indexSite($idTipoPublicacao = null)
     {   
         $tipos = TipoPublicacoes::all();

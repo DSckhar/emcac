@@ -1,15 +1,13 @@
 <?php
 
 //SITE
-Route::get('/', function () {
-    return view('site.home');
-});
+Route::get('/', 'PublicacoesController@homeSite');
 
 //conheça nossa equipe
-Route::get('/funcionario', 'FuncionariosController@indexSite'); 
+Route::get('funcionario', 'FuncionariosController@indexSite')->name('funcionario');
 
 //documentos
-Route::get('/documento', 'DocumentosController@indexSite'); 
+Route::get('documento', 'DocumentosController@indexSite')->name('documento');
 
 //sobre
 Route::get('/sobre', function () {
@@ -18,14 +16,14 @@ Route::get('/sobre', function () {
 
 //publicações
 //publicações lista
-Route::get('/publicacoes', 'PublicacoesController@indexSite'); 
-Route::get('/publicacoes/{id}', 'PublicacoesController@indexSite'); 
+Route::get('publicacoes', 'PublicacoesController@indexSite')->name('publicacoes');
+Route::get('publicacoes/{id}', 'PublicacoesController@indexSite')->name('publicacoes');
 
 //publicação show
-Route::get('/publicacao/{id}', 'PublicacoesController@showSite'); 
+Route::get('publicacao/{id}', 'PublicacoesController@showSite')->name('publicacao');
 
 //Agenda
-Route::get('/agenda', 'AgendasController@indexSite'); 
+Route::get('agenda', 'AgendasController@indexSite')->name('agenda');
 
 //Autentificação de usuário
 Auth::routes();
@@ -70,6 +68,7 @@ Route::group(['prefix' => 'admr', 'middleware' => 'auth'], function () {
     Route::resource('turmaaluno', 'TurmaAlunosController');
 
     //capitulo
+    Route::get('capitulo/cadastrar/{id}', 'CapitulosController@create')->name('capitulo.cadastrar');
     Route::post('capitulo/editado', 'CapitulosController@update')->name('capitulo.editado');
     Route::get('capitulo/delete/{id}', 'CapitulosController@destroy')->name('capitulo.delete');
     Route::resource('capitulo', 'CapitulosController');
@@ -80,6 +79,7 @@ Route::group(['prefix' => 'admr', 'middleware' => 'auth'], function () {
     Route::resource('agenda', 'AgendasController');
 
     //foto
+    Route::get('foto/cadastrar/{id}', 'FotosController@create')->name('foto.cadastrar');
     Route::post('foto/editado', 'FotosController@update')->name('foto.editado');
     Route::get('foto/delete/{id}', 'FotosController@destroy')->name('foto.delete');
     Route::resource('foto', 'FotosController');

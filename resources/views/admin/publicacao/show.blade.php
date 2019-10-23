@@ -3,10 +3,10 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Publicação - {{$publicacao->titulo}}</h1>
         <div>
-            <button class="btn btn-outline-dark" onclick="window.location.href='/admr/publicacao/editar/{{$publicacao->id}}'" >
+            <button class="btn btn-outline-dark" onclick="window.location.href='{{route('publicacao.edit', $publicacao->id)}}'" >
                 <span data-feather="edit"></span>
             </button>
-            <button class="btn btn-outline-danger" onclick="window.location.href='/admr/publicacao/delete/{{$publicacao->id}}'" >
+            <button class="btn btn-outline-danger" onclick="window.location.href='{{route('publicacao.delete', $publicacao->id)}}'" >
                 <span data-feather="trash-2"></span>
             </button>
         </div>
@@ -53,7 +53,7 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-top border-bottom">
         <h1 class="h2">Fotos Associadas</h1>
         <div>
-            <button class="btn btn-outline-dark" onclick="window.location.href='/admr/foto/cadastrar/{{$publicacao->id}}'" >
+            <button class="btn btn-outline-dark" onclick="window.location.href='{{route('foto.cadastrar', $publicacao->id)}}'" >
                 <span data-feather="plus"></span>
             </button>
         </div>
@@ -77,7 +77,7 @@
                         <td><a href='{{asset("storage/media/fotos/{$foto->arquivo}")}}' target="_blank"><img width="50px" src='{{asset("storage/media/fotos/{$foto->arquivo}")}}' alt="{{ $foto->descricao }}"></a></td>
 
                         <td>
-                            <button class="btn btn-outline-danger" onclick="window.location.href='/admr/foto/delete/{{$foto->id}}'" >
+                            <button class="btn btn-outline-danger" onclick="window.location.href='{{route('foto.delete', $foto->id)}}'" >
                                 <span data-feather="trash-2"></span>
                             </button>
                         </td>

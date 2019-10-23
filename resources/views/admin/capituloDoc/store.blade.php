@@ -4,7 +4,7 @@
         <h1 class="h2">Cadastrar capítulo no documento - {{$documento->titulo}}</h1>
     </div>
     <div class="contanier-fluid">
-        <form method='post' action="/admr/capitulo/cadastrado">
+        <form method='post' action="{{route('capitulo.store')}}">
             <div class="row justify-content-center">
                 <div class="col-10">
                     {!! csrf_field() !!}

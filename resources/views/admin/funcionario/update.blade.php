@@ -5,7 +5,7 @@
 </div>
 
 <div class="contanier-fluid">
-    <form method='post' enctype="multipart/form-data" action="/admr/funcionario/editado">
+    <form method='post' enctype="multipart/form-data" action="{{route('funcionario.editado')}}">
         <div class="row justify-content-center">
             <div class="col-6">
                 {!! csrf_field() !!}
