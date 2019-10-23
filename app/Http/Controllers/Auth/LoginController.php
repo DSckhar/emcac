@@ -27,7 +27,7 @@ class LoginController extends Controller
      */
     protected function redirectTo()
     {
-        return '/admr/aluno';
+        return redirect()->route('aluno.index');;
     }
 
     /**

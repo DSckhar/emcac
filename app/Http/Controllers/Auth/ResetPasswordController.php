@@ -27,8 +27,9 @@ class ResetPasswordController extends Controller
      */
     protected function redirectTo()
     {
-        return '/admr/aluno';
+        return redirect()->route('aluno.index');;
     }
+    
 
     /**
      * Create a new controller instance.

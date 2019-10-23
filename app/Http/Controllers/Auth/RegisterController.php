@@ -64,7 +64,7 @@ class RegisterController extends Controller
 
     protected function redirectTo()
     {
-        return '/admr/aluno';
+        return redirect()->route('aluno.index');;
     }
     
     protected function create(array $data)

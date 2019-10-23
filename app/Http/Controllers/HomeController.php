@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return redirect()->action('AlunosController@index');    
+        return redirect()->route('aluno.index');    
     }
 
     public function logout()

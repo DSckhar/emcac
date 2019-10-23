@@ -32,8 +32,34 @@ Auth::routes();
 Route::get('/admr', 'HomeController@index')->name('home');
 Route::get('/sair', 'HomeController@logout');
 
+Route::group(['prefix' => 'admr', 'middleware' => 'auth'], function () {
+    
+    //aluno
+    Route::resource('aluno', 'AlunosController');
+    //funcionario
+    Route::resource('funcionario', 'FuncionariosController');
+    //documento
+    Route::resource('documento', 'DocumentosController');
+    //publicacao
+    Route::resource('publicacao', 'PublicacoesController');
+    //tipopublicacao
+    Route::resource('tipopublicacao', 'TipoPublicacoesController');
+    //turma
+    Route::resource('turma', 'TurmasController');
+    //turmaaluno
+    Route::resource('turmaaluno', 'TurmaAlunosController');
+    //capitulo
+    Route::resource('capitulo', 'CapitulosController');
+    //agenda
+    Route::resource('agenda', 'AgendasController');
+    //foto
+    Route::resource('foto', 'FotosController');
+    //usuario
+    Route::resource('usuario', 'UsersController');
+
+});
 //aluno
-Route::get('/admr/aluno/cadastrar', 'AlunosController@create')->middleware('auth');
+/*Route::get('/admr/aluno/cadastrar', 'AlunosController@create')->middleware('auth');
 Route::post('/admr/aluno/cadastrado', 'AlunosController@store')->middleware('auth');
 Route::get('/admr/aluno/editar/{id}', 'AlunosController@edit')->middleware('auth');
 Route::post('/admr/aluno/editado', 'AlunosController@update')->middleware('auth');
@@ -113,4 +139,4 @@ Route::get('/admr/usuario/adiministrador/{id}', 'UsersController@administator')-
 Route::get('/admr/usuario/habilitar/{id}', 'UsersController@enable')->middleware('auth');
 Route::get('/admr/usuario/desabilitar/{id}', 'UsersController@disable')->middleware('auth');
 Route::get('/admr/usuario/padrao/{id}', 'UsersController@standard')->middleware('auth');
-Route::get('/admr/usuario/perfil', 'UsersController@profile')->middleware('auth');
+Route::get('/admr/usuario/perfil', 'UsersController@profile')->middleware('auth');*/
