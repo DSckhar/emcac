@@ -18,20 +18,20 @@
         </thead>
         <tbody>
             <?php $cont = 1;?>
-            <!-- foreach($turmas as $turma) -->
+            @foreach($turmas as $turma)
             <tr>
                 <td>{{$cont}}</td>
-                <td></td>
-                <td></td>
+                <td>{{$turma->nome}}</td>
+                <td>{{$turma->status}}</td>
                 <td></td>
                 <td>
-                    <button class="btn btn-outline-dark" onclick="window.location.href='/admr/turmaaluno/{{$turmaAluno->id}}'" >
+                    <button class="btn btn-outline-dark" onclick="window.location.href='/admr/turmaaluno/{{$turma->id}}'" >
                         <span data-feather="plus"></span>
                     </button>
                 </td>
             </tr>
             <?php $cont ++; ?>
-            <!-- endforeach -->
+            @endforeach
         <tfoot>
             <tr>
                 <th>Nº</th>

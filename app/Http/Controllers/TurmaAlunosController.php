@@ -21,7 +21,11 @@ class TurmaAlunosController extends Controller
 
         $turmaAlunos = TurmaAlunos::all();
 
-        return view('admin.turmaAluno.index', array('turmaAlunos' => $turmaAlunos, 'user' => $user));
+        $turmas = Turmas::all();
+
+        $alunos = Alunos::all();
+
+        return view('admin.turmaAluno.index', array('turmaAlunos' => $turmaAlunos, 'turmas' => $turmas, 'user' => $user));
     }
 
     /**
@@ -42,7 +46,12 @@ class TurmaAlunosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+
+        $turmaAlunos = $request->except('_token');
+        $turmaAlunos = TurmaAlunos::store($turmaAlunos);
+        dd($turmaAlunos);
+        return redirect()->action('TurmaAlunosController@index', array('user' => $user));
     }
 
     /**
@@ -55,9 +64,11 @@ class TurmaAlunosController extends Controller
     {
         $user = Auth::user();
 
-        $turmaAluno = TurmaAlunos::find($id);
-
-        return view('admin.turmaAluno.show', array('turmaAluno' => $turmaAluno, 'user' => $user));
+        $turma = Turmas::find($id);
+       
+        $alunos = Alunos::all();
+        
+        return view('admin.turmaAluno.show', array('turma' => $turma, 'alunos' => $alunos, 'user' => $user));
     }
 
     /**

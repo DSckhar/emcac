@@ -5,11 +5,6 @@
     </div>
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-top border-bottom">
         <h1 class="h2">Alunos</h1>
-        <div>
-            <button class="btn btn-outline-dark" onclick="window.location.href='/admr/capitulo/cadastrar/{{$turma->id}}'" >
-                <span data-feather="plus"></span>
-            </button>
-        </div>
     </div>
     <div class="contanier-fluid">
         <table id="tabela" class="display table table-striped" style="width:100%">
@@ -17,7 +12,8 @@
                 <tr>
                     <th>Nº</th>
                     <th>Aluno</th>
-                    <th>Teste</th>
+                    <th>Nascimento</th>
+                    <th>Email</th>
                     <th class="no-sort"></th>
                     <th class="no-sort"></th>
                     <th class="no-sort"></th>
@@ -25,34 +21,30 @@
             </thead>
             <tbody>
                 <?php $cont = 1;?>
-                <!--foreach($turmas as $turma)-->
+                <form method='post' action="/admr/turmaaluno/cadastrado">
+                {!! csrf_field() !!}
+                @foreach($alunos as $aluno)
+                <input type="hidden" value="{{$turma->id}}">
                     <tr>
                         <td>{{$cont}}</td>
-                        <td>{{$turma->nome}}</td>
-                        <td>{{$turma->ano}}</td>
+                        <td><input type="hidden" value="{{$aluno->id}}">{{$aluno->nome}}</td>
+                        <td>{{$aluno->nascimento}}</td>
+                        <td>{{$aluno->emailResponsavel}}</td>
                         <td>
-                            <button class="btn btn-outline-dark" onclick="window.location.href='/admr/turma/{{$turma->id}}'" >
-                                <span data-feather="eye"></span>
-                            </button>
-                        </td>
-                        <td>
-                            <button class="btn btn-outline-dark" onclick="window.location.href='/admr/turma/editar/{{$turma->id}}'" >
-                                <span data-feather="edit"></span>
-                            </button>
-                        </td>
-                        <td>
-                            <button class="btn btn-outline-danger" onclick="window.location.href='/admr/turma/delete/{{$turma->id}}'" >
-                                <span data-feather="trash-2"></span>
+                            <button class="btn btn-outline-dark" type="submit" >
+                                <span data-feather="plus"></span>
                             </button>
                         </td>
                     </tr>
+                </form>
                     <?php $cont ++; ?>
-                <!--endforeach-->
+                @endforeach
             <tfoot>
                 <tr>
                     <th>Nº</th>
                     <th>Aluno</th>
-                    <th>Teste</th>
+                    <th>Nascimento</th>
+                    <th>Email</th>
                     <th></th>
                 </tr>
             </tfoot>
