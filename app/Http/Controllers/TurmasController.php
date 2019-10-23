@@ -64,7 +64,13 @@ class TurmasController extends Controller
 
         $turma = Turmas::find($id);
 
-        return view('admin.turma.show', array('turma' => $turma, 'user' => $user));
+        $alunos = Alunos::all();
+
+        $turmaAlunos = TurmaAlunos::all();
+
+        
+
+        return view('admin.turma.show', array('turma' => $turma, 'alunos' => $alunos, 'user' => $user));
     }
 
     /**

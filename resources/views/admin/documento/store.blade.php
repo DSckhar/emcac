@@ -4,7 +4,7 @@
         <h1 class="h2">Cadastrar Documento</h1>
     </div>
     <div class="contanier-fluid">
-        <form name="validar" method='post' enctype="multipart/form-data"  action="/admr/documento/cadastrado">
+        <form name="validar" method='post' enctype="multipart/form-data"  action="{{route('documento.store')}}">
             <div class="row justify-content-center">
                 <div class="col-6">
                     {!! csrf_field() !!}

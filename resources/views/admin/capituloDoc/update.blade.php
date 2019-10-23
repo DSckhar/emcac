@@ -6,7 +6,7 @@
         <h1 class="h2">Atualizar capítulo no documento - {{$documento->titulo}}</h1>
     </div>
     <div class="contanier-fluid">
-        <form method='post' action="/admr/capitulo/editado">
+        <form method='post' action="{{route('capitulo.editado')}}">
             <div class="row justify-content-center">
                 <div class="col-10">
                     {!! csrf_field() !!}

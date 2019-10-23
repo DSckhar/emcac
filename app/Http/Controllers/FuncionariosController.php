@@ -52,7 +52,6 @@ class FuncionariosController extends Controller
      */
     public function store(Request $request)
     {
-        $user = Auth::user();
 
         $nameFile = null;
  
@@ -83,7 +82,7 @@ class FuncionariosController extends Controller
         $funcionarios = $request->except('_token');
         $funcionarios['foto'] =  $nameFile;
         $funcionarios = Funcionarios::store($funcionarios);
-        return redirect()->action('FuncionariosController@index', array('user' => $user));
+        return redirect()->action('FuncionariosController@index');
     }
 
     /**
@@ -121,7 +120,6 @@ class FuncionariosController extends Controller
      */
     public function update(Request $request)
     {
-        $user = Auth::user();
 
         $funcionarios = $request->except('_token');
         $id = $funcionarios['id'];  
@@ -163,7 +161,7 @@ class FuncionariosController extends Controller
         $funcionario->foto = $nameFile;
         $funcionario->save();
 
-        return redirect()->action('FuncionariosController@index', array('user' => $user));
+        return redirect()->action('FuncionariosController@index');
     }
 
     /**
@@ -174,14 +172,12 @@ class FuncionariosController extends Controller
      */
     public function destroy($id)
     {
-        
-        $user = Auth::user();
 
         $funcionario = Funcionarios::find($id);
         Storage::delete("media/funcionarios/{$funcionario->foto}");
 
         Funcionarios::find($id)->delete();
 
-        return redirect()->action('FuncionariosController@index', array('user' => $user));
+        return redirect()->action('FuncionariosController@index');
     }
 }

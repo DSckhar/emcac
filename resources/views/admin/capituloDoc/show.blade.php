@@ -4,13 +4,13 @@
         <h1 class="h2">{{$documento->titulo}}</h1>
         <h2 class="h2">Capítulo - {{$capitulo->titulo}}</h2>
         <div>
-            <button class="btn btn-outline-dark" onclick="window.location.href='/admr/documento/{{$documento->id}}'" >
+            <button class="btn btn-outline-dark" onclick="window.location.href='{{route('documento.show', $documento->id)}}'" >
                 <span data-feather="arrow-left"></span>
             </button>
-            <button class="btn btn-outline-dark" onclick="window.location.href='/admr/capitulo/editar/{{$capitulo->id}}'" >
+            <button class="btn btn-outline-dark" onclick="window.location.href='{{route('capitulo.edit', $capitulo->id)}}'" >
                 <span data-feather="edit"></span>
             </button>
-            <button class="btn btn-outline-danger" onclick="window.location.href='/admr/capitulo/delete/{{$capitulo->id}}'" >
+            <button class="btn btn-outline-danger" onclick="window.location.href='{{route('capitulo.delete', $capitulo->id)}}'" >
                 <span data-feather="trash-2"></span>
             </button>
         </div>

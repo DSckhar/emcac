@@ -21,13 +21,13 @@
             </thead>
             <tbody>
                 <?php $cont = 1;?>
-                <form method='post' action="/admr/turmaaluno/cadastrado">
-                {!! csrf_field() !!}
                 @foreach($alunos as $aluno)
-                <input type="hidden" value="{{$turma->id}}">
+                <form method='post' action="{{route('turmaaluno.store')}}">
+                {!! csrf_field() !!}
+                <input type="hidden" name="idTurma" value="{{$turma->id}}">
                     <tr>
                         <td>{{$cont}}</td>
-                        <td><input type="hidden" value="{{$aluno->id}}">{{$aluno->nome}}</td>
+                        <td><input type="hidden" name="idAluno" value="{{$aluno->id}}">{{$aluno->nome}}</td>
                         <td>{{$aluno->nascimento}}</td>
                         <td>{{$aluno->emailResponsavel}}</td>
                         <td>
