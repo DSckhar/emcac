@@ -19,13 +19,22 @@ class DocumentosController extends Controller
 
     public function indexSite()
     {   
+        $doc = null;
         $documentos = Documentos::orderBy('id', 'desc')->take(1)->get();
+        
+        foreach ($documentos as $documento) {
+            $doc = $documento;
+        }
 
-        $documento = $documentos[0];
+        if($doc == null) {
+            $documento = null;
+            $capitulos = null;
+        }else{
+            $documento = $doc;
+            $capitulos = Capitulos::all()->where('idDocumento', '=', $documento->id);
+        }
 
         $documentos = Documentos::orderBy('id', 'desc')->get();
-
-        $capitulos = Capitulos::all()->where('idDocumento', '=', $documento->id);
 
         return view('site.documento.index', array('documento' => $documento, 'capitulos' => $capitulos, 'documentos' => $documentos));
     }

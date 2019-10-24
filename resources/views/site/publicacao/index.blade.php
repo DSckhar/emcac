@@ -11,7 +11,7 @@
                     @if($idTipoPublicacao == $tipo->id)
                         <a id="{{$tipo->id}}" class="list-group-item list-group-item-action active" style="background-color: #19c880; border-color: #19c880;" href="/publicacoes/{{$tipo->id}}">{{$tipo->nome}}</a>
                     @else
-                        <a id="{{$tipo->id}}" class="list-group-item list-group-item-action" href="/publicacoes/{{$tipo->id}}">{{$tipo->nome}}</a>
+                        <a id="{{$tipo->id}}" class="list-group-item list-group-item-action" href="{{route('publicacoesF', $tipo->id)}}">{{$tipo->nome}}</a>
                     @endif
                 @endforeach
 

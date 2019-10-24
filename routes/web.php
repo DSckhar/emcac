@@ -17,7 +17,7 @@ Route::get('/sobre', function () {
 //publicações
 //publicações lista
 Route::get('publicacoes', 'PublicacoesController@indexSite')->name('publicacoes');
-Route::get('publicacoes/{id}', 'PublicacoesController@indexSite')->name('publicacoes');
+Route::get('publicacoes/{id}', 'PublicacoesController@indexSite')->name('publicacoesF');
 
 //publicação show
 Route::get('publicacao/{id}', 'PublicacoesController@showSite')->name('publicacao');

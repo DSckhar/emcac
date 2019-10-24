@@ -43,8 +43,8 @@
                                 <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
                                     <li class="current-menu-item" disabled><a href="">EMCAC</a></li>
                                     <li><a href="{{asset('/')}}">Home</a></li>
-                                    <li><a href="/publicacoes">Publicações</a></li>
-                                    <li><a href="/documento">Documentos</a></li>
+                                    <li><a href="{{route('publicacoes')}}">Publicações</a></li>
+                                    <li><a href="{{route('documento')}}">Documentos</a></li>
                                     <li><a href="/sobre">Sobre</a></li>
                                 </ul>
                                 
@@ -167,7 +167,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     feather.replace()
 </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script> -->
 <script type='text/javascript' src="{{asset('site/js/voltarTopo.js')}}"></script>
 
 <body>

@@ -27,8 +27,29 @@ class PublicacoesController extends Controller
 
     public function homeSite(){
 
-        $publicacoes = Publicacoes::listar();
-        return view('site.home', compact('publicacoes'));
+        $publicacoes = Publicacoes::orderBy('id', 'desc')->take(3)->get();
+
+        //selecionando fotos
+        foreach($publicacoes as $key => $publicacao){
+            $publicacao->foto = null;
+            $fotos = fotos::listarIdPublicacoes($publicacao->id);
+            foreach($fotos as $foto){
+                $publicacao->foto =  $foto->foto;
+            }
+        }
+
+        $publicacaoPrincipal = null;
+        $publicacoesSecundarias = null;
+
+        foreach ($publicacoes as $key => $publicacao) {
+            if($key == 0){
+                $publicacaoPrincipal = $publicacao;
+            }elseif ($key > 0) {
+                $publicacoesSecundarias[$key] = $publicacao;
+            }
+        }
+
+        return view('site.home', compact('publicacaoPrincipal', 'publicacoesSecundarias'));
         
     }
     public function indexSite($idTipoPublicacao = null)
