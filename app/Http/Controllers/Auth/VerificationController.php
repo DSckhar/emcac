@@ -27,7 +27,7 @@ class VerificationController extends Controller
      */
     protected function redirectTo()
     {
-        return redirect()->route('aluno.index');;
+        return 'admr/aluno';
     }
     
 

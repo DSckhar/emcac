@@ -28,8 +28,11 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected function redirectTo()
+    {
+        return 'admr/aluno';
 
+    }
     /**
      * Create a new controller instance.
      *
@@ -62,10 +65,7 @@ class RegisterController extends Controller
      * @return \App\User
      */
 
-    protected function redirectTo()
-    {
-        return redirect()->route('aluno.index');;
-    }
+    
     
     protected function create(array $data)
     {
