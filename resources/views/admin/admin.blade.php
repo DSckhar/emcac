@@ -88,7 +88,6 @@
         <script src="{{asset('admin/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('admin/js/jquery.js')}}"></script>
         <script src="{{asset('admin/DataTables/datatables.min.js')}}"></script>
-        <script src="{{asset('admin/DataTables/br.js')}}"></script>
         <script src="{{asset('admin/js/validacao.js')}}"></script>
         <script type="text/javascript">
             $(document).ready( function () {

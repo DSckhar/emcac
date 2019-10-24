@@ -25,14 +25,14 @@
             </div>
         </div>
         <div class="row justify-content-center">
-                <div class="col-4">
-                    @if(session('mensagem'))
-                        <div class="alert alert-danger">
-                            <span>{{session('mensagem')}}</span>
-                        </div>
-                    @endif
-                </div>
+            <div class="col-4">
+                @if(session('mensagem'))
+                    <div class="alert alert-danger">
+                        <span>{{session('mensagem')}}</span>
+                    </div>
+                @endif
             </div>
+        </div>
         <div class="row justify-content-center">
             <div class="col-2">
             <button type="submit" class="btn btn-outline-dark">Enviar</button>
@@ -45,7 +45,7 @@
     <h1 class="h2">Alterar Senha</h1>
 </div>
 <div class="contanier-fluid">
-    <form method='post' enctype="multipart/form-data" action="">
+    <form name="alterarSenha" method='post' enctype="multipart/form-data" action="{{route('usuario.passwordEditado')}}">
         <div class="row justify-content-center">
             <div class="col-6">
                 {!! csrf_field() !!}
@@ -66,8 +66,17 @@
             </div>
         </div>
         <div class="row justify-content-center">
+            <div class="col-4">
+                @if(session('mensagemSenha'))
+                    <div class="alert alert-danger">
+                        <span>{{session('mensagemSenha')}}</span>
+                    </div>
+                @endif
+            </div>
+        </div>
+        <div class="row justify-content-center">
             <div class="col-2">
-            <button type="submit" class="btn btn-outline-dark">Enviar</button>
+            <button onclick="return validarSenha();" type="submit" class="btn btn-outline-dark">Enviar</button>
             </div>
         </div>
         <br/>

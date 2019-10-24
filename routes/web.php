@@ -84,7 +84,8 @@ Route::group(['prefix' => 'admr', 'middleware' => 'auth'], function () {
     Route::get('foto/delete/{id}', 'FotosController@destroy')->name('foto.delete');
     Route::resource('foto', 'FotosController');
 
-    //usuario    
+    //usuario   
+    Route::post('usuario/passwordEditado', 'UsersController@updatePassword')->name('usuario.passwordEditado'); 
     Route::get('usuario/adiministrador/{id}', 'UsersController@administator')->name('usuario.adiministrador');
     Route::get('usuario/habilitar/{id}', 'UsersController@enable')->name('usuario.habilitar');
     Route::get('usuario/desabilitar/{id}', 'UsersController@disable')->name('usuario.desabilitar');

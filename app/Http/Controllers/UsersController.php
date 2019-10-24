@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Users;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+
 
 class UsersController extends Controller
 {
@@ -109,6 +111,35 @@ class UsersController extends Controller
         
             return redirect()->action('UsersController@profile');
         }
+        
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $user = $request->except('_token');
+        $id = $user['id'];  
+        $users = Users::find($id);
+
+        if (Hash::check($user['passwordAntiga'], $users['password'])) {
+            $users->password = Hash::make($user['passwordNova']);
+            $users->save();
+
+            return redirect()->action('UsersController@profile');
+        }else{
+            return back()->with('mensagemSenha', 'Senha antiga incorreta!');
+        }
+
+        /*$usuarios = Users::all()->where('id', '!=', $id)->where('email', '=', $user['email']);
+
+        if (count($usuarios) > 0 ) {
+            return back()->with('mensagem', 'E-Mail já cadastrados para um usuário!');
+        }else{
+            $users->name = $user['name'];
+            $users->email = $user['email'];
+            $users->save();
+        
+            return redirect()->action('UsersController@profile');
+        }*/
         
     }
 

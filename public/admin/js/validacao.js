@@ -1,3 +1,4 @@
+
 function validarData(){
 
     var dInicio = validar.dInicio.value;
@@ -89,3 +90,18 @@ validar.arquivo.onchange = function() {
         this.value = "";
     };
 };
+
+function validarSenha(){
+
+    var passwordNova = alterarSenha.passwordNova.value;
+    var passwordConfirme = alterarSenha.passwordConfirme.value;
+
+    if(passwordNova == passwordConfirme){
+        return true
+    }else{
+        alert("A nova senha e a confirmação não coincidem");
+        return false;
+    }
+
+}
+
