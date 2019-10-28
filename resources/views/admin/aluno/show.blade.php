@@ -3,6 +3,9 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Aluno(a) - {{$aluno->nome}}</h1>
         <div>
+            <button class="btn btn-outline-dark" onclick="window.location.href='{{route('email.enviar', $aluno->id)}}'" >
+                <span data-feather="mail"></span>
+            </button>
             <button class="btn btn-outline-dark" onclick="window.location.href='{{route('aluno.edit', $aluno->id)}}'" >
                 <span data-feather="edit"></span>
             </button>

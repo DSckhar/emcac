@@ -161,27 +161,6 @@
         </div><!-- .container-fluid -->
     </div><!-- .icon-boxes -->
 
-    
-    <section class="about-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-6 align-content-lg-stretch">
-                    <header class="heading">
-                        <h2 class="entry-title">Sobre a EMCAC</h2>
-
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
-                    </header><!-- .heading -->
-                </div><!-- .col -->
-
-                <div class="col-12 col-lg-6 flex align-content-center mt-5 mt-lg-0">
-                    <div class="ezuca-video position-relative">
-                        <img src="{{asset('site/images/video-screenshot.png')}}" alt="">
-                    </div><!-- .ezuca-video -->
-                </div><!-- .col -->
-            </div><!-- .row -->
-        </div><!-- .container -->
-    </section><!-- .about-section -->
-
     @if($publicacaoPrincipal != null)
         <section class="latest-news-events">
             <div class="container">
@@ -253,66 +232,26 @@
         </section><!-- .latest-news-events -->
     @endif
 
-    <section class="home-gallery">
-        <div class="gallery-wrap flex flex-wrap">
-            <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="{{asset('site/images/a.jpg')}}" alt=""></a>
-            </div><!-- .gallery-grid -->
+    
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 align-content-lg-stretch">
+                    <header class="heading">
+                        <h2 class="entry-title">Sobre a EMCAC</h2>
 
-            <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="{{asset('site/images/b.jpg')}}" alt=""></a>
-            </div><!-- .gallery-grid -->
+                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
+                    </header><!-- .heading -->
+                </div><!-- .col -->
 
-            <div class="gallery-grid gallery-grid2x2">
-                <a href="#"><img src="{{asset('site/images/c.jpg')}}" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="{{asset('site/images/d.jpg')}}" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="{{asset('site/images/e.jpg')}}" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid2x1">
-                <a href="#"><img src="{{asset('site/images/g.jpg')}}" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid2x1">
-                <a href="#"><img src="{{asset('site/images/h.jpg')}}" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="{{asset('site/images/i.jpg')}}" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid2x2 ">
-                <a href="#"><img src="{{asset('site/images/j.jpg')}}" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="{{asset('site/images/k.jpg')}}" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="{{asset('site/images/l.jpg')}}" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid2x1">
-                <a href="#"><img src="{{asset('site/images/m.jpg')}}" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid3x1">
-                <a href="#"><img src="{{asset('site/images/n.jpg')}}" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="{{asset('site/images/o.jpg')}}" alt=""></a>
-            </div><!-- .gallery-grid -->
-        </div><!-- .gallery-wrap -->
-    </section><!-- .home-gallery -->
-
+                <div class="col-12 col-lg-6 flex align-content-center mt-5 mt-lg-0">
+                    <div class="ezuca-video position-relative">
+                        <img src="{{asset('site/images/video-screenshot.png')}}" alt="">
+                    </div><!-- .ezuca-video -->
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </section><!-- .about-section -->
     
     <footer class="site-footer" >
         <div class="footer-widgets" style="background-color: #383749;">

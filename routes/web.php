@@ -94,4 +94,8 @@ Route::group(['prefix' => 'admr', 'middleware' => 'auth'], function () {
     Route::get('usuario/perfil', 'UsersController@profile')->name('usuario.perfil');
     Route::resource('usuario', 'UsersController');
 
+    //email
+    Route::get('email/enviar/{id}', 'EmailController@create')->name('email.enviar');    
+    Route::resource('email', 'EmailController');
+
 });
