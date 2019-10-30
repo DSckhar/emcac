@@ -33,14 +33,14 @@
                     <h3>EMCAC</h3>
                 </div>
                 <div class="col-6 col-md-3 justify-content-end offset-md-4">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item">
-                            <a class="btn btn-outline-dark" href="{{route('usuario.perfil')}}">{{$user->name}}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('logout')}}">Sair</a>
-                        </li>
-                    </ul>
+                    <div class="row justify-content-end">
+                        <div class="col-4">
+                            <a class="btn btn-outline-dark" href="{{route('usuario.perfil')}}"><strong>Perfil</strong></a>
+                        </div>
+                        <div class="col-4">
+                            <a class="btn btn-outline-dark" alt="Sair" title="Sair" href="{{ route('logout') }}"><span data-feather="log-out"></span></a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row" style=" min-height:100%;">
@@ -52,9 +52,6 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('funcionario.index')}}"><span data-feather="briefcase"></span> Funcionários</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('turma.index')}}"><span data-feather="smile"></span> Turmas</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('documento.index')}}"><span data-feather="file-text"></span> Documentos</a>
