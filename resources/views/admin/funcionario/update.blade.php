@@ -37,6 +37,15 @@
             </div>
         </div>
         <div class="row justify-content-center">
+            <div class="col-6">
+                @if(session('mensagem'))
+                    <div class="alert alert-danger">
+                        <span>{{session('mensagem')}}</span>
+                    </div>
+                @endif
+            </div>
+        </div>
+        <div class="row justify-content-center">
             <div class="col-2">
             <button type="submit" class="btn btn-outline-dark">Enviar</button>
             </div>

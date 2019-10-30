@@ -22,7 +22,7 @@
                         No momento você ainda não está habilitado a utilizar este sistema 
                         <br/>Solicite permissão a um adiministrador
                     </h3>
-                    <a class="btn btn-outline-dark" href="{{route('logout')}}">Sair</a>
+                    <a class="btn btn-outline-dark" alt="Sair" title="Sair" href="{{ route('logout') }}"><span data-feather="log-out"></span></a>
                 </div>
             </div>
         </div>   
@@ -81,9 +81,9 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <footer>
+        <script src="{{asset('admin/js/jquery.js')}}"></script>
         <script src="{{asset('admin/js/bootstrap.min.js')}}"></script>
         <script src="{{asset('admin/js/bootstrap.bundle.min.js')}}"></script>
-        <script src="{{asset('admin/js/jquery.js')}}"></script>
         <script src="{{asset('admin/DataTables/datatables.min.js')}}"></script>
         <script src="{{asset('admin/js/validacao.js')}}"></script>
         <script type="text/javascript">
@@ -91,7 +91,6 @@
                 $('#tabela').DataTable();
             } );
         </script>
-
         <!-- Icons -->
         <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
         <script>

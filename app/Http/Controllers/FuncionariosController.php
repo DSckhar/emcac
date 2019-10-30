@@ -52,7 +52,7 @@ class FuncionariosController extends Controller
      */
     public function store(Request $request)
     {
-
+        
         $nameFile = null;
  
         // Verifica se informou o arquivo e se é válido
@@ -80,9 +80,18 @@ class FuncionariosController extends Controller
         }
 
         $funcionarios = $request->except('_token');
-        $funcionarios['foto'] =  $nameFile;
-        $funcionarios = Funcionarios::store($funcionarios);
-        return redirect()->action('FuncionariosController@index');
+        $diretor = Funcionarios::all()->where('cargo', '=', 'Diretor(a)');
+        $vice = Funcionarios::all()->where('cargo', '=', 'Vice Diretor(a)');
+
+        if ($funcionarios['cargo'] == 'Diretor(a)' && count($diretor) > 0) {
+            return back()->with('mensagem', 'Já existe um Funcionário registrado como Diretor(a)');
+        }elseif ($funcionarios['cargo'] == 'Vice Diretor(a)' && count($vice) > 0) {
+            return back()->with('mensagem', 'Já existe um Funcionário registrado como Vice Diretor(a)');
+        }else{
+            $funcionarios['foto'] =  $nameFile;
+            $funcionarios = Funcionarios::store($funcionarios);
+            return redirect()->action('FuncionariosController@index');
+        }
     }
 
     /**
@@ -155,13 +164,23 @@ class FuncionariosController extends Controller
 
         $funcionario = Funcionarios::find($id);
 
-        $funcionario->nome = $funcionarios['nome'];
-        $funcionario->cargo = $funcionarios['cargo'];
-        $funcionario->formacao = $funcionarios['formacao'];
-        $funcionario->foto = $nameFile;
-        $funcionario->save();
+        $diretor = Funcionarios::all()->where('id', '!=', $id)->where('cargo', '=', 'Diretor(a)');
+        $vice = Funcionarios::all()->where('id', '!=', $id)->where('cargo', '=', 'Vice Diretor(a)');
+
+        if ($funcionarios['cargo'] == 'Diretor(a)' && count($diretor) > 0) {
+            return back()->with('mensagem', 'Já existe um Funcionário registrado como Diretor(a)');
+        }elseif ($funcionarios['cargo'] == 'Vice Diretor(a)' && count($vice) > 0) {
+            return back()->with('mensagem', 'Já existe um Funcionário registrado como Vice Diretor(a)');
+        }else{
+            $funcionario->nome = $funcionarios['nome'];
+            $funcionario->cargo = $funcionarios['cargo'];
+            $funcionario->formacao = $funcionarios['formacao'];
+            $funcionario->foto = $nameFile;
+            $funcionario->save();
 
         return redirect()->action('FuncionariosController@index');
+        }
+
     }
 
     /**

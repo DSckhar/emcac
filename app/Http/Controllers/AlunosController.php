@@ -87,15 +87,16 @@ class AlunosController extends Controller
     {
         $alunos = $request->except('_token');
         $id = $alunos['id'];  
-        
         $aluno = Alunos::find($id);
 
         $aluno->nome = $alunos['nome'];
+
         $aluno->nascimento = $alunos['nascimento'];
         $aluno->parentesco = $alunos['parentesco'];
         $aluno->nomeResponsavel = $alunos['nomeResponsavel'];
         $aluno->emailResponsavel = $alunos['emailResponsavel'];
         $aluno->telefoneResponsavel = $alunos['telefoneResponsavel'];
+
         $aluno->save();
         
         return redirect()->action('AlunosController@index');
