@@ -1,7 +1,7 @@
 @extends('admin.admin') 
 @section('adm')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Enviar email para o responsavel - {{$aluno['nomeResponsavel']}}</h1>
+        <h1 class="h2">Enviar e-mail para o responsável - {{$aluno['nomeResponsavel']}}</h1>
     </div>
 
     <div class="contanier-fluid">
