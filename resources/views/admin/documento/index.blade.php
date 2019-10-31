@@ -3,7 +3,7 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Documentos</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
-        <button class="btn btn-outline-dark" onclick="window.location.href='{{route('documento.create')}}'" ><span data-feather="plus"></span></button>
+        <button title="Adicionar documento" class="btn btn-outline-dark" onclick="window.location.href='{{route('documento.create')}}'" ><span data-feather="plus"></span></button>
     </div>
 </div>
 
@@ -31,17 +31,17 @@
                 <td>{{date('d/m/Y', strtotime($documento->created_at))}}</td>
                 <td>{{date('d/m/Y', strtotime($documento->updated_at))}}</td>
                 <td>
-                    <button class="btn btn-outline-dark" onclick="window.location.href='{{route('documento.show', $documento->id)}}'" >
+                    <button title="Vizualizar documento" class="btn btn-outline-dark" onclick="window.location.href='{{route('documento.show', $documento->id)}}'" >
                         <span data-feather="eye"></span>
                     </button>
                 </td>
                 <td>
-                    <button class="btn btn-outline-dark" onclick="window.location.href='{{route('documento.edit', $documento->id)}}'" >
+                    <button title="Editar documento" class="btn btn-outline-dark" onclick="window.location.href='{{route('documento.edit', $documento->id)}}'" >
                         <span data-feather="edit"></span>
                     </button>
                 </td>
                 <td>
-                    <button class="btn btn-outline-danger" onclick="window.location.href='{{route('documento.delete', $documento->id)}}'" >
+                    <button title="Apagar documento" class="btn btn-outline-danger" onclick="window.location.href='{{route('documento.delete', $documento->id)}}'" >
                         <span data-feather="trash-2"></span>
                     </button>
                 </td>

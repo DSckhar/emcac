@@ -3,10 +3,10 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Documento - {{$documento->titulo}}</h1>
         <div>
-            <button class="btn btn-outline-dark" onclick="window.location.href='{{route('documento.edit', $documento->id)}}'" >
+            <button title="Editar documento" class="btn btn-outline-dark" onclick="window.location.href='{{route('documento.edit', $documento->id)}}'" >
                 <span data-feather="edit"></span>
             </button>
-            <button class="btn btn-outline-danger" onclick="window.location.href='{{route('documento.delete', $documento->id)}}'" >
+            <button title="Apagar documento" class="btn btn-outline-danger" onclick="window.location.href='{{route('documento.delete', $documento->id)}}'" >
                 <span data-feather="trash-2"></span>
             </button>
         </div>
@@ -41,7 +41,7 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-top border-bottom">
         <h1 class="h2">Capítulos do Documento</h1>
         <div>
-            <button class="btn btn-outline-dark" onclick="window.location.href='{{route('capitulo.cadastrar', $documento->id)}}'" >
+            <button title="Adicionar capítulo" class="btn btn-outline-dark" onclick="window.location.href='{{route('capitulo.cadastrar', $documento->id)}}'" >
                 <span data-feather="plus"></span>
             </button>
         </div>
@@ -64,17 +64,17 @@
                         <td>{{$cont}}</td>
                         <td>{{$capitulo->titulo}}</td>
                         <td>
-                            <button class="btn btn-outline-dark" onclick="window.location.href='{{route('capitulo.show', $capitulo->id)}}'" >
+                            <button title="Vizualizar capítulo" class="btn btn-outline-dark" onclick="window.location.href='{{route('capitulo.show', $capitulo->id)}}'" >
                                 <span data-feather="eye"></span>
                             </button>
                         </td>
                         <td>
-                            <button class="btn btn-outline-dark" onclick="window.location.href='{{route('capitulo.edit', $capitulo->id)}}'" >
+                            <button title="Editar capítulo" class="btn btn-outline-dark" onclick="window.location.href='{{route('capitulo.edit', $capitulo->id)}}'" >
                                 <span data-feather="edit"></span>
                             </button>
                         </td>
                         <td>
-                            <button class="btn btn-outline-danger" onclick="window.location.href='{{route('capitulo.delete', $capitulo->id)}}'" >
+                            <button title="Apagar capítulo" class="btn btn-outline-danger" onclick="window.location.href='{{route('capitulo.delete', $capitulo->id)}}'" >
                                 <span data-feather="trash-2"></span>
                             </button>
                         </td>

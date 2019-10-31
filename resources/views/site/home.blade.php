@@ -257,7 +257,7 @@
         <div class="footer-widgets" style="background-color: #383749;">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-6 col-lg-3">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="foot-about">
                             <div class="site-branding">
                                 <h1 class="site-title"><a href="{{asset('/')}}" rel="home">EM<span>CAC</span></a></h1>
@@ -271,7 +271,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         </div><!-- .foot-about -->
                     </div><!-- .col -->
 
-                    <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
+                    <div class="col-12 col-md-6 col-lg-4 mt-5 mt-md-0">
                         <div class="foot-contact">
                             <h2 style="color: #fff;">Fale Conoscos</h2>
 
@@ -283,27 +283,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         </div><!-- .foot-contact -->
                     </div><!-- .col -->
 
-                    <div class="col-12 col-md-6 col-lg-3 mt-5 mt-lg-0">
-                        <div class="quick-links flex flex-wrap">
-                            <h2 class="w-100" style="color: #fff;">Links Úteis</h2>
-
-                            <ul class="w-50" >
-                                <li><a href="#">About </a></li>
-                                <li><a href="#">Terms of Use </a></li>
-                                <li><a href="#">Privacy Policy </a></li>
-                                <li><a href="#">Contact Us</a></li>
-                            </ul>
-
-                            <ul class="w-50">
-                                <li><a href="#">Documentation</a></li>
-                                <li><a href="#">Forums</a></li>
-                                <li><a href="#">Language Packs</a></li>
-                                <li><a href="#">Release Status</a></li>
-                            </ul>
-                        </div><!-- .quick-links -->
-                    </div><!-- .col -->
-
-                    <div class="col-12 col-md-6 col-lg-3 mt-5 mt-lg-0">
+                    <div class="col-12 col-md-6 col-lg-4 mt-5 mt-lg-0">
                         <div class="follow-us">
                             <h2 style="color: #fff;">Siga-nos</h2>
 
